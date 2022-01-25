@@ -1,0 +1,7 @@
+<nav>
+        {% for navItem in site.data.navigation %}
+        <a href="{{navItem.link}}" {% if page.url == navItem.link %}class="nav_item selected"{%else%}class="nav_item unselected"{% endif %}>
+          {{navItem.name}}
+        </a>
+        {% endfor %}
+</nav>
