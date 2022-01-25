@@ -27,7 +27,7 @@
       href="assets/images/fav/favicon96.png"
       sizes="96x96"
     />
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href=/assets/css/styles.css>
   </head>
   <body>
     <div class="container">
@@ -70,47 +70,55 @@
     </div>
   </nav> -->
 </header>
- <div class="content"><nav class="sidebar">
+
+      <div class="content">
+        <nav class="sidebar">
   <ul class="side-nav">
-    <li class="side-nav__item">
-      <a href="#" class="side-nav__link">
+    
+    <li
+      class="side-nav__item  side-nav__item--active"
+    >
+      <a href="/" class="side-nav__link">
         <svg class="side-nav__icon">
-          <use
-            class="side-nav__icon-use"
-            xlink:href="/assets/images/sprite.svg#icon-home"
-          ></use>
+          <use class="side-nav__icon-use" xlink:href="/assets/images/sprite.svg#icon-home"></use>
         </svg>
         <span>Home</span>
       </a>
     </li>
-    <li class="side-nav__item">
-      <a href="#" class="side-nav__link">
+    
+    <li
+      class="side-nav__item "
+    >
+      <a href="/articles.html" class="side-nav__link">
         <svg class="side-nav__icon">
-          <use
-            class="side-nav__icon-use"
-            xlink:href="/assets/images/sprite.svg#icon-home"
-          ></use>
+          <use class="side-nav__icon-use" xlink:href="/assets/images/sprite.svg#icon-open-book"></use>
         </svg>
-        <span>iOS Native</span>
+        <span>Articles</span>
       </a>
     </li>
-    <li class="side-nav__item">
-      <a href="#" class="side-nav__link">
+    
+    <li
+      class="side-nav__item "
+    >
+      <a href="/about.html" class="side-nav__link">
         <svg class="side-nav__icon">
-          <use
-            class="side-nav__icon-use"
-            xlink:href="/assets/images/sprite.svg#icon-home"
-          ></use>
+          <use class="side-nav__icon-use" xlink:href="/assets/images/sprite.svg#icon-info"></use>
         </svg>
-        <span>Flutter</span>
+        <span>About</span>
       </a>
     </li>
+    
   </ul>
   <div class="legal">&copy; 2020 CodeKunda. All rights reserved.</div>
 </nav>
- <main class="main-view">Center View</main>
-</div>
 
+        <main class="main-view"><h2>Welcome to CodeKunda.</h2>
+<br />
+A side dedicated to Mobile developers by mobile developers.
+<br /><br />
+Native iOS Development, Native Android Development and Cross Platform
+</main>
+      </div>
     </div>
   </body>
 </html>

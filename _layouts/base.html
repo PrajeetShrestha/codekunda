@@ -27,11 +27,15 @@
       href="assets/images/fav/favicon96.png"
       sizes="96x96"
     />
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href={{ "/assets/css/styles.css" | relative_url }}>
   </head>
   <body>
     <div class="container">
-      {% include header.html %} {% include content.html %}
+      {% include header.html %}
+      <div class="content">
+        {% include sidebar.html %}
+        <main class="main-view">{{content}}</main>
+      </div>
     </div>
   </body>
 </html>
