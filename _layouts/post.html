@@ -2,10 +2,13 @@
 layout: base
 ---
 
-<div class="article">
-  <div class="article__title">{{ page.title }}</div>
-  <div class="article__date">
-    {{ page.date | date_to_string }} - {{ page.author }}
-  </div>
-  <div class="article__content">{{ content }}</div>
-</div>
+<h1>{{ page.title }}</h1>
+
+<p>
+  {{ page.date | date_to_string }} {% assign author = site.authors | where:
+  'short_name', page.author | first %} {% if author %} -
+  <a href="{{ author.url }}">{{ author.name }}</a>
+  {% endif %}
+</p>
+
+{{ content }}

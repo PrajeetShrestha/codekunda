@@ -4,6 +4,9 @@
 - name: Articles
   link: /articles.html
   icon: /assets/images/sprite.svg#icon-open-book
+- name: Authors
+  link: /authors.html
+  icon: /assets/images/sprite.svg#icon-info
 - name: About
   link: /about.html
   icon: /assets/images/sprite.svg#icon-info
