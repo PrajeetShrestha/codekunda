@@ -1,14 +1,16 @@
 ---
 layout: base
-title: "CK: Latest"
+title: "CodeKunda: Latest"
 ---
 
-<h1>Latest Posts</h1>
-<ul>
+<h1 class="article-list-title">Latest Posts</h1>
+<ul class="article-list">
   {% for post in site.posts %}
-  <li>
-    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    {{ post.excerpt }}
+  <li class="article-list__item">
+    <h2 class="article-list__link">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </h2>
+    <div class="article-list__excerpt">{{ post.excerpt }}</div>
   </li>
   {% endfor %}
 </ul>

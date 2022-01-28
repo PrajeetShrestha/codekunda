@@ -1,6 +1,6 @@
 <nav class="sidebar">
   <ul class="side-nav">
-    {% for navItem in site.data.sidebar_nav %}
+    {% for navItem in site.data.nav_data %}
     <li
       class="side-nav__item {% if page.url == navItem.link%} side-nav__item--active{% endif %}"
     >

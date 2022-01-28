@@ -31,11 +31,25 @@
     justify-content: space-between;
 }
 
+.topbar {
+    background-color: var(--color-grey-dark-1);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .main-view {
     flex: 1;
-    padding: 0rem 2.5rem;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: var(--color-text-dark);
     background-color: #fff;
     line-height: 1.6;
+
+    &__content {
+        margin: 1rem;
+        padding: 2rem;
+        background-color: var(--color-grey-light-1);
+        border-radius: 10px;
+    }
 }

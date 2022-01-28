@@ -1,0 +1,16 @@
+<nav class="topbar">
+  <ul class="top-nav">
+    {% for navItem in site.data.nav_data %}
+    <li
+      class="top-nav__item {% if page.url == navItem.link%} top-nav__item--active{% endif %}"
+    >
+      <a href="{{navItem.link}}" class="top-nav__link">
+        <svg class="top-nav__icon">
+          <use class="top-nav__icon-use" xlink:href="{{navItem.icon}}"></use>
+        </svg>
+        <span>{{navItem.name}}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
