@@ -1,6 +1,3 @@
-- name: Home
-  link: /
-  icon: /assets/images/sprite.svg#icon-home
 - name: Articles
   link: /articles.html
   icon: /assets/images/sprite.svg#icon-open-book
