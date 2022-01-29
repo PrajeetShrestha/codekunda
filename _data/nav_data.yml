@@ -6,7 +6,7 @@
   icon: /assets/images/sprite.svg#icon-open-book
 - name: Authors
   link: /authors.html
-  icon: /assets/images/sprite.svg#icon-info
+  icon: /assets/images/sprite.svg#icon-quill
 - name: About
   link: /about.html
   icon: /assets/images/sprite.svg#icon-info

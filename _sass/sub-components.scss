@@ -3,14 +3,14 @@
 .article-list-title {
 }
 .article-list {
-    background-color: #fff;
-
     &__item {
         list-style: none;
-        padding: 2rem;
-        box-shadow: 0 2px 4px 0 rgba(3, 3, 3, 0.2), 0 6px 20px 0 rgba(3, 3, 3, 0.19);
         border-radius: 4px;
         margin-bottom: 2rem;
+        background-color: var(--color-grey-light-1);
+        padding: 2rem 3rem;
+        border-radius: 2rem;
+        color: var(--color-text-dark);
     }
 
     &__link a {
@@ -36,7 +36,7 @@
 
     &__date {
         font-size: 1.4rem;
-        color: var(--color-grey-dark-3);
+        color: var(--color-grey-dark-);
         margin-bottom: 2rem;
     }
 
@@ -47,10 +47,10 @@
 /////////////////
 //CODEBLOCK
 .code-container {
-    border: 1px solid #333;
     margin: 2rem 0rem;
     padding: 2rem;
     border-radius: 4px;
+    background-color: #fff;
 }
 .code-block {
 }

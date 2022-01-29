@@ -93,60 +93,51 @@
 }
 //////////////////////////////
 //Top Navigation
+.topbar {
+    padding: 0.5rem;
+    background-color: #fff;
+    border-radius: 10px 10px 0px 0px;
+}
 .top-nav {
     display: flex;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     list-style: none;
-    margin: 0rem 1rem;
-    color: #000;
+    gap: 0.5rem;
+    justify-content: center;
 
     &__item {
-        color: #000;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
         padding: 0.5rem 1rem;
-        border-radius: 100px;
         color: #000;
-        background-color: var(--color-grey-light-2);
-        transition: all 0.2s ease-in-out;
-
+        border-radius: 4px;
         &:hover {
-            background-color: var(--color-grey-light-3);
-            color: #000;
+            background-color: var(--color-primary);
+            color: #fff;
         }
 
-        &:active {
-            transform: translateY(2px);
+        & a {
+            text-decoration: none;
             color: #000;
+        }
+        & a:hover {
+            color: #fff;
         }
     }
     &__item--active {
-        color: #000;
+        color: #fff;
         background-color: var(--color-primary-dark);
-    }
+        font-weight: bold;
 
-    &__link:link,
-    &__link:visited {
-        text-decoration: none;
-        text-transform: uppercase;
-        padding: 1.5rem 2rem;
-        display: flex;
-        align-items: center;
-        z-index: 10;
-        color: #000;
-    }
-
-    &__link:hover {
-        background-color: var(--color-primary);
+        & a {
+            text-decoration: none;
+            color: #fff;
+        }
     }
 
     &__icon {
         fill: currentColor;
         height: 1.75rem;
         width: 1.75rem;
-        margin-right: 2rem;
+        margin-right: 1rem;
     }
 }
 
