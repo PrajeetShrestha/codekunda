@@ -1,0 +1,13 @@
+---
+title: "CodeKunda: Topics"
+layout: base
+---
+
+<h1>Topics</h1>
+<ul>
+	{% for tag in site.tags %}
+	<li>
+		<h2><a href="{{ tag.url }}">{{ tag.name }}</a></h2>
+	</li>
+	{% endfor %}
+</ul>

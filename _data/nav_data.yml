@@ -4,6 +4,9 @@
 - name: Authors
   link: /authors.html
   icon: /assets/images/sprite.svg#icon-quill
+- name: Topics
+  link: /topics.html
+  icon: /assets/images/sprite.svg#icon-quill
 - name: About
   link: /about.html
   icon: /assets/images/sprite.svg#icon-info

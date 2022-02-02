@@ -1,27 +1,34 @@
 collections:
-  authors:
-    output: true
+    authors:
+        output: true
+    tags:
+        output: true
 
 markdown: kramdown
 highlighter: rouge
 kramdown:
-  input: GFM
-  syntax_highlighter_opts:
-    default_lang: html
-    css_class: "syntax"
+    input: GFM
+    syntax_highlighter_opts:
+        default_lang: html
+        css_class: "syntax"
 
 defaults:
-  - scope:
-      path: ""
-      type: "authors"
-    values:
-      layout: "author"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-    values:
-      layout: "base"
+    - scope:
+          path: ""
+          type: "tags"
+      values:
+          layout: "tag"
+    - scope:
+          path: ""
+          type: "authors"
+      values:
+          layout: "author"
+    - scope:
+          path: ""
+          type: "posts"
+      values:
+          layout: "post"
+    - scope:
+          path: ""
+      values:
+          layout: "base"
