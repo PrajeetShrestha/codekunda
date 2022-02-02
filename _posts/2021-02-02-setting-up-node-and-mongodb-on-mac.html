@@ -1,0 +1,76 @@
+---
+layout: post
+author: prajeet
+tags: [nodejs, web-development, mongodb]
+---
+
+<h2>Setting up NodeJs</h2>
+<p>
+	Setting up NodeJs is pretty straight forward in mac. 
+</p>
+<p>
+Download the installer for your respective device 
+<a href="https://nodejs.org/en/download/" class="link">here</a> 
+and after running the installer. Go to terminal and check the installed version of the node. 
+<br>
+<code>
+	node -v
+</code>
+</p>
+<p>
+	If you want to go further and execute your first node application, you can use the command below 
+	in terminal. Just take a note of your current working directory.
+	<code>
+		echo "console.log('hello world')" > app.js
+		<br>
+		node app.js
+	</code>
+	You can see <strong>hello world</strong> printed in the terminal. What you just did is to simply 
+	create a javascript file called <strong>app.js</strong> from the terminal and execute it with 
+	<strong>nodejs</strong>.
+</p>
+
+<h2>Installing MongoDB</h2>
+<p>
+	You would want to try to install a community edition for MongoDB first. You can get it from 
+	<a href="https://www.mongodb.com/try/download/community" class="link">here</a>
+	<br> 
+	After extracting the downloaded file you would get a folder named <strong>mongodb-macOS***</strong> 
+	rename the folder to just <strong>mongodb</strong> for ease of use.
+</p>
+<p>
+	Now go the the folder (Downloads folder normally) in which you extracted the mongodb in terminal.
+	And type below commands:
+	<code>
+		cp -a $PWD/mongodb ~ <span class="comment"># copy the folder to the home directory</span>
+		<br>
+		cd ~ <span class="comment"># go to the home directory</span>
+		<br>
+		mkdir mongodb-data <span class="comment"># create a folder named mongodb-data, used for storing collections and other meta-data</span>
+	</code>
+</p>
+
+<h2>Running mongodb server</h2>
+<p>
+In terminal type below commands:
+<code>
+	~/mongodb/bin/mongod --dbpath=~/mongodb-data <span class="comment"># starts mongodb server</span>
+</code>
+	
+This initiates mongodb server and starts listening on port 27017. Don't close the tab in 
+terminal yet or the server might stop.
+</p>
+
+<h2> Connect to mongodb server with GUI</h2> 
+<p>
+There are various tools available for connecting to mongodb server. 
+<ul>
+	<li>MongoDB Compass: <span><a href="https://www.mongodb.com/products/compass" class="link">Download</a></span></li>
+	<li>Robo: <span><a href="https://robomongo.org/download" class="link">Download</a></span></li>
+</ul>
+<p>
+	My personal favorite is MongoDB Compass
+</p>
+</p>
+{% include post-tags.html %}
+
