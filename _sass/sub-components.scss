@@ -17,8 +17,10 @@
 	}
 
 	& a:visited {
-		color: var(--color-grey-dark-1);
-		text-decoration: none;
+	}
+
+	&__readmore {
+		color: var(--color-primary-dark);
 	}
 
 	&__excerpt {
@@ -58,6 +60,7 @@
 	display: flex;
 	gap: 0.5rem;
 	margin-top: 2rem;
+	flex-wrap: wrap;
 	& a {
 		text-decoration: none;
 		padding: 0.5rem 1rem;

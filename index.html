@@ -2,15 +2,16 @@
 layout: base
 title: "CodeKunda: Articles"
 ---
+
 <ul class="article-list">
-  {% for post in site.posts %}
-  <li class="article-list__item">
+	{% for post in site.posts %}
+	<li class="article-list__item">
 		<a href="{{ post.url }}">
-    <h1 class="article-list__link">
-      {{ post.title }}
-    </h1>
-    <div class="article-list__excerpt post-content">{{ post.excerpt }}</div>
-	</a>
-  </li>
-  {% endfor %}
+			<h1 class="article-list__link">{{ post.title }}</h1>
+		</a>
+		<div class="article-list__excerpt post-content">{{ post.excerpt }}</div>
+		<a href="{{ post.url }}" class="article-list__readmore">Read More...</a>
+	</li>
+
+	{% endfor %}
 </ul>
