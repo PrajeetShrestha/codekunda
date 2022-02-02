@@ -14,3 +14,16 @@
     {% endfor %}
   </ul>
 </nav>
+
+{% for dress in site.data.dresses %}
+<div class="dress-card">
+  <div class="dress-card__img">
+    <img src="{{dress.img}}" alt="{{dress.name}}" />
+  </div>
+  <div class="dress-card__info">
+    <h3 class="dress-card__name">{{dress.name}}</h3>
+    <p class="dress-card__price">{{dress.price}}</p>
+    <p class="dress-card__description">{{dress.description}}</p>
+  </div>
+  {% endfor %}
+</div>

@@ -84,7 +84,6 @@
 
     &__user-photo {
         height: 3.75rem;
-
         border-radius: 50%;
     }
 
@@ -221,4 +220,10 @@
         line-height: 1.5;
         margin-bottom: 2rem;
     }
+}
+
+.post-container {
+    background-color: var(--color-grey-light-2);
+    padding: 1rem 2rem;
+    border-radius: 10px;
 }

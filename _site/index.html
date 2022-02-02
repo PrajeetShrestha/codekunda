@@ -8,12 +8,14 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
       rel="stylesheet"
     />
+    <script type="module" src=/assets/js/main.js></script>
     <title>CK: Home</title>
     <link rel="icon" type="image/png" href=/assets/images/fav/favicon16.png sizes="16x16" /> <link rel="icon" type="image/png"
     href=/assets/images/fav/favicon32.png sizes="32x32" />
     <link rel="icon" type="image/png" href=/assets/images/fav/favicon96.png sizes="96x96" /> <link rel="stylesheet" href=/assets/css/styles.css> <link rel="stylesheet" href=/assets/css/syntax.css>
   </head>
   <body>
+    <div id="dynamic_content"></div>
     <div class="container">
       <header class="header">
   <img class="logo" src="/assets/images/banner_logo.png" alt="CodeKunda logo" />
@@ -23,6 +25,17 @@
   </div>
   <nav class="topbar">
   <ul class="top-nav">
+    
+    <li
+      class="top-nav__item  top-nav__item--active"
+    >
+      <a href="/">
+        <svg class="top-nav__icon">
+          <use class="top-nav__icon-use" xlink:href="/assets/images/sprite.svg#icon-home"></use>
+        </svg>
+        <span>Home</span>
+      </a>
+    </li>
     
     <li
       class="top-nav__item "
@@ -60,6 +73,39 @@
   </ul>
 </nav>
 
+
+<div class="dress-card">
+  <div class="dress-card__img">
+    <img src="" alt="Lehenga" />
+  </div>
+  <div class="dress-card__info">
+    <h3 class="dress-card__name">Lehenga</h3>
+    <p class="dress-card__price"></p>
+    <p class="dress-card__description">Suitable for <p> Brides </p></p>
+  </div>
+  
+<div class="dress-card">
+  <div class="dress-card__img">
+    <img src="" alt="Lehenga1" />
+  </div>
+  <div class="dress-card__info">
+    <h3 class="dress-card__name">Lehenga1</h3>
+    <p class="dress-card__price"></p>
+    <p class="dress-card__description">Suitable for <p> Brides </p></p>
+  </div>
+  
+<div class="dress-card">
+  <div class="dress-card__img">
+    <img src="" alt="Lehenga2" />
+  </div>
+  <div class="dress-card__info">
+    <h3 class="dress-card__name">Lehenga2</h3>
+    <p class="dress-card__price"></p>
+    <p class="dress-card__description">Suitable for <h1> Brides </h1></p>
+  </div>
+  
+</div>
+
 </header>
 
       <div class="content">
@@ -73,5 +119,6 @@ Native iOS Development, Native Android Development and Cross Platform
         </main>
       </div>
     </div>
+
   </body>
 </html>
