@@ -1,5 +1,5 @@
 <div class="post-tags">
-  {% for tag in page.tags %}
-  <a href="{{ site.baseurl }}/tags/{{ tag }}.html">{{ tag }}</a>
+  {% for tag in page.tags %} {% capture tag_name %}{{ tag }}{% endcapture %}
+  <a href="{{ site.baseurl }}/tags/{{ tag }}.html">{{ tag_name }}</a>
   {% endfor %}
 </div>

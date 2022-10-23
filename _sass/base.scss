@@ -39,3 +39,11 @@ body {
     background-repeat: no-repeat;
     min-height: 100vh;
 }
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+a:visited {
+    color: lightcoral;
+}
