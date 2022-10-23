@@ -1,0 +1,89 @@
+{
+  "main": {
+    "id": "77003a50bf8890f7",
+    "type": "split",
+    "children": [
+      {
+        "id": "9ee1dfefae71a05d",
+        "type": "leaf",
+        "state": {
+          "type": "graph",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "90da0daf57bfcf16",
+    "type": "split",
+    "children": [
+      {
+        "id": "cc5cfbc30bdcba1b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3d603eee1fb76ccf",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "5b16c3af053bb7d5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "87a2df1bc222ac59",
+    "type": "split",
+    "children": [
+      {
+        "id": "16d00c9d0fb280f1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6b2d8e2bd80154e2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "9ee1dfefae71a05d",
+  "lastOpenFiles": [
+    "code.md"
+  ]
+}

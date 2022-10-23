@@ -32,5 +32,3 @@ defaults:
           path: ""
       values:
           layout: "base"
-plugins:
-    - jekyll-seo-tag

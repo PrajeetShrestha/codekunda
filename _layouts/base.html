@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-	{% seo %}
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-COMPATIBLE" content="ie=edge" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
-      rel="stylesheet"
-    />
-    <script type="module" src={{"assets/js/main.js" | relative_url}}></script>
-    <title>{{page.title}}</title>
-    <link rel="icon" type="image/png" href={{"assets/images/fav/favicon16.png" |
-    relative_url}} sizes="16x16" /> <link rel="icon" type="image/png"
-    href={{"assets/images/fav/favicon32.png" | relative_url}} sizes="32x32" />
-    <link rel="icon" type="image/png" href={{"assets/images/fav/favicon96.png" |
-    relative_url}} sizes="96x96" /> <link rel="stylesheet" href={{
-    "/assets/css/styles.css" | relative_url }}> <link rel="stylesheet" href={{
-    "/assets/css/syntax.css" | relative_url }}>
-  </head>
-  <body>
-    <div class="container">
-      {% include header.html %}
-      <div class="content">
-        <main class="main-view">
-          <div class="main-view__content">{{content}}</div>
-        </main>
-      </div>
-    </div>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-COMPATIBLE" content="ie=edge" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+			rel="stylesheet"
+		/>
+		<title>{{page.title}}</title>
+		<link rel="icon" type="image/png"
+		href={{"assets/images/fav/favicon16.png" | relative_url}} sizes="16x16"
+		/> <link rel="icon" type="image/png"
+		href={{"assets/images/fav/favicon32.png" | relative_url}} sizes="32x32"
+		/> <link rel="icon" type="image/png"
+		href={{"assets/images/fav/favicon96.png" | relative_url}} sizes="96x96"
+		/> <link rel="stylesheet" href={{ "/assets/css/styles.css" |
+		relative_url }}> <link rel="stylesheet" href={{ "/assets/css/syntax.css"
+		| relative_url }}>
+	</head>
+	<body>
+		<div class="container">
+			{% include header.html %}
+			<div class="content">
+				<main class="main-view">
+					<div class="main-view__content">{{content}}</div>
+				</main>
+			</div>
+		</div>
 
-  </body>
+	</body>
 </html>
