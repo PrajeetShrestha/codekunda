@@ -1,0 +1,87 @@
+---
+layout: post
+title: "Custom Button tvOS"
+date: 2024-07-08
+tags: [tvOS, swift]
+---
+<h2>How to make custom button for tvOS</h2>
+<p>Customization of buttons in tvOS is done through buttonStyles view modifier and implementing ButtonStyle protocol.</p>
+<p>
+    ButtonStyle is a protocol that defines type that applies standard interaction behavior and a custom appearance to all buttons within a view hierarchy.
+</p>
+<!--more-->
+<div class="code-container">
+    {% highlight swift %}
+    struct CustomButtonStyle: ButtonStyle {
+    
+        @Environment (\.isFocused) var focused
+        var backgroundColor: Color = .orange
+        var foregroundColor: Color = .white
+        
+        private var padding: Double = 32.0
+        private var cornerRadius: Double = 20.0
+        private var strokeWidth: Double = 5.0
+        private var scale: Double = 1.05
+        
+        init(backgroundColor: Color, foregroundColor: Color) {
+            self.backgroundColor = backgroundColor
+            self.foregroundColor = foregroundColor
+        }
+        
+        func makeBody(configuration: Configuration) -> some View {
+            configuration.label
+                .padding(padding)
+                .background(focused ? .orange : .clear)
+                .foregroundColor(foregroundColor)
+                .cornerRadius(cornerRadius)
+                .overlay(
+                    RoundedRectangle(cornerRadius: cornerRadius)
+                        .stroke(focused ? .clear : .white,
+                                lineWidth: focused  ? 0 : strokeWidth)
+                )
+                .scaleEffect(focused ? scale : 1.0)
+                .animation(.easeIn, value: focused ? scale : 1.0)
+        }
+    }
+    {% endhighlight %}
+</div>
+
+<h3>Use the buttonStyle </h3>   
+<div class="code-container">
+    {% highlight swift %}
+    struct ContentView: View {
+        var body: some View {
+            VStack {
+                Button {
+                    print("More button tappped")
+                } label: {
+                    Text("More")
+                        .frame(maxWidth: .infinity)
+                }
+                Button {
+                    print("Play button tappped")
+                } label: {
+                    Text("Play")
+                        .frame(maxWidth: .infinity)
+                }
+            }
+            .buttonStyle(CustomButtonStyle(
+                backgroundColor: .orange,
+                foregroundColor: .white))
+            .frame(maxWidth: 400)
+        }
+    }
+    {% endhighlight %}
+</div>
+
+<h3>Disection</h3>
+<p>
+    <code>func makeBody(configuration: Configuration) -> some View</code></p>
+    This method needs to be implemented by your custom ButtonStyle. It takes a Configuration object as a parameter and returns a view. The Configuration object contains the button’s label and <code> @Environment (\.isFocused) var focused</code>  indicates whether the button is currently focused.
+    You can customize the button according to the focused state.
+</p>
+
+<h3>Output</h3>
+<img width=300 height: auto src={{"/assets/images/posts/custom-button-tvos/output.png" | relative_url }} class="illustration">
+    
+{% include post-tags.html %}

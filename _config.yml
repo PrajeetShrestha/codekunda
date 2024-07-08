@@ -11,7 +11,7 @@ kramdown:
     syntax_highlighter_opts:
         default_lang: html
         css_class: "syntax"
-
+excerpt_separator: <!--more-->
 defaults:
     - scope:
           path: ""

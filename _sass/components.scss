@@ -32,10 +32,10 @@
       width: 100%;
     }
 
-    &::--webkit-input-placeholder {
-      font-weight: 100;
-      color: var(--color-grey-light-4);
-    }
+    // &::--webkit-input-placeholder {
+    //   font-weight: 100;
+    //   color: var(--color-grey-light-4);
+    // }
   }
 
   &__input:focus + &button {
