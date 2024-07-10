@@ -13,6 +13,7 @@
 
     --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -46,4 +47,9 @@ a:hover {
 
 a:visited {
     color: lightcoral;
+}
+
+ul,
+ol {
+    margin: 0 2rem;
 }
