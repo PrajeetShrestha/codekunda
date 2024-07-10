@@ -1,7 +1,7 @@
 /////////////////
 //ARTICLES LIST ITEM
-.article-list-title {
-}
+.article-list-title {}
+
 .article-list {
   &__item {
     list-style: none;
@@ -10,21 +10,22 @@
     background-color: var(--color-grey-light-2);
     padding: 2rem 3rem;
     border-radius: 2rem;
+    @media (max-width: 480px) {
+      border-radius: 0rem;
+    }
   }
 
   & a {
     text-decoration: none;
   }
 
-  & a:visited {
-  }
+  & a:visited {}
 
   &__readmore {
     color: var(--color-primary-dark);
   }
 
-  &__excerpt {
-  }
+  &__excerpt {}
 }
 
 /////////////////
@@ -41,7 +42,14 @@
     margin-bottom: 2rem;
   }
 
-  &__content {
+  &__content {}
+
+  ul,
+  ol {
+    margin: 0 2rem;
+    @media (max-width: 480px) {
+      margin: 0;
+    }
   }
 }
 
@@ -63,20 +71,22 @@
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  z-index: 10; /* Ensure the button is above other elements */
+  z-index: 10;
+  /* Ensure the button is above other elements */
 }
 
 .copy-button:hover {
   background-color: #0056b3;
 }
-.code-block {
-}
+
+.code-block {}
 
 .post-tags {
   display: flex;
   gap: 0.5rem;
   margin-top: 2rem;
   flex-wrap: wrap;
+
   & a {
     text-decoration: none;
     padding: 0.5rem 1rem;

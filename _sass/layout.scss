@@ -1,6 +1,5 @@
 .container {
   background-color: #fff;
-  box-shadow: var(--shadow-dark);
   min-height: 50rem;
 }
 
@@ -39,6 +38,10 @@
   &__content {
     margin: 1rem;
     padding: 2rem;
-    border-radius: 10px;
+    @media (max-width: 480px) {
+      margin: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }
