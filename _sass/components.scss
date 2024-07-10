@@ -230,7 +230,9 @@
 
 .post-container {
   position: relative;
+  padding: 2rem;
   background-color: var(--color-grey-light-2);
+  border-radius: 16px;
 }
 
 .highlight pre, .highlight code {

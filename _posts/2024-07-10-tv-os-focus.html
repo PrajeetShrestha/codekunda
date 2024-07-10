@@ -1,0 +1,104 @@
+---
+layout: post
+title: "Focus on custom UI element on tvOS"
+date: 2024-07-10
+tags: [tvos, swift, swiftui]
+---
+
+<p>
+    Working with prebuilt SwiftUI element like button and image in tvOS is easy but when it comes to customization, it
+    can be a bit tricky.
+    In this article, we will focus on how to customize the focus on custom UI elements in tvOS.
+</p>
+
+<p>
+    Please note that order of modifiers used is very important while customizing the focus on custom UI elements. If you
+    messup the order of the modifiers, the focus might not work as expected.
+</p>
+
+<p> I will be using the following code snippet to demonstrate the focus on custom UI elements in tvOS. </p>
+
+<div class="code-container">
+    {% highlight swift %}
+    import SwiftUI
+    import SwiftData
+    import UIKit
+
+    // 1. Custom hashable noded that can be used as focus state
+    struct Person: Hashable {
+    var name: String
+    var address: String
+
+    static func all() -> [Person] {
+    return [
+    Person(name: "Mr X", address: "Japan"),
+    Person(name: "Miss Y", address: "United States"),
+    Person(name: "Mrs Z", address: "United Kingdom"),
+    ]
+    }
+    }
+
+    struct ContentView: View {
+    // 2. Focus State
+    @FocusState var person: Person?
+    var body: some View {
+    List {
+    // 3. Displays the name of person that is focused
+
+    Text(person?.name ?? "No focus")
+    ForEach(Person.all(), id: \.name) { person in
+    VStack {
+    ListItem(person: person)
+    }
+    // 4. VStack is important to wrap ListItem so that isFocused environment variable is triggered when ListItem is
+    triggered.
+    .focusable()
+    // 5. After view is made focusable then you can use .focused view modifier on it to bind with focus state
+    .focused($person, equals: person)
+    // 6. On tap gesture is added only after focusable view modifier is added
+    .onTapGesture {
+    print("Tapp")
+    }
+    }
+    }
+    .listStyle(.plain)
+    .frame(maxWidth: 400)
+    }
+    }
+
+
+    struct ListItem: View {
+    // 7. Returns whether the nearest focusable ancestor has focus.
+    @Environment(\.isFocused) var focused
+    var person: Person
+
+    var body: some View {
+    Text(person.name)
+    .foregroundColor(focused ? .white : .black)
+    .padding()
+    .background(focused ? .orange : .gray)
+    .cornerRadius(20)
+    .scaleEffect(focused ? 1.2 : 1.0)
+    }
+    }
+
+    {% endhighlight %}
+</div>
+
+<p>
+<h2> Explanation of the code snippet </h2>
+<ol>
+    <li>Custom hashable node that can be used as focus state</li>
+    <li>Focus State</li>
+    <li>Displays the name of the person that is focused</li>
+    <li>VStack is important to wrap ListItem so that the isFocused environment variable is triggered when ListItem
+        is triggered.</li>
+    <li>After the view is made focusable, you can use the .focused view modifier on it to bind with the focus state
+    </li>
+    <li>On tap gesture is added only after the focusable view modifier is added</li>
+    <li>Returns whether the nearest focusable ancestor has focus.</li>
+</ol>
+</p>
+
+<h3>Output</h3>
+<img width=300 height: auto src={{"/assets/images/posts/focus-state-tvos/1.png" | relative_url }} class="illustration">
