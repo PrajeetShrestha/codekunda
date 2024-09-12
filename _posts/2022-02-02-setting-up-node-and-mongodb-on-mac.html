@@ -63,9 +63,11 @@ tags: [nodejs, web-development, mongodb]
 <p>
 	In terminal type below commands:
 	<code>
-		~/mongodb/bin/mongod --dbpath=~/mongodb-data
+		~/mongodb/bin/mongod --dbpath= ~/mongodb-data
 		<span class="comment"># starts mongodb server</span>
 	</code>
+
+	<i>Note that you may need to set a permission to the mongodb-data folder which <code>sudo chmod -R 700 ~/mongodb-data</code></i>
 
 	This initiates mongodb server and starts listening on port 27017. Don't
 	close the tab in terminal yet or the server might stop.
