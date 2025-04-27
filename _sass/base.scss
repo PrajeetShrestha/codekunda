@@ -49,3 +49,8 @@ a:visited {
     color: lightcoral;
 }
 
+ul,
+ol {
+    padding: 0 3.5rem; /* 0 top/bottom, 1.5rem left/right */
+    margin: 0; /* Remove any default margin */
+}
