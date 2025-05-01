@@ -470,18 +470,18 @@
             
             <div class="flex flex-col lg:flex-row">
                 <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-8 animate-fade-in animate-delay-100">
-                    <form class="bg-white rounded-lg shadow-md p-8">
+                    <form action="mailto:info@codekunda.com" method="POST" enctype="text/plain" class="bg-white rounded-lg shadow-md p-8">
                         <div class="mb-6">
                             <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="John Doe">
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="John Doe">
                         </div>
                         <div class="mb-6">
                             <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="john@example.com">
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="john@example.com">
                         </div>
                         <div class="mb-6">
                             <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Tell us about your project..."></textarea>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Tell us about your project..."></textarea>
                         </div>
                         <button type="submit" class="w-full bg-primary hover:bg-opacity-90 text-white font-medium py-3 px-6 rounded-md transition-colors">
                             Send Message
@@ -628,7 +628,7 @@
             
             <div class="border-t border-gray-800 mt-12 pt-8 text-center">
                 <p class="text-gray-400">
-                    &copy; 2025 CodeKunda. All rights reserved.
+                    © 2025 CodeKunda. All rights reserved.
                 </p>
             </div>
         </div>
