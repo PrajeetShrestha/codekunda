@@ -12,11 +12,11 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
   <title>{{page.title}}</title>
-  <link rel="icon" type="image/png" href={{"assets/images/fav/favicon16.png" | relative_url}} sizes="16x16" />
-  <link rel="icon" type="image/png" href={{"assets/images/fav/favicon32.png" | relative_url}} sizes="32x32" />
-  <link rel="icon" type="image/png" href={{"assets/images/fav/favicon96.png" | relative_url}} sizes="96x96" />
-  <link rel="stylesheet" href={{ "/assets/css/styles.css" | relative_url }}>
-  <link rel="stylesheet" href={{ "/assets/css/syntax.css" | relative_url }}>
+  <link rel="icon" type="image/png" href="{{ 'assets/images/fav/favicon16.png' | relative_url }}" sizes="16x16" />
+  <link rel="icon" type="image/png" href="{{ 'assets/images/fav/favicon32.png' | relative_url }}" sizes="32x32" />
+  <link rel="icon" type="image/png" href="{{ 'assets/images/fav/favicon96.png' | relative_url }}" sizes="96x96" />
+  <link rel="stylesheet" href="{{ 'assets/css/styles.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ 'assets/css/syntax.css' | relative_url }}">
 </head>
 
 <body>
@@ -24,11 +24,11 @@
     {% include header.html %}
     <div class="content">
       <main class="main-view">
-        <div class="main-view__content">{{content}}</div>
+        <div class="main-view__content">{{ content }}</div>
       </main>
     </div>
   </div>
-  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  <script src="{{ 'assets/js/main.js' | relative_url }}"></script>
 </body>
 
 </html>
