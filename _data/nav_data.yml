@@ -1,5 +1,5 @@
 - name: Articles
-  link: /index.html
+  link: /blog.html
   icon: /assets/images/sprite.svg#icon-open-book
 - name: Authors
   link: /authors.html
