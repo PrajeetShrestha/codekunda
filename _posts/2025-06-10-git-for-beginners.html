@@ -7,114 +7,76 @@ tags: [git]
 comments: true
 ---
 
-<p>
-  Git is a distributed version control system that helps you track changes in your code and collaborate with others.<br>
-  This guide will introduce you to the basics of Git and get you started with essential commands.
-</p>
-<!--more-->
+<article>
+  <section>
+    <p>
+      Git is a distributed version control system that helps you track changes in your code and collaborate with others.
+      This guide will introduce you to the basics of Git and get you started with essential commands.
+    </p>
+  </section>
 
-<h2>Basic Commands</h2>
-<ul>
-  1. Initialize Git Repository
-  <code>git init</code>
-  2. Check status of your files in the working directory
-  <code>git status</code>
-  3. Add files to staging area
-  <code>git add &lt;file&gt;</code>
-  4. Commit changes with a message
-  <code>git commit -m "message"</code> 
-  5. View commit history
-  <code>git log</code>
-  6. Create a new branch
-  <code>git branch &lt;branch-name&gt;</code>
-  7. Switch to a branch
-  <code>git checkout &lt;branch-name&gt;</code>
-  8. Merge a branch into the current branch
-  <code>git merge &lt;branch-name&gt;</code>
-  9. Push changes to a remote repository
-  <code>git push origin &lt;branch-name&gt;</code>
-  10. Pull changes from a remote repository
-  <code>git pull origin &lt;branch-name&gt;</code>
-  11. Clone a remote repository
-  <code>git clone &lt;repository-url&gt;</code>
-  12. Remove a file from the staging area
-  <code>git rm &lt;file&gt;</code>
-  13. View differences between staged and unstaged changes
-  <code>git diff</code>
-  14. View differences between the last commit and the current state
-  <code>git diff HEAD</code>
-  15. Reset the staging area to the last commit
-  <code>git reset</code>
-  16. Discard changes in the working directory
-  <code>git checkout -- &lt;file&gt;</code>
-  17. View the current branch
-  <code>git branch --show-current</code>
-  18. View all branches
-  <code>git branch</code>
-  19. Delete a branch
-  <code>git branch -d &lt;branch-name&gt;</code>
-  20. Force delete a branch
-  <code>git branch -D &lt;branch-name&gt;</code>
-  21. View remote repositories
-  <code>git remote -v</code>
-  22. Add a remote repository
-  <code>git remote add &lt;name&gt; &lt;repository-url&gt;</code>
-  23. Remove a remote repository
-  <code>git remote remove &lt;name&gt;</code>
-  24. Fetch changes from a remote repository
-  <code>git fetch &lt;remote-name&gt;</code>
-  25. View the status of the remote repository
-  <code>git remote show &lt;remote-name&gt;</code>
-  26. Rename a branch
-  <code>git branch -m &lt;old-branch-name&gt; &lt;new-branch-name&gt;</code>
-  27. Stash changes temporarily
-  <code>git stash</code>
-  28. Apply stashed changes
-  <code>git stash apply</code>
-  29. List stashed changes
-  <code>git stash list</code>
-  30. Drop a specific stash
-  <code>git stash drop &lt;stash@{index}&gt;</code>
-  31. Clear all stashes
-  <code>git stash clear</code>
-  32. View the configuration settings
-  <code>git config --list</code>
-  33. Set a global configuration setting
-  <code>git config --global &lt;setting&gt; &lt;value&gt;</code>
-  34. Set a local configuration setting
-  <code>git config --local &lt;setting&gt; &lt;value&gt;</code>
-  35. Show the current configuration file
-  <code>git config --edit</code>
-  36. Show the current user name
-  <code>git config user.name</code>
-  37. Show the current user email
-  <code>git config user.email</code>
-  38. Set the user name
-  <code>git config --global user.name "Your Name"</code>
-  39. Set the user email
-  <code>git config --global user.email "your.email@example.com"</code>  
-</ul>
-<p>
-  <i>Note: All these commands should be run in the terminal or command prompt within your project directory.</i>
-</p>
-<br>
-<br>
+  <!--more-->
 
-<h2>Understanding the .gitignore</h2>
-<p>
-  A <strong>.gitignore</strong> file tells Git which files or directories to ignore in a project. This is useful for excluding files that do not need to be tracked, such as build artifacts, log files, or sensitive information.
-</p>
+  <section>
+    <h2>Basic Commands</h2>
+    <ol>
+      <li>Initialize Git Repository<br><code>git init</code></li>
+      <li>Check status of your files in the working directory<br><code>git status</code></li>
+      <li>Add files to staging area<br><code>git add &lt;file&gt;</code></li>
+      <li>Commit changes with a message<br><code>git commit -m "message"</code></li>
+      <li>View commit history<br><code>git log</code></li>
+      <li>Create a new branch<br><code>git branch &lt;branch-name&gt;</code></li>
+      <li>Switch to a branch<br><code>git checkout &lt;branch-name&gt;</code></li>
+      <li>Merge a branch into the current branch<br><code>git merge &lt;branch-name&gt;</code></li>
+      <li>Push changes to a remote repository<br><code>git push origin &lt;branch-name&gt;</code></li>
+      <li>Pull changes from a remote repository<br><code>git pull origin &lt;branch-name&gt;</code></li>
+      <li>Clone a remote repository<br><code>git clone &lt;repository-url&gt;</code></li>
+      <li>Remove a file from the staging area<br><code>git rm &lt;file&gt;</code></li>
+      <li>View differences between staged and unstaged changes<br><code>git diff</code></li>
+      <li>View differences between the last commit and the current state<br><code>git diff HEAD</code></li>
+      <li>Reset the staging area to the last commit<br><code>git reset</code></li>
+      <li>Discard changes in the working directory<br><code>git checkout -- &lt;file&gt;</code></li>
+      <li>View the current branch<br><code>git branch --show-current</code></li>
+      <li>View all branches<br><code>git branch</code></li>
+      <li>Delete a branch<br><code>git branch -d &lt;branch-name&gt;</code></li>
+      <li>Force delete a branch<br><code>git branch -D &lt;branch-name&gt;</code></li>
+      <li>View remote repositories<br><code>git remote -v</code></li>
+      <li>Add a remote repository<br><code>git remote add &lt;name&gt; &lt;repository-url&gt;</code></li>
+      <li>Remove a remote repository<br><code>git remote remove &lt;name&gt;</code></li>
+      <li>Fetch changes from a remote repository<br><code>git fetch &lt;remote-name&gt;</code></li>
+      <li>View the status of the remote repository<br><code>git remote show &lt;remote-name&gt;</code></li>
+      <li>Rename a branch<br><code>git branch -m &lt;old&gt; &lt;new&gt;</code></li>
+      <li>Stash changes temporarily<br><code>git stash</code></li>
+      <li>Apply stashed changes<br><code>git stash apply</code></li>
+      <li>List stashed changes<br><code>git stash list</code></li>
+      <li>Drop a specific stash<br><code>git stash drop &lt;stash@{index}&gt;</code></li>
+      <li>Clear all stashes<br><code>git stash clear</code></li>
+      <li>View the configuration settings<br><code>git config --list</code></li>
+      <li>Set a global configuration setting<br><code>git config --global &lt;setting&gt; &lt;value&gt;</code></li>
+      <li>Set a local configuration setting<br><code>git config --local &lt;setting&gt; &lt;value&gt;</code></li>
+      <li>Show the current configuration file<br><code>git config --edit</code></li>
+      <li>Show the current user name<br><code>git config user.name</code></li>
+      <li>Show the current user email<br><code>git config user.email</code></li>
+      <li>Set the user name<br><code>git config --global user.name "Your Name"</code></li>
+      <li>Set the user email<br><code>git config --global user.email "your.email@example.com"</code></li>
+    </ol>
+    <p><em>Note: All these commands should be run in the terminal or command prompt within your project directory.</em></p>
+  </section>
 
-<h4>How to Use <strong>.gitignore ?</strong></h4>
-<ol>
-  <li><strong>Create a <strong>.gitignore</strong> file</strong> in the root of your repository.</li>
-  <li><strong>List the files, directories, or patterns</strong> you want Git to ignore.</li>
-  <li>Example:</li>
-  
-</ol>
+  <section>
+    <h2>Understanding the .gitignore</h2>
+    <p>
+      A <strong>.gitignore</strong> file tells Git which files or directories to ignore in a project. This is useful for excluding files that do not need to be tracked, such as build artifacts, log files, or sensitive information.
+    </p>
 
-<div class="code-container">
-{% highlight git %}
+    <h3>How to Use .gitignore</h3>
+    <ol>
+      <li>Create a .gitignore file in the root of your repository.</li>
+      <li>List the files, directories, or patterns you want Git to ignore.</li>
+      <li>Example:</li>
+    </ol>
+
+    <pre><code class="language-git">
 # Ignore node_modules folder
 node_modules/
 
@@ -123,30 +85,29 @@ node_modules/
 
 # Ignore environment files
 .env
-{% endhighlight %}
-</div>
+    </code></pre>
 
-<p>
-  <h4>Why Use .gitignore</code>?</h4>
-  <ul>
-    <li>Keeps your repository clean by excluding unnecessary files.</li>
-    <li>Prevents sensitive data from being accidentally committed.</li>
-    <li>Reduces repository size and clutter.</li>
-  </ul>
-</p>
+    <h3>Why Use .gitignore?</h3>
+    <ul>
+      <li>Keeps your repository clean by excluding unnecessary files.</li>
+      <li>Prevents sensitive data from being accidentally committed.</li>
+      <li>Reduces repository size and clutter.</li>
+    </ul>
+  </section>
 
-
-<h2>Use Source Tree</h2>
-<p>
-  SourceTree is a free Git client that provides a graphical interface for managing your Git repositories. It simplifies the process of committing changes, branching, merging, and viewing commit history.
-  <br>
-  <a href="https://www.sourcetreeapp.com/" target="_blank">Download SourceTree</a>
-</p>
-<p>
-  SourceTree allows you to perform all the Git commands mentioned above through a user-friendly interface, making it easier for beginners to get started with Git.
-</p>
-
-
-<p>
-  For more information, see the <a href="https://git-scm.com/docs/gitignore" target="_blank">official Git documentation on .gitignore</a>.
-</p>
+  <section>
+    <h2>Use SourceTree</h2>
+    <p>
+      SourceTree is a free Git client that provides a graphical interface for managing your Git repositories. It simplifies the process of committing changes, branching, merging, and viewing commit history.
+      <br>
+      <a href="https://www.sourcetreeapp.com/" target="_blank" rel="noopener noreferrer">Download SourceTree</a>
+    </p>
+    <p>
+      SourceTree allows you to perform all the Git commands mentioned above through a user-friendly interface, making it easier for beginners to get started with Git.
+    </p>
+    <p>
+      For more information, see the
+      <a href="https://git-scm.com/docs/gitignore" target="_blank" rel="noopener noreferrer">official Git documentation on .gitignore</a>.
+    </p>
+  </section>
+</article>
