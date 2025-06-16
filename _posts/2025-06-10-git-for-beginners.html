@@ -20,54 +20,57 @@ comments: true
 
   <section>
     <h2>Basic Commands</h2>
-    <ol>
-      <li>Initialize Git Repository<br><code>git init</code></li>
-      <li>Check status of your files in the working directory<br><code>git status</code></li>
-      <li>Add files to staging area<br><code>git add &lt;file&gt;</code></li>
-      <li>Commit changes with a message<br><code>git commit -m "message"</code></li>
-      <li>View commit history<br><code>git log</code></li>
-      <li>Create a new branch<br><code>git branch &lt;branch-name&gt;</code></li>
-      <li>Switch to a branch<br><code>git checkout &lt;branch-name&gt;</code></li>
-      <li>Merge a branch into the current branch<br><code>git merge &lt;branch-name&gt;</code></li>
-      <li>Push changes to a remote repository<br><code>git push origin &lt;branch-name&gt;</code></li>
-      <li>Pull changes from a remote repository<br><code>git pull origin &lt;branch-name&gt;</code></li>
-      <li>Clone a remote repository<br><code>git clone &lt;repository-url&gt;</code></li>
-      <li>Remove a file from the staging area<br><code>git rm &lt;file&gt;</code></li>
-      <li>View differences between staged and unstaged changes<br><code>git diff</code></li>
-      <li>View differences between the last commit and the current state<br><code>git diff HEAD</code></li>
-      <li>Reset the staging area to the last commit<br><code>git reset</code></li>
-      <li>Discard changes in the working directory<br><code>git checkout -- &lt;file&gt;</code></li>
-      <li>View the current branch<br><code>git branch --show-current</code></li>
-      <li>View all branches<br><code>git branch</code></li>
-      <li>Delete a branch<br><code>git branch -d &lt;branch-name&gt;</code></li>
-      <li>Force delete a branch<br><code>git branch -D &lt;branch-name&gt;</code></li>
-      <li>View remote repositories<br><code>git remote -v</code></li>
-      <li>Add a remote repository<br><code>git remote add &lt;name&gt; &lt;repository-url&gt;</code></li>
-      <li>Remove a remote repository<br><code>git remote remove &lt;name&gt;</code></li>
-      <li>Fetch changes from a remote repository<br><code>git fetch &lt;remote-name&gt;</code></li>
-      <li>View the status of the remote repository<br><code>git remote show &lt;remote-name&gt;</code></li>
-      <li>Rename a branch<br><code>git branch -m &lt;old&gt; &lt;new&gt;</code></li>
-      <li>Stash changes temporarily<br><code>git stash</code></li>
-      <li>Apply stashed changes<br><code>git stash apply</code></li>
-      <li>List stashed changes<br><code>git stash list</code></li>
-      <li>Drop a specific stash<br><code>git stash drop &lt;stash@{index}&gt;</code></li>
-      <li>Clear all stashes<br><code>git stash clear</code></li>
-      <li>View the configuration settings<br><code>git config --list</code></li>
-      <li>Set a global configuration setting<br><code>git config --global &lt;setting&gt; &lt;value&gt;</code></li>
-      <li>Set a local configuration setting<br><code>git config --local &lt;setting&gt; &lt;value&gt;</code></li>
-      <li>Show the current configuration file<br><code>git config --edit</code></li>
-      <li>Show the current user name<br><code>git config user.name</code></li>
-      <li>Show the current user email<br><code>git config user.email</code></li>
-      <li>Set the user name<br><code>git config --global user.name "Your Name"</code></li>
-      <li>Set the user email<br><code>git config --global user.email "your.email@example.com"</code></li>
-    </ol>
-    <p><em>Note: All these commands should be run in the terminal or command prompt within your project directory.</em></p>
+    <pre><code>
+git init # Initialize Git Repository
+git status # Check status of your files in the working directory
+git add &lt;file&gt; # Add files to staging area
+git commit -m "message" # Commit changes with a message
+git log # View commit history
+git branch &lt;branch-name&gt; # Create a new branch
+git checkout &lt;branch-name&gt; # Switch to a branch
+git merge &lt;branch-name&gt; # Merge a branch into the current branch
+git push origin &lt;branch-name&gt; # Push changes to a remote repository
+git pull origin &lt;branch-name&gt; # Pull changes from a remote repository
+git clone &lt;repository-url&gt; # Clone a remote repository
+git rm &lt;file&gt; # Remove a file from the staging area
+git diff # View differences between staged and unstaged changes
+git diff HEAD # View differences between the last commit and the current state
+git reset # Reset the staging area to the last commit
+git checkout -- &lt;file&gt; # Discard changes in the working directory
+git branch --show-current # View the current branch
+git branch # View all branches
+git branch -d &lt;branch-name&gt; # Delete a branch
+git branch -D &lt;branch-name&gt; # Force delete a branch
+git remote -v # View remote repositories
+git remote add &lt;name&gt; &lt;repository-url&gt; # Add a remote repository
+git remote remove &lt;name&gt; # Remove a remote repository
+git fetch &lt;remote-name&gt; # Fetch changes from a remote repository
+git remote show &lt;remote-name&gt; # View the status of the remote repository
+git branch -m &lt;old&gt; &lt;new&gt; # Rename a branch
+git stash # Stash changes temporarily
+git stash apply # Apply stashed changes
+git stash list # List stashed changes
+git stash drop &lt;stash@{index}&gt; # Drop a specific stash
+git stash clear # Clear all stashes
+git config --list # View the configuration settings
+git config --global &lt;setting&gt; &lt;value&gt; # Set a global configuration setting
+git config --local &lt;setting&gt; &lt;value&gt; # Set a local configuration setting
+git config --edit # Show the current configuration file
+git config user.name # Show the current user name
+git config user.email # Show the current user email
+git config --global user.name "Your Name" # Set the user name
+git config --global user.email "your.email@example.com" # Set the user email
+</code>
+</pre>
+    <p><em>Note: All these commands should be run in the terminal or command prompt within your project directory.</em>
+    </p>
   </section>
 
   <section>
     <h2>Understanding the .gitignore</h2>
     <p>
-      A <strong>.gitignore</strong> file tells Git which files or directories to ignore in a project. This is useful for excluding files that do not need to be tracked, such as build artifacts, log files, or sensitive information.
+      A <strong>.gitignore</strong> file tells Git which files or directories to ignore in a project. This is useful for
+      excluding files that do not need to be tracked, such as build artifacts, log files, or sensitive information.
     </p>
 
     <h3>How to Use .gitignore</h3>
@@ -99,16 +102,19 @@ node_modules/
   <section>
     <h2>Use SourceTree</h2>
     <p>
-      SourceTree is a free Git client that provides a graphical interface for managing your Git repositories. It simplifies the process of committing changes, branching, merging, and viewing commit history.
+      SourceTree is a free Git client that provides a graphical interface for managing your Git repositories. It
+      simplifies the process of committing changes, branching, merging, and viewing commit history.
       <br>
       <a href="https://www.sourcetreeapp.com/" target="_blank" rel="noopener noreferrer">Download SourceTree</a>
     </p>
     <p>
-      SourceTree allows you to perform all the Git commands mentioned above through a user-friendly interface, making it easier for beginners to get started with Git.
+      SourceTree allows you to perform all the Git commands mentioned above through a user-friendly interface, making it
+      easier for beginners to get started with Git.
     </p>
     <p>
       For more information, see the
-      <a href="https://git-scm.com/docs/gitignore" target="_blank" rel="noopener noreferrer">official Git documentation on .gitignore</a>.
+      <a href="https://git-scm.com/docs/gitignore" target="_blank" rel="noopener noreferrer">official Git documentation
+        on .gitignore</a>.
     </p>
   </section>
 </article>
