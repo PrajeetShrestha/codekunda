@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OCR and Image Features - ClipKunda Documentation">
+    <title>OCR & Images - ClipKunda Documentation</title>
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <button class="header__menu-toggle" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="header__logo">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>ClipKunda</span>
+            </div>
+            <div class="header__search">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search documentation...">
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="nav-group">
+                <div class="nav-group__title">Getting Started</div>
+                <a href="../index.html" class="nav-link">Overview</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group__title">Core Features</div>
+                <a href="ocr.html" class="nav-link active">OCR & Images</a>
+                <a href="colors.html" class="nav-link">Colors</a>
+                <a href="organization.html" class="nav-link">Organization</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group__title">Automation</div>
+                <a href="automation.html" class="nav-link">Rules & AI</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group__title">Productivity</div>
+                <a href="productivity.html" class="nav-link">Shortcuts & Tools</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group__title">Management</div>
+                <a href="management.html" class="nav-link">Data & Settings</a>
+            </div>
+             <div class="nav-group">
+                <div class="nav-group__title">Reference</div>
+                <a href="reference.html" class="nav-link">Specs & Version</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group__title">Project Info</div>
+                <a href="../project-effort.html" class="nav-link">Project Effort</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="breadcrumb">
+                <span>Core Features</span>
+                <i class="fa-solid fa-chevron-right" style="font-size: 0.8em; padding-top: 3px;"></i>
+                <span>OCR & Images</span>
+            </div>
+
+            <h1 class="page-title">OCR & Image Processing</h1>
+            
+            <div class="content-section">
+                <h2>Text Recognition (OCR)</h2>
+                <p>ClipKunda automatically processes images copied to your clipboard to extract text using the Vision Framework.</p>
+                
+                <div class="image-container" style="margin: 1.5rem 0; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                    <img src="../images/ocr-extraction.svg" alt="OCR extraction process showing image to text conversion" style="width: 100%; height: auto; display: block;">
+                </div>
+
+                <h3>Key Features</h3>
+                <ul>
+                    <li><strong>Accurate text recognition</strong>: High-quality text extraction from images.</li>
+                    <li><strong>Language correction</strong>: Automatic spelling and grammar correction.</li>
+                    <li><strong>Searchable text</strong>: OCR results are fully searchable in the app.</li>
+                    <li><strong>Multiple languages</strong>: Supports English and is expandable to other languages.</li>
+                    <li><strong>Error handling</strong>: Graceful fallback when OCR fails.</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Screenshot Support</h2>
+                <p>Manage your screenshots efficiently with automatic detection and enhanced metadata.</p>
+                
+                <div class="image-container" style="margin: 1.5rem 0; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                    <img src="../images/screenshot-manager.svg" alt="Screenshot management interface showing metadata and file path" style="width: 100%; height: auto; display: block;">
+                </div>
+
+                <ul>
+                    <li><strong>Automatic detection</strong>: Captures system screenshots instantly.</li>
+                    <li><strong>Format preservation</strong>: Maintains original image quality.</li>
+                    <li><strong>Metadata extraction</strong>: Local analysis for image descriptions (when Local LLM is enabled).</li>
+                    <li><strong>Timestamp labeling</strong>: Automatic dating of screenshots.</li>
+                    <li><strong>File storage</strong>: Saved locally in:</li>
+                </ul>
+                
+                <div class="code-block">
+                    <pre><code class="language-bash">~/Library/Application Support/ClipKunda/images/</code></pre>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Image Processing</h2>
+                <p>Optimized for performance and accuracy.</p>
+
+                <div class="image-container" style="margin: 1.5rem 0; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                    <img src="../images/image-processing.svg" alt="Image processing pipeline flow diagram" style="width: 100%; height: auto; display: block;">
+                </div>
+
+                <ul>
+                    <li><strong>Resizing</strong>: Optimized for color extraction (150px max for analysis).</li>
+                    <li><strong>Sampling</strong>: ~10,000 pixel samples for large images.</li>
+                    <li><strong>Caching</strong>: Smart caching to reuse loaded images.</li>
+                    <li><strong>Transparent pixel filtering</strong>: Ignores fully transparent areas during analysis.</li>
+                </ul>
+            </div>
+        </main>
+
+        <!-- TOC -->
+        <aside class="toc">
+            <!-- JS Generated -->
+        </aside>
+    </div>
+
+    <script src="../js/search-data.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Color Detection Features - ClipKunda Documentation">
+    <title>Color Detection - ClipKunda Documentation</title>
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <button class="header__menu-toggle" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="header__logo">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>ClipKunda</span>
+            </div>
+            <div class="header__search">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search documentation...">
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="nav-group">
+                <div class="nav-group__title">Getting Started</div>
+                <a href="../index.html" class="nav-link">Overview</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group__title">Core Features</div>
+                <a href="ocr.html" class="nav-link">OCR & Images</a>
+                <a href="colors.html" class="nav-link active">Colors</a>
+                <a href="organization.html" class="nav-link">Organization</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group__title">Automation</div>
+                <a href="automation.html" class="nav-link">Rules & AI</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group__title">Productivity</div>
+                <a href="productivity.html" class="nav-link">Shortcuts & Tools</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group__title">Management</div>
+                <a href="management.html" class="nav-link">Data & Settings</a>
+            </div>
+             <div class="nav-group">
+                <div class="nav-group__title">Reference</div>
+                <a href="reference.html" class="nav-link">Specs & Version</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group__title">Project Info</div>
+                <a href="../project-effort.html" class="nav-link">Project Effort</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="breadcrumb">
+                <span>Core Features</span>
+                <i class="fa-solid fa-chevron-right" style="font-size: 0.8em; padding-top: 3px;"></i>
+                <span>Colors</span>
+            </div>
+
+            <h1 class="page-title">Color Detection & Management</h1>
+            
+            <div class="content-section">
+                <h2>Automatic Color Code Detection</h2>
+                <p>ClipKunda automatically detects and recognizes multiple color formats from your clipboard content.</p>
+                
+                <div class="image-container" style="margin: 1.5rem 0; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                    <img src="../images/color-detection.svg" alt="Color Detection Interface showing hex, rgb, and hsl values" style="width: 100%; height: auto; display: block;">
+                </div>
+
+                <h3>Supported Formats</h3>
+                <ul>
+                    <li><strong>Hex colors</strong>:
+                        <ul>
+                            <li>3-digit: <code>#F00</code></li>
+                            <li>6-digit: <code>#FF0000</code></li>
+                            <li>8-digit with alpha: <code>#FF0000FF</code></li>
+                        </ul>
+                    </li>
+                    <li><strong>RGB/RGBA colors</strong>:
+                        <ul>
+                            <li>Standard: <code>rgb(255, 0, 0)</code></li>
+                            <li>With alpha: <code>rgba(255, 0, 0, 0.5)</code></li>
+                        </ul>
+                    </li>
+                    <li><strong>HSL/HSLA colors</strong>:
+                        <ul>
+                            <li>Standard: <code>hsl(0, 100%, 50%)</code></li>
+                            <li>With alpha: <code>hsla(0, 100%, 50%, 0.5)</code></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Conversion & Copy Options</h2>
+                <p>When a color code is detected, you get specialized tools:</p>
+                <ul>
+                    <li><strong>Visual preview</strong>: Live color swatch display (120x120px in detail view).</li>
+                    <li><strong>Multi-format conversion</strong>: Convert between Hex, RGB, and HSL instantly.</li>
+                    <li><strong>Copy menu</strong>: Quick copy in any format.</li>
+                    <li><strong>Alpha channel support</strong>: Correctly handles transparency values.</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Color Palette Extraction</h2>
+                <p>Advanced color analysis for images using machine learning.</p>
+                
+                <div class="image-container" style="margin: 1.5rem 0; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                    <img src="../images/color-palette.svg" alt="Palette Extraction showing an image and 5 dominant colors" style="width: 100%; height: auto; display: block;">
+                </div>
+
+                <h3>How it works</h3>
+                <ul>
+                    <li><strong>K-means clustering</strong>: Extracts dominant colors.</li>
+                    <li><strong>Up to 5 colors</strong>: Identifies the most prominent colors in an image.</li>
+                    <li><strong>Smart filtering</strong>: Removes very dark, light, and desaturated colors.</li>
+                    <li><strong>Vibrancy sorting</strong>: Colors sorted by saturation and brightness.</li>
+                </ul>
+
+                <h3>Usage</h3>
+                <ul>
+                    <li><strong>Visual palette bar</strong>: Shows color strip below image thumbnails.</li>
+                    <li><strong>Click to copy</strong>: Individual palette colors copyable with single click.</li>
+                    <li><strong>Hex output</strong>: All palette colors provided in hex format.</li>
+                </ul>
+            </div>
+        </main>
+
+        <!-- TOC -->
+        <aside class="toc">
+            <!-- JS Generated -->
+        </aside>
+    </div>
+
+    <script src="../js/search-data.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

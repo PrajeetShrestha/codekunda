@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Productivity Features - ClipKunda Documentation">
+    <title>Productivity - ClipKunda Documentation</title>
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <button class="header__menu-toggle" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="header__logo">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>ClipKunda</span>
+            </div>
+            <div class="header__search">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search documentation...">
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="nav-group">
+                <div class="nav-group__title">Getting Started</div>
+                <a href="../index.html" class="nav-link">Overview</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group__title">Core Features</div>
+                <a href="ocr.html" class="nav-link">OCR & Images</a>
+                <a href="colors.html" class="nav-link">Colors</a>
+                <a href="organization.html" class="nav-link">Organization</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group__title">Automation</div>
+                <a href="automation.html" class="nav-link">Rules & AI</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group__title">Productivity</div>
+                <a href="productivity.html" class="nav-link active">Shortcuts & Tools</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group__title">Management</div>
+                <a href="management.html" class="nav-link">Data & Settings</a>
+            </div>
+             <div class="nav-group">
+                <div class="nav-group__title">Reference</div>
+                <a href="reference.html" class="nav-link">Specs & Version</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group__title">Project Info</div>
+                <a href="../project-effort.html" class="nav-link">Project Effort</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="breadcrumb">
+                <span>Productivity</span>
+                <i class="fa-solid fa-chevron-right" style="font-size: 0.8em; padding-top: 3px;"></i>
+                <span>Shortcuts & Tools</span>
+            </div>
+
+            <h1 class="page-title">Productivity Tools</h1>
+            
+            <div class="content-section">
+                <h2>Keyboard Shortcuts</h2>
+                
+                <h3>Global Hotkey</h3>
+                <p>Open ClipKunda from anywhere:</p>
+                <div class="code-block">
+                    <pre><code class="language-text">Cmd + Option + V</code></pre>
+                </div>
+                <p>Alternative presets available in settings (e.g., Cmd + Shift + C).</p>
+
+                <h3>In-App Shortcuts</h3>
+                <ul>
+                    <li><strong>Settings</strong>: <code>Cmd + ,</code></li>
+                    <li><strong>Quit</strong>: <code>Cmd + Q</code></li>
+                    <li><strong>Pin/Unpin clip</strong>: <code>Cmd + Shift + P</code> (in Detail View)</li>
+                </ul>
+            </div>
+
+            <div class="content-section" id="transformations">
+                <h2>Text Transformations</h2>
+                <p>Right-click on any text clip to access powerful transformation tools. The original clip remains unchanged; the transformed text is copied to your clipboard.</p>
+                
+                <h3>Case Transformations</h3>
+                <ul>
+                    <li><strong>UPPERCASE</strong> / <strong>lowercase</strong></li>
+                    <li><strong>Title Case</strong>: Capitalize first letter of each word</li>
+                    <li><strong>camelCase</strong> / <strong>PascalCase</strong> / <strong>snake_case</strong> / <strong>kebab-case</strong></li>
+                </ul>
+
+                <h3>Encoding/Decoding</h3>
+                <ul>
+                    <li><strong>Base64</strong>: Encode/Decode</li>
+                    <li><strong>URL</strong>: Encode/Decode (percent encoding)</li>
+                    <li><strong>HTML</strong>: Encode/Decode entities</li>
+                    <li><strong>JWT</strong>: Decode JSON Web Tokens</li>
+                </ul>
+
+                <h3>Format Conversions</h3>
+                <ul>
+                    <li><strong>JSON</strong>: Beautify, Minify, Convert to YAML/CSV</li>
+                    <li><strong>YAML</strong>: Convert to JSON</li>
+                    <li><strong>CSV</strong>: Convert to JSON arrays</li>
+                </ul>
+
+                <h3>Text Utilities</h3>
+                <ul>
+                    <li><strong>Trim/Normalize Whitespace</strong></li>
+                    <li><strong>Remove Formatting</strong> (Strip markdown/HTML)</li>
+                    <li><strong>Sort Lines</strong> (A-Z / Z-A)</li>
+                    <li><strong>Remove Duplicate Lines</strong></li>
+                    <li><strong>Reverse Text</strong></li>
+                    <li><strong>Show Statistics</strong> (Counts)</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Collaboration & Sharing</h2>
+                <ul>
+                    <li><strong>Multi-select export</strong>: Export bundles as Markdown, HTML, or PDF.</li>
+                    <li><strong>Share flows</strong>: AirDrop, Messages, Mail support.</li>
+                    <li><strong>Link handoff</strong>: Local share link for same-network discovery.</li>
+                    <li><strong>Privacy controls</strong>: Redact sensitive fields on export.</li>
+                </ul>
+            </div>
+        </main>
+
+        <!-- TOC -->
+        <aside class="toc">
+            <!-- JS Generated -->
+        </aside>
+    </div>
+
+    <script src="../js/search-data.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

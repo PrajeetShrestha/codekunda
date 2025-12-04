@@ -1,0 +1,34 @@
+<svg width="800" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="300" fill="#f8fafc" />
+  
+  <!-- Monitor/Screen -->
+  <rect x="150" y="50" width="500" height="200" rx="8" fill="#1e293b" stroke="#334155" stroke-width="4" />
+  <rect x="150" y="250" width="500" height="20" rx="0" fill="#334155" /> <!-- Stand base/chin -->
+  
+  <!-- Screenshot Content -->
+  <rect x="160" y="60" width="480" height="180" fill="#3b82f6" opacity="0.1" />
+  <path d="M160 60 L640 240" stroke="#3b82f6" stroke-width="1" opacity="0.2" />
+  <path d="M640 60 L160 240" stroke="#3b82f6" stroke-width="1" opacity="0.2" />
+  
+  <!-- Flash Effect -->
+  <rect x="150" y="50" width="500" height="200" rx="8" fill="#ffffff" opacity="0.1" />
+
+  <!-- Metadata Cards -->
+  <g transform="translate(450, 150)">
+    <rect x="0" y="0" width="160" height="80" rx="4" fill="#ffffff" stroke="#e2e8f0" shadow="true" />
+    <text x="10" y="20" font-family="sans-serif" font-size="10" fill="#94a3b8" font-weight="bold">METADATA DETECTED</text>
+    
+    <circle cx="15" cy="40" r="3" fill="#10b981" />
+    <text x="25" y="43" font-family="sans-serif" font-size="12" fill="#334155">App: VS Code</text>
+    
+    <circle cx="15" cy="60" r="3" fill="#10b981" />
+    <text x="25" y="63" font-family="sans-serif" font-size="12" fill="#334155">Date: 2025-03-15</text>
+  </g>
+
+  <!-- File Path -->
+  <rect x="200" y="180" width="200" height="40" rx="20" fill="#0f172a" stroke="#334155" />
+  <text x="230" y="205" font-family="monospace" font-size="12" fill="#f8fafc">~/.../ClipKunda/images/</text>
+  <circle cx="215" cy="200" r="4" fill="#fbbf24" />
+
+</svg>
