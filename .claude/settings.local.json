@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(bundle exec jekyll serve:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(ls:*)",
+      "Bash(convert:*)"
     ],
     "deny": [],
     "ask": []

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCursor();
     initTilt();
     initMobileMenu();
+    initFormModal();
 });
 
 /* =========================================
@@ -336,6 +337,83 @@ function initMobileMenu() {
             !toggle.contains(e.target)) {
             toggle.classList.remove('active');
             nav.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}
+
+function initFormModal() {
+    const form = document.getElementById('contact-form');
+    const modal = document.getElementById('form-modal');
+    if (!form || !modal) return;
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const formspreeId = form.dataset.formspreeId;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+        }
+
+        if (!formspreeId) {
+            alert('Form is not configured. Please set formspree_id.');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            }
+            return;
+        }
+
+        const formData = new FormData(form);
+        const name = (formData.get('name') || '').toString().trim();
+        const msg = (formData.get('message') || '').toString().trim();
+        if (msg) {
+            formData.set('message', name ? `${name}: ${msg}` : msg);
+        }
+
+        try {
+            const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json'
+                },
+                body: formData
+            });
+
+            if (response.ok) {
+                form.reset();
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            } else {
+                const result = await response.json().catch(() => ({}));
+                console.error('Form submission failed:', result);
+                alert('Something went wrong. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Something went wrong. Please try again.');
+        } finally {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            }
+        }
+    });
+
+    const closeBtn = modal.querySelector('[data-close]');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
             document.body.style.overflow = '';
         }
     });

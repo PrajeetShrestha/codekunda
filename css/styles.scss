@@ -1,17 +1,17 @@
 ---
 ---
-@import "variables";
-@import "base";
-@import "cursor";
-@import "canvas";
-@import "header";
-@import "nav";
-@import "buttons";
-@import "hero";
-@import "vision";
-@import "services";
-@import "products";
-@import "contact";
-@import "footer";
-@import "utilities";
-@import "responsive";
+@use "variables" as *;
+@use "base" as *;
+@use "cursor" as *;
+@use "canvas" as *;
+@use "header" as *;
+@use "nav" as *;
+@use "buttons" as *;
+@use "hero" as *;
+@use "vision" as *;
+@use "services" as *;
+@use "products" as *;
+@use "contact" as *;
+@use "footer" as *;
+@use "utilities" as *;
+@use "responsive" as *;

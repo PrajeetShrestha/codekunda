@@ -19,6 +19,28 @@
     outline-offset: 2px;
 }
 
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.modal-overlay.active { display: flex; }
+
+.modal {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: clamp(1.5rem, 3vw, 2rem);
+    max-width: 420px;
+    width: calc(100% - 2rem);
+    text-align: center;
+}
+
 /* High contrast mode support */
 @media (prefers-contrast: high) {
     .form-group input,
@@ -37,4 +59,3 @@
     .form-group label,
     .detail-item a { transition: none; }
 }
-
