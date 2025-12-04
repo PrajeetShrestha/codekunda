@@ -1,0 +1,37 @@
+<section id="products" class="products-section">
+  <div class="container">
+    <h2 class="section-title center-text">Our Products</h2>
+    <div class="products-grid">
+      {% for p in site.data.products %}
+      <article class="product-card glass-panel" data-tilt>
+        <div class="product-image">
+          {% case p.image_style %}
+          {% when "default" %}
+            <div class="placeholder-ui">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="circle"></div>
+            </div>
+          {% when "graph" %}
+            <div class="placeholder-ui graph">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          {% when "shield" %}
+            <div class="placeholder-ui shield">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+          {% endcase %}
+        </div>
+        <div class="product-content">
+          <h3>{{ p.title }}</h3>
+          <p>{{ p.desc }}</p>
+          <a href="#" class="btn-sm">View Details</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+

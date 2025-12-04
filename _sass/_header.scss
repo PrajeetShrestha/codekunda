@@ -1,0 +1,32 @@
+/* Header */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: clamp(1rem, 2vw, 1.5rem) 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: var(--nav-bg);
+    transition: all 0.3s ease;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.dot { color: var(--primary-color); }
+

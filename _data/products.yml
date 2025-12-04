@@ -1,0 +1,10 @@
+- title: CodeBase Pro
+  desc: A modular architecture kit for rapid SaaS deployment.
+  image_style: default
+- title: Analytics Core
+  desc: Real-time data visualization engine for enterprise.
+  image_style: graph
+- title: SecureFlow
+  desc: End-to-end encryption module for sensitive data.
+  image_style: shield
+

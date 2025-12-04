@@ -1,0 +1,39 @@
+/* Reset & Base */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s;
+    cursor: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    width: 100%;
+}
+

@@ -1,0 +1,40 @@
+/* Utilities */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.form-group input:focus-visible,
+.form-group textarea:focus-visible,
+.btn:focus-visible,
+.detail-item a:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .form-group input,
+    .form-group textarea { border-width: 3px; }
+
+    .form-group input:focus,
+    .form-group textarea:focus { border-width: 3px; box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2); }
+
+    .detail-item a:focus { outline-width: 3px; outline-offset: 3px; }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .form-group input,
+    .form-group textarea,
+    .form-group label,
+    .detail-item a { transition: none; }
+}
+

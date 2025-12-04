@@ -1,0 +1,42 @@
+/* Theme variables */
+:root {
+    /* Dark Theme (Default) */
+    --bg-color: #0a0a0a;
+    --text-color: #e0e0e0;
+    --primary-color: #6366f1;
+    --secondary-color: #a855f7;
+    --accent-color: #ec4899;
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --card-hover-bg: rgba(255, 255, 255, 0.12);
+    --nav-bg: rgba(10, 10, 10, 0.8);
+    
+    /* Gradients */
+    --gradient-main: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --gradient-text: linear-gradient(to right, #ffffff, #a5b4fc);
+    
+    /* Typography */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
+    
+    /* Spacing & Grid */
+    --container-width: 1280px;
+    --section-spacing: clamp(60px, 10vw, 120px);
+    --gutter: clamp(1rem, 4vw, 2rem);
+}
+
+[data-theme="light"] {
+    --bg-color: #f8fafc;
+    --text-color: #1e293b;
+    --primary-color: #4f46e5;
+    --secondary-color: #9333ea;
+    --accent-color: #db2777;
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --card-hover-bg: rgba(255, 255, 255, 0.95);
+    --nav-bg: rgba(248, 250, 252, 0.8);
+    --gradient-text: linear-gradient(to right, #1e293b, #4f46e5);
+    --form-bg-light: rgba(0, 0, 0, 0.03);
+    --form-focus-bg-light: rgba(0, 0, 0, 0.05);
+}
+

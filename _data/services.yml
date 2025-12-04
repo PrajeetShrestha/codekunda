@@ -1,0 +1,13 @@
+- icon: fas fa-code
+  title: Custom Software
+  desc: Bespoke enterprise solutions tailored to complex workflows and unique business logic.
+- icon: fas fa-mobile-alt
+  title: Mobile Applications
+  desc: Native and cross-platform experiences that feel fluid, responsive, and intuitive.
+- icon: fas fa-cloud
+  title: Cloud Infrastructure
+  desc: Scalable, secure, and serverless architectures designed for maximum uptime and performance.
+- icon: fas fa-bezier-curve
+  title: UI/UX Design
+  desc: Human-centered design philosophy that prioritizes accessibility and aesthetic delight.
+
