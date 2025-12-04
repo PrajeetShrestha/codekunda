@@ -4,7 +4,17 @@
       "Bash(bundle exec jekyll serve:*)",
       "Bash(pkill:*)",
       "Bash(ls:*)",
-      "Bash(convert:*)"
+      "Bash(convert:*)",
+      "Bash(cat:*)",
+      "Bash(find:*)",
+      "Bash(bundle exec jekyll build:*)",
+      "Bash(rm:*)",
+      "Bash(firebase deploy:*)",
+      "Bash(bundle exec jekyll clean:*)",
+      "Bash(bundle list:*)",
+      "Bash(lsof:*)",
+      "Bash(firebase --version:*)",
+      "Bash(node --version:*)"
     ],
     "deny": [],
     "ask": []

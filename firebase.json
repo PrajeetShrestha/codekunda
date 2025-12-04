@@ -1,10 +1,10 @@
 {
   "hosting": {
     "public": "_site",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+    "predeploy": [
+      "pkill -f 'jekyll serve' || true",
+      "bundle exec jekyll clean",
+      "bundle exec jekyll build"
     ]
   }
 }
