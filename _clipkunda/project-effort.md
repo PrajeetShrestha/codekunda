@@ -1,5 +1,5 @@
 ---
-layout: clipnote
+layout: clipkunda
 title: Project Effort & Snapshot
 description: Development effort and project statistics for ClipKunda
 breadcrumb: Project Effort
@@ -158,4 +158,4 @@ breadcrumb: Project Effort
     </div>
 </div>
 
-<script src="{{ '/js/clipnote/presentation.js' | relative_url }}"></script>
+<script src="{{ '/js/clipkunda/presentation.js' | relative_url }}"></script>

@@ -1,5 +1,5 @@
 ---
-layout: clipnote
+layout: clipkunda
 title: Productivity Tools
 description: Keyboard shortcuts and text transformation tools in ClipKunda
 breadcrumb: Shortcuts & Tools

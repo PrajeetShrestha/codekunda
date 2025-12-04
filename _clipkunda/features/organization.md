@@ -1,5 +1,5 @@
 ---
-layout: clipnote
+layout: clipkunda
 title: Search & Organization
 description: Search, tagging, and organization features in ClipKunda
 breadcrumb: Organization

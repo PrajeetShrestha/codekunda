@@ -11,8 +11,8 @@
     <link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
     <link rel="icon" href="{{ '/favicon.png' | relative_url }}" type="image/png">
 
-    <!-- ClipNote Styles -->
-    <link rel="stylesheet" href="{{ '/css/clipnote.css' | relative_url }}">
+    <!-- ClipKunda Styles -->
+    <link rel="stylesheet" href="{{ '/css/clipkunda.css' | relative_url }}">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -20,16 +20,16 @@
 <body>
     <div class="app-container">
         <!-- Header -->
-        {% include clipnote/header.html %}
+        {% include clipkunda/header.html %}
 
         <!-- Sidebar -->
-        {% include clipnote/sidebar.html %}
+        {% include clipkunda/sidebar.html %}
 
         <!-- Main Content -->
         <main class="main-content">
             {% if page.breadcrumb %}
             <div class="breadcrumb">
-                <a href="{{ '/clipnote/' | relative_url }}">Home</a>
+                <a href="{{ '/clipkunda/' | relative_url }}">Home</a>
                 <i class="fa-solid fa-chevron-right" style="font-size: 0.8em; padding-top: 3px;"></i>
                 {% if page.category %}
                 <span>{{ page.category }}</span>
@@ -50,10 +50,10 @@
         </aside>
     </div>
 
-    <!-- ClipNote Scripts -->
-    <script src="{{ '/js/clipnote/search-data.js' | relative_url }}"></script>
-    <script src="{{ '/js/clipnote/search.js' | relative_url }}"></script>
-    <script src="{{ '/js/clipnote/navigation.js' | relative_url }}"></script>
-    <script src="{{ '/js/clipnote/main.js' | relative_url }}"></script>
+    <!-- ClipKunda Scripts -->
+    <script src="{{ '/js/clipkunda/search-data.js' | relative_url }}"></script>
+    <script src="{{ '/js/clipkunda/search.js' | relative_url }}"></script>
+    <script src="{{ '/js/clipkunda/navigation.js' | relative_url }}"></script>
+    <script src="{{ '/js/clipkunda/main.js' | relative_url }}"></script>
 </body>
 </html>

@@ -13,9 +13,9 @@ sass:
 collections:
   pages:
     output: true
-  clipnote:
+  clipkunda:
     output: true
-    permalink: /clipnote/:path/
+    permalink: /clipkunda/:path/
 
 defaults:
   - scope:

@@ -1,5 +1,5 @@
 ---
-layout: clipnote
+layout: clipkunda
 title: Data Management & Settings
 description: Storage architecture, privacy, and configuration options in ClipKunda
 breadcrumb: Data & Settings

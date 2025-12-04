@@ -1,5 +1,5 @@
 ---
-layout: clipnote
+layout: clipkunda
 title: OCR & Image Processing
 description: Text recognition and image processing features in ClipKunda
 breadcrumb: OCR & Images
@@ -11,7 +11,7 @@ category: Core Features
     <p>ClipKunda automatically processes images copied to your clipboard to extract text using the Vision Framework.</p>
 
     <div class="image-container" style="margin: 1.5rem 0; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
-        <img src="{{ '/assets/images/clipnote/ocr-extraction.svg' | relative_url }}" alt="OCR extraction process showing image to text conversion" style="width: 100%; height: auto; display: block;">
+        <img src="{{ '/assets/images/clipkunda/ocr-extraction.svg' | relative_url }}" alt="OCR extraction process showing image to text conversion" style="width: 100%; height: auto; display: block;">
     </div>
 
     <h3>Key Features</h3>
@@ -29,7 +29,7 @@ category: Core Features
     <p>Manage your screenshots efficiently with automatic detection and enhanced metadata.</p>
 
     <div class="image-container" style="margin: 1.5rem 0; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
-        <img src="{{ '/assets/images/clipnote/screenshot-manager.svg' | relative_url }}" alt="Screenshot management interface showing metadata and file path" style="width: 100%; height: auto; display: block;">
+        <img src="{{ '/assets/images/clipkunda/screenshot-manager.svg' | relative_url }}" alt="Screenshot management interface showing metadata and file path" style="width: 100%; height: auto; display: block;">
     </div>
 
     <ul>
@@ -50,7 +50,7 @@ category: Core Features
     <p>Optimized for performance and accuracy.</p>
 
     <div class="image-container" style="margin: 1.5rem 0; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
-        <img src="{{ '/assets/images/clipnote/image-processing.svg' | relative_url }}" alt="Image processing pipeline flow diagram" style="width: 100%; height: auto; display: block;">
+        <img src="{{ '/assets/images/clipkunda/image-processing.svg' | relative_url }}" alt="Image processing pipeline flow diagram" style="width: 100%; height: auto; display: block;">
     </div>
 
     <ul>

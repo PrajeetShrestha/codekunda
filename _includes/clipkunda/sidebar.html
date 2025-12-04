@@ -1,0 +1,38 @@
+<nav class="sidebar">
+    <div class="nav-group">
+        <div class="nav-group__title">Getting Started</div>
+        <a href="{{ '/clipkunda/' | relative_url }}" class="nav-link {% if page.url == '/clipkunda/' or page.url == '/clipkunda/index.html' %}active{% endif %}">Overview</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-group__title">Core Features</div>
+        <a href="{{ '/clipkunda/features/ocr/' | relative_url }}" class="nav-link {% if page.url contains 'ocr' %}active{% endif %}">OCR & Images</a>
+        <a href="{{ '/clipkunda/features/colors/' | relative_url }}" class="nav-link {% if page.url contains 'colors' %}active{% endif %}">Colors</a>
+        <a href="{{ '/clipkunda/features/organization/' | relative_url }}" class="nav-link {% if page.url contains 'organization' %}active{% endif %}">Organization</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-group__title">Automation</div>
+        <a href="{{ '/clipkunda/features/automation/' | relative_url }}" class="nav-link {% if page.url contains 'automation' %}active{% endif %}">Rules & AI</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-group__title">Productivity</div>
+        <a href="{{ '/clipkunda/features/productivity/' | relative_url }}" class="nav-link {% if page.url contains 'productivity' %}active{% endif %}">Shortcuts & Tools</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-group__title">Management</div>
+        <a href="{{ '/clipkunda/features/management/' | relative_url }}" class="nav-link {% if page.url contains 'management' %}active{% endif %}">Data & Settings</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-group__title">Reference</div>
+        <a href="{{ '/clipkunda/features/reference/' | relative_url }}" class="nav-link {% if page.url contains 'reference' %}active{% endif %}">Specs & Version</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-group__title">Project Info</div>
+        <a href="{{ '/clipkunda/project-effort/' | relative_url }}" class="nav-link {% if page.url contains 'project-effort' %}active{% endif %}">Project Effort</a>
+    </div>
+</nav>

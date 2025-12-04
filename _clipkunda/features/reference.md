@@ -1,5 +1,5 @@
 ---
-layout: clipnote
+layout: clipkunda
 title: Technical Reference
 description: Technical specifications and version information for ClipKunda
 breadcrumb: Specs & Version

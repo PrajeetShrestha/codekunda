@@ -1,5 +1,5 @@
 ---
-layout: clipnote
+layout: clipkunda
 title: Automation & Local Intelligence
 description: Rule engine automation and on-device AI features in ClipKunda
 breadcrumb: Rules & AI
@@ -11,7 +11,7 @@ category: Automation
     <p>Create powerful workflows with the built-in rule engine.</p>
 
     <div class="image-container" style="margin: 1.5rem 0; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
-        <img src="{{ '/assets/images/clipnote/rule-engine.svg' | relative_url }}" alt="Rule Engine Flowchart showing condition and action blocks" style="width: 100%; height: auto; display: block;">
+        <img src="{{ '/assets/images/clipkunda/rule-engine.svg' | relative_url }}" alt="Rule Engine Flowchart showing condition and action blocks" style="width: 100%; height: auto; display: block;">
     </div>
 
     <ul>
@@ -28,7 +28,7 @@ category: Automation
     <p>Interact with your data using the on-device LLM.</p>
 
     <div class="image-container" style="margin: 1.5rem 0; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
-        <img src="{{ '/assets/images/clipnote/ai-chat.svg' | relative_url }}" alt="AI Chat Interface showing threaded conversation and clipboard context" style="width: 100%; height: auto; display: block;">
+        <img src="{{ '/assets/images/clipkunda/ai-chat.svg' | relative_url }}" alt="AI Chat Interface showing threaded conversation and clipboard context" style="width: 100%; height: auto; display: block;">
     </div>
 
     <ul>
@@ -46,7 +46,7 @@ category: Automation
     <p>ClipKunda includes a built-in Model Context Protocol (MCP) HTTP server to expose its capabilities to external AI clients.</p>
 
     <div class="image-container" style="margin: 1.5rem 0; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
-        <img src="{{ '/assets/images/clipnote/mcp-server.svg' | relative_url }}" alt="MCP Server Diagram showing connections to external clients" style="width: 100%; height: auto; display: block;">
+        <img src="{{ '/assets/images/clipkunda/mcp-server.svg' | relative_url }}" alt="MCP Server Diagram showing connections to external clients" style="width: 100%; height: auto; display: block;">
     </div>
 
     <ul>
@@ -63,7 +63,7 @@ category: Automation
     <p>Manage your AI models and resources.</p>
 
     <div class="image-container" style="margin: 1.5rem 0; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
-        <img src="{{ '/assets/images/clipnote/ai-settings.svg' | relative_url }}" alt="AI Settings Panel showing model selection and resource usage" style="width: 100%; height: auto; display: block;">
+        <img src="{{ '/assets/images/clipkunda/ai-settings.svg' | relative_url }}" alt="AI Settings Panel showing model selection and resource usage" style="width: 100%; height: auto; display: block;">
     </div>
 
     <ul>

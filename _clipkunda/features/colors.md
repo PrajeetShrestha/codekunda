@@ -1,5 +1,5 @@
 ---
-layout: clipnote
+layout: clipkunda
 title: Color Detection & Management
 description: Color code detection and palette extraction in ClipKunda
 breadcrumb: Colors
@@ -11,7 +11,7 @@ category: Core Features
     <p>ClipKunda automatically detects and recognizes multiple color formats from your clipboard content.</p>
 
     <div class="image-container" style="margin: 1.5rem 0; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
-        <img src="{{ '/assets/images/clipnote/color-detection.svg' | relative_url }}" alt="Color Detection Interface showing hex, rgb, and hsl values" style="width: 100%; height: auto; display: block;">
+        <img src="{{ '/assets/images/clipkunda/color-detection.svg' | relative_url }}" alt="Color Detection Interface showing hex, rgb, and hsl values" style="width: 100%; height: auto; display: block;">
     </div>
 
     <h3>Supported Formats</h3>
@@ -54,7 +54,7 @@ category: Core Features
     <p>Advanced color analysis for images using machine learning.</p>
 
     <div class="image-container" style="margin: 1.5rem 0; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
-        <img src="{{ '/assets/images/clipnote/color-palette.svg' | relative_url }}" alt="Palette Extraction showing an image and 5 dominant colors" style="width: 100%; height: auto; display: block;">
+        <img src="{{ '/assets/images/clipkunda/color-palette.svg' | relative_url }}" alt="Palette Extraction showing an image and 5 dominant colors" style="width: 100%; height: auto; display: block;">
     </div>
 
     <h3>How it works</h3>
