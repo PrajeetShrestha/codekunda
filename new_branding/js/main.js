@@ -210,30 +210,44 @@ function initGSAP() {
     });
     
     // Services Stagger (was Products)
-    gsap.from('.service-card', {
-        scrollTrigger: {
-            trigger: '.services-grid',
-            start: "top 80%",
+    gsap.fromTo('.service-card',
+        {
+            y: 50,
+            opacity: 0
         },
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power3.out"
-    });
+        {
+            scrollTrigger: {
+                trigger: '.services-grid',
+                start: "top 80%",
+            },
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out",
+            clearProps: "all"
+        }
+    );
 
     // Products Stagger (New)
-    gsap.from('.product-card', {
-        scrollTrigger: {
-            trigger: '.products-grid',
-            start: "top 80%",
+    gsap.fromTo('.product-card',
+        {
+            y: 50,
+            opacity: 0
         },
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power3.out"
-    });
+        {
+            scrollTrigger: {
+                trigger: '.products-grid',
+                start: "top 80%",
+            },
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out",
+            clearProps: "all"
+        }
+    );
 }
 
 /* =========================================
