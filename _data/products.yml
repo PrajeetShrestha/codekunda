@@ -7,4 +7,7 @@
 - title: SecureFlow
   desc: End-to-end encryption module for sensitive data.
   image_style: shield
-
+- title: ClipKunda
+  desc: Privacy-first clipboard manager with local AI and rich docs.
+  image_style: default
+  url: /clipkunda/

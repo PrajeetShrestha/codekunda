@@ -27,11 +27,10 @@
         <div class="product-content">
           <h3>{{ p.title }}</h3>
           <p>{{ p.desc }}</p>
-          <a href="#" class="btn-sm">View Details</a>
+          <a href="{{ p.url | default: '#' | relative_url }}" class="btn-sm">View Details</a>
         </div>
       </article>
       {% endfor %}
     </div>
   </div>
 </section>
-
