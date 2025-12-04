@@ -13,6 +13,9 @@ sass:
 collections:
   pages:
     output: true
+  clipnote:
+    output: true
+    permalink: /clipnote/:path/
 
 defaults:
   - scope:

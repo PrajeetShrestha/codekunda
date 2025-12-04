@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Jekyll: Serve (watch)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "bundle exec jekyll serve --watch -P 4001",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Jekyll: Serve (watch + livereload)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "bundle exec jekyll serve --watch --livereload -P 4002",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
