@@ -28,4 +28,5 @@ exclude:
   - script.sh
   - firebase.json
   - .firebaserc
+  - scripts
 formspree_id: "meoyzard"
