@@ -13,7 +13,7 @@ releases:
       - On-device LLM chat (opt-in, no network calls)
       - Search, tagging and organization capabilities
       - Color pallete extraction from image, text transformations and more...
-    primary_download_url: https://github.com/PrajeetShrestha/clipkunda-releases/releases/download/v1.0/ClipKunda-Installer.dmg
+    primary_download_url: https://github.com/PrajeetShrestha/clipkunda-releases/releases/download/v1.0.0/ClipKunda-Installer.dmg
     secondary_url: /clipkunda/
     notes_url: /releases/clipkunda/
     details: |
