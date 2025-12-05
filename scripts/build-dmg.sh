@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-APP_PATH=${1:-assets/ClipKunda.app}
+APP_PATH=${1:-scripts/resources/ClipKunda.app}
 VOL_NAME=${2:-ClipKunda}
 OUT_DMG=${3:-dist/${VOL_NAME}-Installer.dmg}
 
@@ -9,6 +9,16 @@ RW_DMG="dist/${VOL_NAME}-temp.dmg"
 MOUNT_POINT="/Volumes/${VOL_NAME}"
 
 mkdir -p dist
+
+if [ ! -d "${APP_PATH}" ]; then
+  if [ -d "assets/ClipKunda.app" ]; then
+    echo "Warning: ${APP_PATH} not found; falling back to assets/ClipKunda.app"
+    APP_PATH="assets/ClipKunda.app"
+  else
+    echo "Error: App bundle not found at ${APP_PATH}"
+    exit 1
+  fi
+fi
 
 if [ -d "${MOUNT_POINT}" ]; then hdiutil detach "${MOUNT_POINT}" || true; fi
 rm -f "${RW_DMG}" "${OUT_DMG}"
