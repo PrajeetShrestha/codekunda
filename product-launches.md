@@ -19,14 +19,14 @@ releases:
     details: |
       Version 1.0.0 — Initial macOS release featuring OCR, Color Studio,
       Rule Engine, and optional local LLM chat powered by MLX. See full
-      technical specifications and changelog in the release notes.
+      technical specifications and changelog in the [release notes](https://github.com/PrajeetShrestha/clipkunda-releases/releases).
 ---
 
 <section class="products-section">
   <div class="container">
     <h1 class="section-title center-text">Product Launches</h1>
     <p class="products-intro">
-      Official launch announcements with downloads, features, and notes — styled to match our site.
+      Check out our latest product, ClipKunda — the ultimate clipboard manager with on-device intelligence.
     </p>
 
     <div class="products-grid">

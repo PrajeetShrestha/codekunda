@@ -47,7 +47,7 @@
     <details class="launch-details">
       <summary class="launch-details-summary">Additional details</summary>
       <div class="launch-details-content">
-        {{ include.release.details }}
+        {{ include.release.details | markdownify }}
       </div>
     </details>
     {% endif %}
