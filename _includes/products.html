@@ -26,8 +26,14 @@
         </div>
         <div class="product-content">
           <h3>{{ p.title }}</h3>
+          {% if p.latest_release %}
+          <span class="badge">Latest Release</span>
+          {% endif %}
           <p>{{ p.desc }}</p>
           <a href="{{ p.url | default: '#' | relative_url }}" class="btn-sm">View Details</a>
+          {% if p.release_url %}
+          <a href="{{ p.release_url | relative_url }}" class="btn-sm">Release Notes</a>
+          {% endif %}
         </div>
       </article>
       {% endfor %}
