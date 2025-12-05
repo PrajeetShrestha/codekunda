@@ -5,14 +5,14 @@ releases:
   - name: ClipKunda
     version: 1.0.0
     image: /assets/images/clipkunda/clipkundalogo.png
-    summary: Privacy-first clipboard manager for macOS with on-device intelligence.
+    summary: The most feature packed yet, easy to use Clipboard Manager for macOS with on device intelligence.
     features:
       - High-accuracy OCR with image metadata extraction
-      - Advanced Color Studio with palette extraction and conversions
+      - MCP Integration, MCP client get context from your pastes.
       - Rule Engine for automated tagging and actions
       - On-device LLM chat (opt-in, no network calls)
-      - Improved search, tagging, and organization capabilities
-      - Transparent pixel filtering and smart caching for images
+      - Search, tagging and organization capabilities
+      - Color pallete extraction from image, text transformations and more...
     primary_download_url: https://github.com/PrajeetShrestha/clipkunda-releases/releases/download/v1.0.0/ClipKunda-Installer.dmg
     secondary_url: /clipkunda/
     notes_url: /releases/clipkunda/
