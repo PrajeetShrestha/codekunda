@@ -25,7 +25,7 @@ releases:
 <section class="products-section">
   <div class="container">
     <h1 class="section-title center-text">Product Launches</h1>
-    <p style="opacity:0.85; max-width: 780px; margin: 0 auto 2rem auto; text-align:center;">
+    <p class="products-intro">
       Official launch announcements with downloads, features, and notes — styled to match our site.
     </p>
 

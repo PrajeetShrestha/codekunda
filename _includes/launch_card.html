@@ -4,7 +4,7 @@
       {% if include.release.image %}
         <img src="{{ include.release.image | relative_url }}" alt="{{ include.release.name }}" />
       {% else %}
-        <div class="placeholder-ui shield" style="transform: scale(0.5);">
+        <div class="placeholder-ui shield">
           <i class="fas fa-cube"></i>
         </div>
       {% endif %}
@@ -44,9 +44,9 @@
     </div>
 
     {% if include.release.details %}
-    <details style="margin-top: 2rem;">
-      <summary style="cursor:pointer; margin-bottom:1rem; color:var(--primary-color);">Additional details</summary>
-      <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 1.5rem;">
+    <details class="launch-details">
+      <summary class="launch-details-summary">Additional details</summary>
+      <div class="launch-details-content">
         {{ include.release.details }}
       </div>
     </details>

@@ -1,15 +1,15 @@
 <header class="site-header">
   <div class="container">
-    <a href="#" class="logo">
+    <a href="{{ '/' | relative_url }}" class="logo">
       CodeKunda<span class="dot">.</span>
     </a>
     <nav class="main-nav">
       <ul>
-        <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#products" class="nav-link">Products</a></li>
+        <li><a href="{{ '/' | relative_url }}#services" class="nav-link">Services</a></li>
+        <li><a href="{{ '/' | relative_url }}#products" class="nav-link">Products</a></li>
         <li><a href="{{ '/product-launches/' | relative_url }}" class="nav-link">Product Launches</a></li>
-        <li><a href="#vision" class="nav-link">Vision</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="{{ '/' | relative_url }}#vision" class="nav-link">Vision</a></li>
+        <li><a href="{{ '/' | relative_url }}#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
     <div class="header-actions">

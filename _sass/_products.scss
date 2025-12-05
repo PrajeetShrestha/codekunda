@@ -1,6 +1,15 @@
 /* Products */
 .products-section { padding: var(--section-spacing) 0; }
 
+.products-intro {
+    opacity: 0.85;
+    max-width: 780px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -71,15 +80,23 @@
     color: #fff;
 }
 
-/* Launch Card - Clean, Readable, Solid */
+/* Launch Card - Clean, Readable, Glass */
 .launch-card {
-    background: #111; /* Solid dark background */
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
     border-radius: 24px;
     overflow: hidden;
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.launch-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
 }
 
 .launch-card .launch-header {
@@ -88,7 +105,7 @@
     padding: 2rem;
     gap: 1.5rem;
     border-bottom: 1px solid var(--glass-border);
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .launch-card .launch-logo {
@@ -96,12 +113,16 @@
     height: 80px;
     flex-shrink: 0;
     border-radius: 16px;
-    background: #1a1a1a;
+    background: rgba(0, 0, 0, 0.2);
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid var(--glass-border);
+}
+
+.launch-card .launch-logo .placeholder-ui {
+    transform: scale(0.5);
 }
 
 .launch-card .launch-logo img {
@@ -117,6 +138,7 @@
     font-family: var(--font-heading);
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
@@ -149,7 +171,7 @@
     align-items: flex-start;
     gap: 0.75rem;
     font-size: 0.95rem;
-    color: #ccc;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .launch-card .launch-features li:before {
@@ -164,5 +186,47 @@
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+}
+
+.launch-details {
+    margin-top: 2rem;
+}
+
+.launch-details-summary {
+    cursor: pointer;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.launch-details-summary:hover {
+    color: var(--secondary-color);
+}
+
+.launch-details-content {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--glass-border);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .launch-card .launch-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .launch-card .launch-title h3 {
+        justify-content: center;
+    }
+    
+    .launch-card .launch-content {
+        padding: 1.5rem;
+    }
 }
 
