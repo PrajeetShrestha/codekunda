@@ -23,6 +23,11 @@ function initThreeJS() {
     // Create Particles
     createParticles();
 
+    // Stars
+    // initStars(scene); // Removed as it is not defined and createParticles() handles it
+
+    // Aurora removed as per user request
+
     // Event Listeners
     window.addEventListener('resize', onWindowResize, false);
 
@@ -68,7 +73,8 @@ function createParticles() {
     updateThreeJSTheme(document.documentElement.getAttribute('data-theme'));
 }
 
-function createGlowTexture() {
+// Make createGlowTexture global so aurora.js can use it if loaded after
+window.createGlowTexture = function () {
     const canvas = document.createElement('canvas');
     canvas.width = 32;
     canvas.height = 32;
@@ -89,42 +95,47 @@ function createGlowTexture() {
 }
 
 function updateThreeJSTheme(theme) {
-    if (!particleSystem) return;
+    // Update Stars
+    if (particleSystem) {
+        const colors = particleSystem.geometry.attributes.color.array;
 
-    const colors = particleSystem.geometry.attributes.color.array;
+        // Realistic Star Colors (for Dark Mode)
+        const starColors = [
+            new THREE.Color(0xffffff), // White
+            new THREE.Color(0xcae8ff), // Blue-white
+            new THREE.Color(0xfff4e5), // Yellow-white
+            new THREE.Color(0xe0e7ff)  // Pale Indigo
+        ];
 
-    // Realistic Star Colors (for Dark Mode)
-    const starColors = [
-        new THREE.Color(0xffffff), // White
-        new THREE.Color(0xcae8ff), // Blue-white
-        new THREE.Color(0xfff4e5), // Yellow-white
-        new THREE.Color(0xe0e7ff)  // Pale Indigo
-    ];
+        // Dark Dusty Colors (for Light Mode)
+        const dustColors = [
+            new THREE.Color(0x1e1b4b), // Dark Indigo
+            new THREE.Color(0x334155), // Slate 700
+            new THREE.Color(0x475569)  // Slate 600
+        ];
 
-    // Dark Dusty Colors (for Light Mode)
-    const dustColors = [
-        new THREE.Color(0x1e1b4b), // Dark Indigo
-        new THREE.Color(0x334155), // Slate 700
-        new THREE.Color(0x475569)  // Slate 600
-    ];
+        for (let i = 0; i < colors.length; i += 3) {
+            let color;
+            if (theme === 'dark') {
+                color = starColors[Math.floor(Math.random() * starColors.length)];
+                // Apply slight randomness to brightness for variety
+                const brightness = 0.8 + Math.random() * 0.2;
+                color = color.clone().multiplyScalar(brightness);
+            } else {
+                color = dustColors[Math.floor(Math.random() * dustColors.length)];
+            }
 
-    for (let i = 0; i < colors.length; i += 3) {
-        let color;
-        if (theme === 'dark') {
-            color = starColors[Math.floor(Math.random() * starColors.length)];
-            // Apply slight randomness to brightness for variety
-            const brightness = 0.8 + Math.random() * 0.2;
-            color = color.clone().multiplyScalar(brightness);
-        } else {
-            color = dustColors[Math.floor(Math.random() * dustColors.length)];
+            colors[i] = color.r;
+            colors[i + 1] = color.g;
+            colors[i + 2] = color.b;
         }
-
-        colors[i] = color.r;
-        colors[i + 1] = color.g;
-        colors[i + 2] = color.b;
+        particleSystem.geometry.attributes.color.needsUpdate = true;
     }
 
-    particleSystem.geometry.attributes.color.needsUpdate = true;
+    // Update Aurora Theme
+    if (typeof updateAuroraTheme === 'function') {
+        updateAuroraTheme(theme);
+    }
 }
 
 function onWindowResize() {
@@ -137,12 +148,12 @@ function onWindowResize() {
 
 function animate() {
     requestAnimationFrame(animate);
+    const time = performance.now() * 0.001;
 
+    // Star Animation
     if (particleSystem) {
         const positions = particleSystem.geometry.attributes.position.array;
         const randomness = particleSystem.geometry.attributes.randomness.array;
-        const colors = particleSystem.geometry.attributes.color.array;
-        const time = Date.now() * 0.001;
 
         for (let i = 0; i < positions.length; i += 3) {
             // Y-axis movement (Drift Upwards) - Slower
@@ -156,22 +167,17 @@ function animate() {
                 positions[i + 1] = -50;
             }
 
-            // Twinkle Effect (Pulse Opacity via Color)
-            // REFINED APPROACH: Since we have `randomness`, we can use that to vary individual particle brightness 
-            // BUT we need the base color.
-            // Let's just create a nice movement for now as the "light emanating" part is provided by the texture.
-            // And maybe a slight Z-axis wobble which might interact with sizeAttenuation to create a pseudo-twinkle.
-
             // Slower twinkle oscillation
             positions[i + 2] += Math.cos(time * 0.5 + randomness[i] * 20) * 0.02;
         }
 
         particleSystem.geometry.attributes.position.needsUpdate = true;
-        // particleSystem.geometry.attributes.color.needsUpdate = true; // Disabled for performance/complexity reasons
 
         // Very subtle overall rotation
         particleSystem.rotation.y += 0.0001;
     }
+
+    // Aurora Animation (Removed)
 
     renderer.render(scene, camera);
 }
