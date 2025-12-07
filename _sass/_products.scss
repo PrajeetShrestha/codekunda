@@ -1,5 +1,7 @@
 /* Products */
-.products-section { padding: var(--section-spacing) 0; }
+.products-section { 
+    padding: var(--section-spacing) 0; 
+}
 
 .products-intro {
     opacity: 0.85;
@@ -231,6 +233,10 @@
 
     .launch-card .launch-actions {
         justify-content: center;
+    }
+
+    .products-section .section-title {
+        margin-top: 4rem;
     }
 }
 
