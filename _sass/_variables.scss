@@ -1,19 +1,41 @@
 /* Theme variables */
 :root {
+    /* Color Palette (HSL) */
+    --hue-primary: 239;
+    --sat-primary: 84%;
+    --lig-primary: 67%;
+    
+    --hue-secondary: 271;
+    --sat-secondary: 91%;
+    --lig-secondary: 65%;
+    
+    --hue-accent: 333;
+    --sat-accent: 83%;
+    --lig-accent: 51%;
+
+    /* Colors */
+    --primary-color: hsl(var(--hue-primary), var(--sat-primary), var(--lig-primary));
+    --secondary-color: hsl(var(--hue-secondary), var(--sat-secondary), var(--lig-secondary));
+    --accent-color: hsl(var(--hue-accent), var(--sat-accent), var(--lig-accent));
+    
     /* Dark Theme (Default) */
     --bg-color: #0a0a0a;
+    --bg-color-rgb: 10, 10, 10;
+    --surface-1: #171717;
+    --surface-2: #262626;
+    
     --text-color: #e0e0e0;
-    --primary-color: #6366f1;
-    --secondary-color: #a855f7;
-    --accent-color: #ec4899;
+    --text-muted: #a3a3a3;
+    
     --glass-bg: rgba(255, 255, 255, 0.08);
     --glass-border: rgba(255, 255, 255, 0.15);
     --card-hover-bg: rgba(255, 255, 255, 0.12);
-    --nav-bg: rgba(10, 10, 10, 0.8);
+    --nav-bg: rgba(10, 10, 10, 0.85); /* Increased opacity for legibility */
     
     /* Gradients */
     --gradient-main: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     --gradient-text: linear-gradient(to right, #ffffff, #a5b4fc);
+    --gradient-surface: linear-gradient(to bottom right, var(--surface-1), var(--bg-color));
     
     /* Typography */
     --font-heading: 'Outfit', sans-serif;
@@ -26,28 +48,30 @@
     
     /* Card Specific */
     --card-text-color: rgba(255, 255, 255, 0.95);
-    --product-img-bg: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+    --product-img-bg: linear-gradient(135deg, hsla(var(--hue-primary), var(--sat-primary), var(--lig-primary), 0.1), hsla(var(--hue-secondary), var(--sat-secondary), var(--lig-secondary), 0.1));
     --placeholder-bg: rgba(255, 255, 255, 0.15);
     --placeholder-element: rgba(255, 255, 255, 0.4);
     
     /* Enhanced States - Focus & Interactions */
-    --focus-ring: 0 0 0 3px rgba(99, 102, 241, 0.4);
+    --focus-ring-color: hsla(var(--hue-primary), var(--sat-primary), var(--lig-primary), 0.5);
+    --focus-ring: 0 0 0 3px var(--focus-ring-color);
     --focus-ring-offset: 2px;
     
     /* Transitions */
-    --transition-fast: 150ms ease;
-    --transition-normal: 300ms ease;
-    --transition-slow: 500ms ease;
-    --transition-bounce: 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --transition-fast: 150ms var(--ease-out-quart);
+    --transition-normal: 300ms var(--ease-out-quart);
+    --transition-slow: 500ms var(--ease-out-quart);
+    --transition-bounce: 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
     
     /* Shadows */
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.15);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
-    --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-glow: 0 0 20px hsla(var(--hue-primary), var(--sat-primary), var(--lig-primary), 0.3);
     
     /* Interactive State Transforms */
-    --hover-lift: translateY(-2px);
+    --hover-lift: translateY(-4px);
     --active-press: translateY(1px);
     
     /* Status Colors */
@@ -58,31 +82,82 @@
 
 [data-theme="light"] {
     --bg-color: #f8fafc;
-    --text-color: #1e293b;
-    --primary-color: #4f46e5;
-    --secondary-color: #9333ea;
-    --accent-color: #db2777;
-    --glass-bg: rgba(255, 255, 255, 0.8);
+    --bg-color-rgb: 248, 250, 252;
+    --surface-1: #ffffff;
+    --surface-2: #f1f5f9;
+    
+    --text-color: #0f172a;
+    --text-muted: #64748b;
+    
+    /* Slightly different HSL for light mode if needed, or re-declare */
+    --hue-primary: 243;
+    --sat-primary: 75%;
+    --lig-primary: 59%;
+    
+    --hue-secondary: 270;
+    --sat-secondary: 85%;
+    --lig-secondary: 55%;
+
+    --glass-bg: rgba(255, 255, 255, 0.7);
     --glass-border: rgba(0, 0, 0, 0.08);
     --card-hover-bg: rgba(255, 255, 255, 0.95);
-    --nav-bg: rgba(248, 250, 252, 0.8);
-    --gradient-text: linear-gradient(to right, #1e293b, #4f46e5);
+    --nav-bg: rgba(248, 250, 252, 0.85);
+    
+    --gradient-text: linear-gradient(to right, #0f172a, var(--primary-color));
+    --gradient-surface: linear-gradient(to bottom right, var(--surface-1), var(--bg-color));
+    
     --form-bg-light: rgba(0, 0, 0, 0.03);
     --form-focus-bg-light: rgba(0, 0, 0, 0.05);
 
     /* Card Specific */
     --card-text-color: #0f172a;
-    --product-img-bg: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(168, 85, 247, 0.05));
+    --product-img-bg: linear-gradient(135deg, hsla(var(--hue-primary), var(--sat-primary), var(--lig-primary), 0.05), hsla(var(--hue-secondary), var(--sat-secondary), var(--lig-secondary), 0.05));
     --placeholder-bg: rgba(15, 23, 42, 0.06);
     --placeholder-element: rgba(15, 23, 42, 0.2);
     
     /* Light mode focus ring */
-    --focus-ring: 0 0 0 3px rgba(79, 70, 229, 0.35);
+    --focus-ring-color: hsla(var(--hue-primary), var(--sat-primary), var(--lig-primary), 0.35);
     
     /* Light mode shadows */
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-    --shadow-glow: 0 0 20px rgba(79, 70, 229, 0.2);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-glow: 0 0 20px hsla(var(--hue-primary), var(--sat-primary), var(--lig-primary), 0.2);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg-color: #f8fafc;
+    --bg-color-rgb: 248, 250, 252;
+    --surface-1: #ffffff;
+    --surface-2: #f1f5f9;
+    --text-color: #0f172a;
+    --text-muted: #64748b;
+    --hue-primary: 243;
+    --sat-primary: 75%;
+    --lig-primary: 59%;
+    --hue-secondary: 270;
+    --sat-secondary: 85%;
+    --lig-secondary: 55%;
+
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --card-hover-bg: rgba(255, 255, 255, 0.95);
+    --nav-bg: rgba(248, 250, 252, 0.85);
+
+    --gradient-text: linear-gradient(to right, #0f172a, var(--primary-color));
+    
+    --card-text-color: #0f172a;
+    --product-img-bg: linear-gradient(135deg, hsla(var(--hue-primary), var(--sat-primary), var(--lig-primary), 0.05), hsla(var(--hue-secondary), var(--sat-secondary), var(--lig-secondary), 0.05));
+    --placeholder-bg: rgba(15, 23, 42, 0.06);
+    --placeholder-element: rgba(15, 23, 42, 0.15);
+    
+    --focus-ring-color: hsla(var(--hue-primary), var(--sat-primary), var(--lig-primary), 0.35);
+    
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-glow: 0 0 20px hsla(var(--hue-primary), var(--sat-primary), var(--lig-primary), 0.2);
+  }
 }
 

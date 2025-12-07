@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initMobileMenu();
     initFormModal();
+    initInteractions();
 });
 
 /* =========================================
@@ -20,32 +21,63 @@ function initTheme() {
 
     const icon = themeToggleBtn.querySelector('i');
 
-    // Load saved theme
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    htmlElement.setAttribute('data-theme', currentTheme);
-    updateIcon(currentTheme);
+    // Check localStorage first, then system preference
+    function getPreferredTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            return savedTheme;
+        }
+        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
 
-    themeToggleBtn.addEventListener('click', () => {
-        let theme = htmlElement.getAttribute('data-theme');
-        const newTheme = theme === 'light' ? 'dark' : 'light';
+    function setTheme(theme) {
+        htmlElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        updateIcon(theme);
 
-        htmlElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateIcon(newTheme);
+        // Update meta theme-color
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+        if (metaThemeColor) {
+            metaThemeColor.setAttribute('content', theme === 'dark' ? '#0a0a0a' : '#f8fafc');
+        }
 
-        // Update Three.js colors if needed
-        updateThreeJSTheme(newTheme);
-    });
+        // Update Three.js/Particles if available
+        if (typeof updateThreeJSTheme === 'function') {
+            updateThreeJSTheme(theme);
+        }
+    }
 
     function updateIcon(theme) {
         const isDark = theme === 'dark';
         if (icon) {
-            icon.classList.toggle('fa-moon', !isDark);
-            icon.classList.toggle('fa-sun', isDark);
+            // Remove both first to avoid conflicts
+            icon.classList.remove('fa-moon', 'fa-sun');
+            icon.classList.add(isDark ? 'fa-sun' : 'fa-moon'); // Sun for dark mode (to switch to light), Moon for light (to switch to dark)
         }
-        // Update aria-pressed for screen readers
         themeToggleBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+        themeToggleBtn.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
     }
+
+    // Initialize
+    const initialTheme = getPreferredTheme();
+    // We only set data-attribute if it's explicitly saved or different from default to avoid overriding CSS media query if not needed,
+    // but for simplicity and consistency with JS access, setting it explicitly is safer.
+    setTheme(initialTheme);
+
+    // Event Listener for Button
+    themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+    });
+
+    // Listen for System Changes (only works if user hasn't overridden)
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            const newTheme = e.matches ? 'light' : 'dark';
+            setTheme(newTheme);
+        }
+    });
 }
 
 /* =========================================
@@ -357,5 +389,24 @@ function initFormModal() {
                 first.focus();
             }
         }
+    });
+}
+
+/* =========================================
+   7. Premium Interactions
+   ========================================= */
+function initInteractions() {
+    // Card Glow Effect
+    const cards = document.querySelectorAll('.service-card, .product-card, .launch-card');
+
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
     });
 }
