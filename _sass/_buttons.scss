@@ -7,7 +7,6 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    cursor: none;
     z-index: 1;
     min-height: 50px;
     display: inline-flex;
@@ -54,4 +53,3 @@
     font-size: clamp(0.95rem, 1.5vw, 1rem);
     padding: clamp(0.875rem, 1.5vw, 1rem) clamp(1.5rem, 2.5vw, 2rem);
 }
-

@@ -1,11 +1,12 @@
 
 // Wait for DOM load
-initTheme();
-initThreeJS();
-initGSAP();
-initTilt();
-initMobileMenu();
-initFormModal();
+document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    initThreeJS();
+    initGSAP();
+    initTilt();
+    initMobileMenu();
+    initFormModal();
 });
 
 /* =========================================
