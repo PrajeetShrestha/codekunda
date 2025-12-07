@@ -29,7 +29,7 @@ releases:
       Check out our latest product, ClipKunda — the ultimate clipboard manager with on-device intelligence.
     </p>
 
-    <div class="products-grid">
+    <div class="products-launch-grid">
       {% for rel in page.releases %}
         {% include launch_card.html release=rel %}
       {% endfor %}
