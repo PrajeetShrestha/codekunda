@@ -15,9 +15,15 @@
       "Bash(lsof:*)",
       "Bash(firebase --version:*)",
       "Bash(node --version:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "mcp_clipnote_*(:*)"
     ],
     "deny": [],
     "ask": []
+  },
+  "mcpServers": {
+    "clipnote": {
+      "url": "http://localhost:3189"
+    }
   }
 }

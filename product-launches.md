@@ -2,7 +2,7 @@
 title: Product Launches
 permalink: /product-launches/
 releases:
-  - name: ClipKunda
+  - name: ClipKunda for macOS
     version: 1.0.0
     image: /assets/images/clipkunda/clipkundalogo.png
     summary: The most feature packed yet, easy to use Clipboard Manager for macOS with on device intelligence.
