@@ -6,11 +6,14 @@
 </head>
 
 <body>
-  <div id="canvas-container"></div>
+  <!-- Skip Link for Keyboard Users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div id="canvas-container" aria-hidden="true"></div>
 
   {% include header.html %}
 
-  <main>
+  <main id="main-content" role="main">
     {{ content }}
   </main>
 

@@ -3,25 +3,25 @@
     <h2 class="section-title center-text">Our Products</h2>
     <div class="products-grid">
       {% for p in site.data.products %}
-      <article class="product-card glass-panel" data-tilt>
+      <article class="product-card glass-panel">
         <div class="product-image">
           {% case p.image_style %}
           {% when "default" %}
-            <div class="placeholder-ui">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="circle"></div>
-            </div>
+          <div class="placeholder-ui">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="circle"></div>
+          </div>
           {% when "graph" %}
-            <div class="placeholder-ui graph">
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-            </div>
+          <div class="placeholder-ui graph">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
           {% when "shield" %}
-            <div class="placeholder-ui shield">
-              <i class="fas fa-shield-alt"></i>
-            </div>
+          <div class="placeholder-ui shield">
+            <i class="fas fa-shield-alt"></i>
+          </div>
           {% endcase %}
         </div>
         <div class="product-content">

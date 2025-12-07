@@ -1,4 +1,27 @@
 /* Utilities */
+
+/* Skip Link for Keyboard Navigation */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 0 0 8px 8px;
+    z-index: 10000;
+    transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: none;
+}
+
+/* Screen Reader Only */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -11,6 +34,16 @@
     border-width: 0;
 }
 
+/* Enhanced Focus Styles */
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: var(--focus-ring-offset);
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
 .form-group input:focus-visible,
 .form-group textarea:focus-visible,
 .btn:focus-visible,
@@ -19,6 +52,55 @@
     outline-offset: 2px;
 }
 
+/* Interactive Cursor */
+button,
+[role="button"],
+a,
+input[type="submit"],
+input[type="button"],
+select,
+.nav-link,
+.social-icon,
+.card-link {
+    cursor: pointer;
+}
+
+/* Selection Colors */
+::selection {
+    background: var(--primary-color);
+    color: white;
+}
+
+::-moz-selection {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Form Error Toast */
+.form-error-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    background: var(--error-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    z-index: 10001;
+    opacity: 0;
+    transition: 
+        transform var(--transition-normal),
+        opacity var(--transition-normal);
+    box-shadow: var(--shadow-lg);
+}
+
+.form-error-toast.visible {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* Modal Overlay Enhancements */
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -27,6 +109,7 @@
     align-items: center;
     justify-content: center;
     z-index: 10000;
+    backdrop-filter: blur(4px);
 }
 
 .modal-overlay.active { display: flex; }
@@ -39,6 +122,18 @@
     max-width: 420px;
     width: calc(100% - 2rem);
     text-align: center;
+    animation: modal-appear 0.3s ease-out;
+}
+
+@keyframes modal-appear {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
 
 /* High contrast mode support */
@@ -50,10 +145,20 @@
     .form-group textarea:focus { border-width: 3px; box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2); }
 
     .detail-item a:focus { outline-width: 3px; outline-offset: 3px; }
+    
+    .btn:focus-visible { outline-width: 3px; }
 }
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
     .form-group input,
     .form-group textarea,
     .form-group label,

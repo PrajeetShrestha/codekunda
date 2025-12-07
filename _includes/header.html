@@ -1,9 +1,9 @@
-<header class="site-header">
+<header class="site-header" role="banner">
   <div class="container">
-    <a href="{{ '/' | relative_url }}" class="logo">
-      CodeKunda<span class="dot">.</span>
+    <a href="{{ '/' | relative_url }}" class="logo" aria-label="CodeKunda Home">
+      CodeKunda<span class="dot" aria-hidden="true">.</span>
     </a>
-    <nav class="main-nav">
+    <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
       <ul>
         <li><a href="{{ '/' | relative_url }}#services" class="nav-link">Services</a></li>
         <li><a href="{{ '/' | relative_url }}#products" class="nav-link">Products</a></li>
@@ -13,13 +13,13 @@
       </ul>
     </nav>
     <div class="header-actions">
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
-        <i class="fas fa-sun"></i>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
+        <i class="fas fa-sun" aria-hidden="true"></i>
       </button>
-      <button class="mobile-menu-toggle" aria-label="Toggle Menu">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </button>
     </div>
   </div>

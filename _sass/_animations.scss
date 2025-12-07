@@ -1,0 +1,199 @@
+/* Animations & Micro-interactions */
+
+/* Icon Box Bounce on Card Hover */
+.icon-box {
+    transition: transform var(--transition-bounce);
+}
+
+.service-card:hover .icon-box {
+    transform: scale(1.1);
+}
+
+/* Link Arrow Animation */
+.card-link,
+.btn-sm {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-link i,
+.btn-sm i {
+    transition: transform var(--transition-fast);
+}
+
+.card-link:hover i,
+.btn-sm:hover i {
+    transform: translateX(4px);
+}
+
+/* Social Icon Hover Effects */
+.social-icon {
+    transition: 
+        background-color var(--transition-normal),
+        color var(--transition-normal),
+        transform var(--transition-fast),
+        box-shadow var(--transition-normal);
+}
+
+.social-icon:hover {
+    box-shadow: var(--shadow-glow);
+}
+
+.social-icon:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: var(--focus-ring-offset);
+}
+
+/* Glass Card Hover Glow */
+.glass-card {
+    transition: 
+        transform 0.3s ease,
+        box-shadow var(--transition-normal);
+}
+
+.glass-card:hover {
+    box-shadow: var(--shadow-glow);
+}
+
+/* Product Card Enhanced Hover */
+.product-card {
+    transition: 
+        transform 0.3s ease,
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.product-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+/* Service Card Glow Pulse on Hover */
+.service-card {
+    transition: 
+        transform 0.3s ease,
+        border-color var(--transition-normal),
+        background-color var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.service-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+/* Nav Link Underline Transition */
+.nav-link {
+    transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* Theme Toggle Button Animation */
+.theme-toggle {
+    transition: 
+        background-color var(--transition-normal),
+        border-color var(--transition-normal),
+        color var(--transition-normal),
+        transform var(--transition-fast);
+}
+
+.theme-toggle:hover {
+    transform: rotate(15deg);
+}
+
+.theme-toggle:active {
+    transform: rotate(0deg) scale(0.95);
+}
+
+/* Form Input Focus Animation */
+.form-group input,
+.form-group textarea {
+    transition: 
+        border-color var(--transition-normal),
+        background-color var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+/* Contact Detail Item Hover */
+.detail-item {
+    transition: transform var(--transition-fast);
+}
+
+.detail-item:hover {
+    transform: translateX(4px);
+}
+
+.detail-item i {
+    transition: 
+        background-color var(--transition-normal),
+        color var(--transition-normal),
+        transform var(--transition-bounce);
+}
+
+.detail-item:hover i {
+    transform: scale(1.1);
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Launch Card Hover Effects */
+.launch-card {
+    transition: 
+        transform 0.3s ease,
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.launch-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+/* Badge Pulse Animation */
+.badge {
+    animation: badge-pulse 2s ease-in-out infinite;
+    animation-play-state: paused;
+}
+
+.product-card:hover .badge,
+.launch-card:hover .badge {
+    animation-play-state: running;
+}
+
+@keyframes badge-pulse {
+    0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+    }
+    50% { 
+        box-shadow: 0 0 0 8px rgba(99, 102, 241, 0);
+    }
+}
+
+/* Smooth Entrance for Cards (used with GSAP) */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 
+        opacity 0.6s ease-out,
+        transform 0.6s ease-out;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Theme Transition for Key Elements */
+.site-header,
+.service-card,
+.product-card,
+.glass-card,
+.contact-wrapper,
+.launch-card,
+.site-footer {
+    transition: 
+        background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}

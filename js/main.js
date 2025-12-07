@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initThreeJS();
     initGSAP();
-    initTilt();
+
     initMobileMenu();
     initFormModal();
 });
@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
 function initTheme() {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
+
+    if (!themeToggleBtn) return;
+
     const icon = themeToggleBtn.querySelector('i');
 
     // Load saved theme
@@ -35,13 +38,13 @@ function initTheme() {
     });
 
     function updateIcon(theme) {
-        if (theme === 'dark') {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        } else {
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
+        const isDark = theme === 'dark';
+        if (icon) {
+            icon.classList.toggle('fa-moon', !isDark);
+            icon.classList.toggle('fa-sun', isDark);
         }
+        // Update aria-pressed for screen readers
+        themeToggleBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
     }
 }
 
@@ -149,55 +152,84 @@ function initGSAP() {
     );
 }
 
-/* =========================================
-   5. Vanilla Tilt Init
-   ========================================= */
-function initTilt() {
-    VanillaTilt.init(document.querySelectorAll(".product-card, .service-card"), {
-        max: 10,
-        speed: 400,
-        glare: true,
-        "max-glare": 0.2,
-        scale: 1.02
-    });
-}
+
 
 /* =========================================
-   1.5 Mobile Menu
+   1.5 Mobile Menu with Accessibility
    ========================================= */
 function initMobileMenu() {
     const toggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('.main-nav');
-    const links = document.querySelectorAll('.nav-link');
 
     if (!toggle || !nav) return;
 
+    const links = nav.querySelectorAll('.nav-link');
+    const focusableInNav = nav.querySelectorAll('a, button');
+
+    function openMenu() {
+        toggle.classList.add('active');
+        toggle.setAttribute('aria-expanded', 'true');
+        nav.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        // Focus first link for keyboard users
+        if (focusableInNav.length) {
+            focusableInNav[0].focus();
+        }
+    }
+
+    function closeMenu() {
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+        nav.classList.remove('active');
+        document.body.style.overflow = '';
+        toggle.focus();
+    }
+
     toggle.addEventListener('click', () => {
-        toggle.classList.toggle('active');
-        nav.classList.toggle('active');
-        document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        const isOpen = nav.classList.contains('active');
+        isOpen ? closeMenu() : openMenu();
     });
 
-    links.forEach(link => {
-        link.addEventListener('click', () => {
-            toggle.classList.remove('active');
-            nav.classList.remove('active');
-            document.body.style.overflow = '';
-        });
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('active')) {
+            closeMenu();
+        }
     });
+
+    // Focus trap within nav when open
+    nav.addEventListener('keydown', (e) => {
+        if (!nav.classList.contains('active')) return;
+        if (e.key === 'Tab' && focusableInNav.length > 0) {
+            const first = focusableInNav[0];
+            const last = focusableInNav[focusableInNav.length - 1];
+
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        }
+    });
+
+    // Close menu when clicking a nav link
+    links.forEach(link => link.addEventListener('click', closeMenu));
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (nav.classList.contains('active') &&
             !nav.contains(e.target) &&
             !toggle.contains(e.target)) {
-            toggle.classList.remove('active');
-            nav.classList.remove('active');
-            document.body.style.overflow = '';
+            closeMenu();
         }
     });
 }
 
+/* =========================================
+   6. Form Modal with Loading State
+   ========================================= */
 function initFormModal() {
     const form = document.getElementById('contact-form');
     const modal = document.getElementById('form-modal');
@@ -205,21 +237,53 @@ function initFormModal() {
 
     const submitBtn = form.querySelector('button[type="submit"]');
     const formspreeId = form.dataset.formspreeId;
+    const originalBtnText = submitBtn ? submitBtn.textContent : 'Send Message';
+
+    function setLoading(isLoading) {
+        if (!submitBtn) return;
+        submitBtn.disabled = isLoading;
+        submitBtn.classList.toggle('is-loading', isLoading);
+        submitBtn.textContent = isLoading ? '' : originalBtnText;
+    }
+
+    function showError(message) {
+        // Create or update error toast
+        let toast = document.querySelector('.form-error-toast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.className = 'form-error-toast';
+            toast.setAttribute('role', 'alert');
+            toast.setAttribute('aria-live', 'assertive');
+            document.body.appendChild(toast);
+        }
+        toast.textContent = message;
+        toast.classList.add('visible');
+        setTimeout(() => toast.classList.remove('visible'), 5000);
+    }
+
+    function openModal() {
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        const closeBtn = modal.querySelector('[data-close]');
+        if (closeBtn) closeBtn.focus();
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        // Return focus to form submit button
+        if (submitBtn) submitBtn.focus();
+    }
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
-
-        if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-        }
+        setLoading(true);
 
         if (!formspreeId) {
-            alert('Form is not configured. Please set formspree_id.');
-            if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Message';
-            }
+            showError('Form is not configured. Please set formspree_id.');
+            setLoading(false);
             return;
         }
 
@@ -241,36 +305,57 @@ function initFormModal() {
 
             if (response.ok) {
                 form.reset();
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
+                openModal();
             } else {
                 const result = await response.json().catch(() => ({}));
                 console.error('Form submission failed:', result);
-                alert('Something went wrong. Please try again.');
+                showError('Something went wrong. Please try again.');
             }
         } catch (error) {
             console.error('Error:', error);
-            alert('Something went wrong. Please try again.');
+            showError('Something went wrong. Please try again.');
         } finally {
-            if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Message';
-            }
+            setLoading(false);
         }
     });
 
+    // Modal close button
     const closeBtn = modal.querySelector('[data-close]');
     if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        });
+        closeBtn.addEventListener('click', closeModal);
     }
 
+    // Close modal on backdrop click
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
+            closeModal();
+        }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    // Focus trap within modal when open
+    modal.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('active')) return;
+        if (e.key === 'Tab') {
+            const focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            if (focusable.length === 0) return;
+
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
         }
     });
 }
