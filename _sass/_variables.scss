@@ -23,6 +23,12 @@
     --container-width: 1280px;
     --section-spacing: clamp(60px, 10vw, 120px);
     --gutter: clamp(1rem, 4vw, 2rem);
+    
+    /* Card Specific */
+    --card-text-color: rgba(255, 255, 255, 0.95);
+    --product-img-bg: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+    --placeholder-bg: rgba(255, 255, 255, 0.15);
+    --placeholder-element: rgba(255, 255, 255, 0.4);
 }
 
 [data-theme="light"] {
@@ -38,5 +44,11 @@
     --gradient-text: linear-gradient(to right, #1e293b, #4f46e5);
     --form-bg-light: rgba(0, 0, 0, 0.03);
     --form-focus-bg-light: rgba(0, 0, 0, 0.05);
+
+    /* Card Specific */
+    --card-text-color: #0f172a;
+    --product-img-bg: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(168, 85, 247, 0.05));
+    --placeholder-bg: rgba(15, 23, 42, 0.06);
+    --placeholder-element: rgba(15, 23, 42, 0.2);
 }
 
