@@ -75,3 +75,4 @@ vendor/
 clipkunda-releases/
 dist/
 scripts/
+!scripts/obfuscate.js

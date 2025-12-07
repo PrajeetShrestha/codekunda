@@ -8,7 +8,32 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initFormModal();
     initInteractions();
+
+    initDomainLock();
 });
+
+/* =========================================
+   0. Domain Lock (Anti-Theft)
+   ========================================= */
+function initDomainLock() {
+    const allowedDomains = ['codekunda.com', 'www.codekunda.com', 'localhost', '127.0.0.1'];
+    const hostname = window.location.hostname;
+
+    // Check if current hostname is in allowed list
+    // We strive to be lenient with subdomains for previews if needed, but for now strict check:
+    if (!allowedDomains.includes(hostname) && !hostname.endsWith('.firebaseapp.com') && !hostname.endsWith('.web.app')) {
+        // Detected unauthorized domain
+        // console.warn('Unauthorized domain detected. Redirecting...');
+        // window.location.href = 'https://codekunda.com'; 
+        // Commented out to prevent accidental lockout during development/testing on different local IPs
+        // Uncomment the line above for production locking.
+
+        // For now, let's just log a strict warning or show a subtle watermark
+        console.log('%c Propery of CodeKunda ', 'background: #222; color: #bada55; font-size: 20px');
+    } else {
+        console.log('%c CodeKunda Authorized ', 'background: #222; color: #bada55');
+    }
+}
 
 /* =========================================
    1. Theme Management

@@ -3,8 +3,10 @@
     "public": "_site",
     "predeploy": [
       "pkill -f 'jekyll serve' || true",
+      "npm install",
       "bundle exec jekyll clean",
-      "bundle exec jekyll build"
+      "bundle exec jekyll build",
+      "node scripts/obfuscate.js"
     ],
     "headers": [
       {
