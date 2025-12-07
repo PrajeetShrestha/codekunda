@@ -49,7 +49,7 @@ function initTheme() {
    2. Three.js Background (Particle Field)
    ========================================= */
 let scene, camera, renderer, particles, particleSystem;
-let mouseX = 0, mouseY = 0;
+
 
 function initThreeJS() {
     const container = document.getElementById('canvas-container');
@@ -72,7 +72,7 @@ function initThreeJS() {
 
     // Event Listeners
     window.addEventListener('resize', onWindowResize, false);
-    document.addEventListener('mousemove', onDocumentMouseMove, false);
+
 
     // Animation Loop
     animate();
@@ -131,10 +131,7 @@ function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-function onDocumentMouseMove(event) {
-    mouseX = (event.clientX - window.innerWidth / 2) / 2;
-    mouseY = (event.clientY - window.innerHeight / 2) / 2;
-}
+
 
 function animate() {
     requestAnimationFrame(animate);
@@ -142,10 +139,6 @@ function animate() {
     if (particleSystem) {
         particleSystem.rotation.x += 0.0005;
         particleSystem.rotation.y += 0.0005;
-
-        // Mouse interaction
-        particleSystem.rotation.x += (mouseY * 0.00005 - particleSystem.rotation.x) * 0.05;
-        particleSystem.rotation.y += (mouseX * 0.00005 - particleSystem.rotation.y) * 0.05;
     }
 
     renderer.render(scene, camera);
