@@ -6,6 +6,7 @@
         "obfuscate": "node scripts/obfuscate.js"
     },
     "devDependencies": {
+        "crypto-js": "^4.2.0",
         "terser": "^5.37.0"
     },
     "private": true

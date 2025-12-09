@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportKonnectAI - Technical Estimate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .markdown-body {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+
+        .markdown-body h1,
+        .markdown-body h2,
+        .markdown-body h3 {
+            color: #2c3e50;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .markdown-body h1 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .markdown-body h2 {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.3rem;
+        }
+
+        .markdown-body ul,
+        .markdown-body ol {
+            padding-left: 1.5rem;
+        }
+
+        .markdown-body table {
+            width: 100%;
+            margin-bottom: 1rem;
+            border-collapse: collapse;
+        }
+
+        .markdown-body th,
+        .markdown-body td {
+            padding: 0.75rem;
+            border: 1px solid #dee2e6;
+        }
+
+        .markdown-body th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+
+        .markdown-body blockquote {
+            border-left: 4px solid #eee;
+            padding-left: 1rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sticky Navbar -->
+    <nav class="navbar sticky-top glass shadow-sm mb-4" id="main-nav">
+        <div class="container py-2 d-flex justify-content-between align-items-center">
+            <div class="brand-pill"><i class="fa-solid fa-bolt me-2"></i>SportKonnectAI</div>
+
+            <!-- Desktop Navigation -->
+            <div class="d-none d-lg-flex gap-3 align-items-center nav-links-desktop">
+                <a href="index.html" class="nav-link-btn text-decoration-none">Dashboard</a>
+                <a href="index.html" class="nav-link-btn text-decoration-none">Negotiation</a>
+                <a href="index.html" class="nav-link-btn text-decoration-none">Contract</a>
+                <a href="technical_estimate.html" class="nav-link-btn active text-decoration-none">Estimate</a>
+            </div>
+
+            <!-- Controls & Mobile Toggle -->
+            <div class="d-flex align-items-center gap-2">
+                <div class="d-none d-md-flex gap-2">
+                    <a href="index.html" class="btn btn-outline-secondary btn-sm">Back to App</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-4">
+        <div class="markdown-body">
+            <h1>SportKonnectAI - Technical Implementation &amp; Cost Estimate</h1>
+
+            <p><strong>Last Updated:</strong> December 9, 2025</p>
+
+            <hr>
+
+            <h2>1. Technical Architecture</h2>
+
+            <h3>System Overview</h3>
+
+            <p>The platform follows a <strong>monolithic architecture</strong> for simplified development and
+                deployment:</p>
+
+            <p><strong>Frontend Applications:</strong></p>
+            <ul>
+                <li>Mobile: Flutter 3.16+ (iOS/Android) - single codebase</li>
+                <li>Web: Next.js 15 (responsive web app)</li>
+                <li>Shared components and design system</li>
+            </ul>
+
+            <p><strong>Backend Monolith:</strong></p>
+            <ul>
+                <li>Single Node.js application (NestJS framework)</li>
+                <li>PostgreSQL database (Supabase)</li>
+                <li>Redis for caching and sessions</li>
+                <li>WebSocket for real-time features</li>
+                <li>Integrated API endpoints for all features</li>
+            </ul>
+
+            <p><strong>AI/ML Module:</strong></p>
+            <ul>
+                <li>Python services integrated with main backend</li>
+                <li>ML models for market value calculation</li>
+                <li>Scam detection algorithms</li>
+                <li>Contract analysis (NLP)</li>
+            </ul>
+
+            <p><strong>Third-Party Integrations:</strong></p>
+            <ul>
+                <li>DocuSign/HelloSign (e-signatures)</li>
+                <li>Stripe Connect (payments/escrow)</li>
+                <li>Twilio (SMS/Voice)</li>
+                <li>SendGrid (email)</li>
+                <li>Firebase (push notifications)</li>
+            </ul>
+
+            <p><strong>Infrastructure:</strong></p>
+            <ul>
+                <li>Single deployment unit (Docker container)</li>
+                <li>AWS/DigitalOcean hosting</li>
+                <li>Cloudflare CDN</li>
+                <li>Automated backups</li>
+            </ul>
+
+            <hr>
+
+            <h2>2. Combined Module Breakdown</h2>
+
+            <h3>Module 1: Frontend Applications (Mobile + Web)</h3>
+
+            <p><strong>Tech Stack:</strong></p>
+            <ul>
+                <li><strong>Mobile:</strong> Flutter 3.16+ with Dart 3.2+
+                    <ul>
+                        <li>Riverpod for state management</li>
+                        <li>GoRouter for navigation</li>
+                        <li>Dio for API calls</li>
+                        <li>Hive for local storage</li>
+                    </ul>
+                </li>
+                <li><strong>Web:</strong> Next.js 15 + React 18
+                    <ul>
+                        <li>TailwindCSS for styling</li>
+                        <li>Zustand for state</li>
+                        <li>React Query for data fetching</li>
+                    </ul>
+                </li>
+                <li><strong>Shared:</strong> Design system, i18n (4 languages), offline support</li>
+            </ul>
+
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Athlete &amp; Partner dashboards</li>
+                <li>Contract browsing and management</li>
+                <li>Real-time messaging</li>
+                <li>E-signature integration</li>
+                <li>Performance stats upload</li>
+                <li>Multi-language support (EN/FR/CR/ES)</li>
+                <li>Lite mode for low-bandwidth</li>
+                <li>Admin panel</li>
+                <li>Analytics &amp; reporting</li>
+            </ul>
+
+            <p><strong>Effort:</strong> 28-32 person-weeks<br>
+                <strong>Team:</strong> 1 Flutter Developer, 1 Frontend Developer (web), 1 UI/UX Designer
+            </p>
+
+            <hr>
+
+            <h3>Module 2: Backend Monolith</h3>
+
+            <p><strong>Tech Stack:</strong></p>
+            <ul>
+                <li>Node.js 20 LTS + NestJS</li>
+                <li>PostgreSQL 15 (Supabase)</li>
+                <li>Redis 7 for caching</li>
+                <li>Prisma ORM</li>
+                <li>Socket.io for WebSockets</li>
+                <li>Bull for job queues</li>
+                <li>Jest for testing</li>
+            </ul>
+
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>RESTful APIs for all resources</li>
+                <li>Authentication &amp; authorization (JWT)</li>
+                <li>User management (athletes, partners, admins)</li>
+                <li>Contract management system</li>
+                <li>E-signature workflow (DocuSign/HelloSign)</li>
+                <li>Payment processing (Stripe Connect escrow)</li>
+                <li>PDF generation (PDFKit)</li>
+                <li>File upload &amp; storage (S3)</li>
+                <li>Real-time chat (WebSocket)</li>
+                <li>SMS/Voice integration (Twilio)</li>
+                <li>Email notifications (SendGrid)</li>
+                <li>Push notifications (Firebase)</li>
+                <li>Audit logging</li>
+                <li>Rate limiting &amp; security</li>
+            </ul>
+
+            <p><strong>Effort:</strong> 32-36 person-weeks<br>
+                <strong>Team:</strong> 1 Senior Backend Developer, 1 DevOps Engineer
+            </p>
+
+            <hr>
+
+            <h3>Module 3: AI/ML Features</h3>
+
+            <p><strong>Tech Stack:</strong></p>
+            <ul>
+                <li>Python 3.11+ with FastAPI</li>
+                <li>scikit-learn, XGBoost for ML models</li>
+                <li>pandas/numpy for data processing</li>
+                <li>spaCy for NLP</li>
+                <li>OpenAI GPT-4 API for AI assistant</li>
+                <li>Redis for model caching</li>
+                <li>PostgreSQL for data storage</li>
+            </ul>
+
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li><strong>Market Value Engine:</strong>
+                    <ul>
+                        <li>Performance-based valuation</li>
+                        <li>Social media influence scoring</li>
+                        <li>Market trend analysis</li>
+                        <li>Prediction models with confidence intervals</li>
+                    </ul>
+                </li>
+                <li><strong>Scam Detection:</strong>
+                    <ul>
+                        <li>Partner verification algorithms</li>
+                        <li>Document authenticity checking</li>
+                        <li>Contract term analysis (red flags)</li>
+                        <li>Risk scoring system</li>
+                    </ul>
+                </li>
+                <li><strong>AI Assistant:</strong>
+                    <ul>
+                        <li>Negotiation guidance (GPT-4)</li>
+                        <li>Contract summarization</li>
+                        <li>Multi-language support</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p><strong>Effort:</strong> 24-28 person-weeks<br>
+                <strong>Team:</strong> 1 Senior ML Engineer, 1 Backend Developer (integration - shared)
+            </p>
+
+            <hr>
+
+            <h3>Module 4: Infrastructure &amp; DevOps</h3>
+
+            <p><strong>Tech Stack:</strong></p>
+            <ul>
+                <li>Docker containerization</li>
+                <li>AWS/DigitalOcean hosting</li>
+                <li>GitHub Actions (CI/CD)</li>
+                <li>Nginx reverse proxy</li>
+                <li>Cloudflare CDN</li>
+                <li>PostgreSQL managed service</li>
+                <li>Redis Cloud</li>
+                <li>Automated backups</li>
+                <li>Monitoring: Datadog/New Relic</li>
+                <li>Error tracking: Sentry</li>
+            </ul>
+
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Automated deployments</li>
+                <li>Database backups (daily)</li>
+                <li>SSL/TLS certificates</li>
+                <li>DDoS protection</li>
+                <li>Load balancing</li>
+                <li>Log aggregation</li>
+                <li>Performance monitoring</li>
+                <li>Security scanning</li>
+                <li>Disaster recovery</li>
+            </ul>
+
+            <p><strong>Effort:</strong> 8-10 person-weeks (setup + ongoing)<br>
+                <strong>Team:</strong> 1 DevOps Engineer (part-time)
+            </p>
+
+            <hr>
+
+            <h2>3. Development Phases</h2>
+
+            <h3>Phase 0: Discovery &amp; Design (6-8 weeks)</h3>
+            <ul>
+                <li>Wireframes (50-60 screens)</li>
+                <li>High-fidelity mockups (30-40 screens)</li>
+                <li>Design system</li>
+                <li>Technical architecture</li>
+                <li>PoC for AI and e-signature integration</li>
+            </ul>
+
+            <h3>Phase 1: MVP (12-16 weeks)</h3>
+            <ul>
+                <li>Basic athlete/partner registration</li>
+                <li>Simple profile creation</li>
+                <li>Manual market value estimation</li>
+                <li>Contract browsing</li>
+                <li>Basic messaging</li>
+                <li>PDF contract upload</li>
+                <li>E-signature (DocuSign)</li>
+                <li>Email + push notifications</li>
+                <li>Admin panel</li>
+                <li>Web + mobile apps</li>
+            </ul>
+
+            <h3>Phase 2: AI + Advanced Contracts (10-12 weeks)</h3>
+            <ul>
+                <li>AI market value engine</li>
+                <li>ML model training</li>
+                <li>AI scam detection</li>
+                <li>KYC integration (Onfido/Persona)</li>
+                <li>AI negotiation assistant (GPT-4)</li>
+                <li>Advanced e-signature workflows</li>
+                <li>Stripe Connect escrow</li>
+                <li>Contract templates</li>
+            </ul>
+
+            <h3>Phase 3: Accessibility (8-10 weeks)</h3>
+            <ul>
+                <li>Lite mode (mobile + web)</li>
+                <li>SMS/Voice system (Twilio)</li>
+                <li>Full localization (4 languages)</li>
+                <li>High-contrast mode</li>
+                <li>Screen reader optimization</li>
+            </ul>
+
+            <h3>Phase 4: Beta Launch (8-12 weeks)</h3>
+            <ul>
+                <li>Private beta (100-200 athletes)</li>
+                <li>Partnerships with sports organizations</li>
+                <li>User feedback iteration</li>
+                <li>Performance optimization</li>
+                <li>Security hardening</li>
+                <li>Marketing website</li>
+            </ul>
+
+            <h3>Phase 5: Public Launch (Ongoing)</h3>
+            <ul>
+                <li>App store launch</li>
+                <li>Continuous optimization</li>
+            </ul>
+
+            <p><strong>Total Timeline:</strong> 10-14 months</p>
+
+            <hr>
+
+            <h2>4. Team Composition (Nepal-Based)</h2>
+
+            <h3>Core Team (5.75 FTE = 7 people)</h3>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>FTE</th>
+                        <th>Monthly Salary (NPR)</th>
+                        <th>Monthly Salary (USD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Product Manager / Lead</td>
+                        <td>0.5</td>
+                        <td>NPR 120,000</td>
+                        <td>$851</td>
+                    </tr>
+                    <tr>
+                        <td>Senior Flutter Developer #1 (Lead)</td>
+                        <td>1.0</td>
+                        <td>NPR 200,000</td>
+                        <td>$1,418</td>
+                    </tr>
+                    <tr>
+                        <td>Senior Backend Developer #1 (Lead)</td>
+                        <td>1.0</td>
+                        <td>NPR 200,000</td>
+                        <td>$1,418</td>
+                    </tr>
+                    <tr>
+                        <td>Senior ML Engineer</td>
+                        <td>1.0</td>
+                        <td>NPR 200,000</td>
+                        <td>$1,418</td>
+                    </tr>
+                    <tr>
+                        <td>UI/UX Designer</td>
+                        <td>0.75</td>
+                        <td>NPR 105,000</td>
+                        <td>$745</td>
+                    </tr>
+                    <tr>
+                        <td>QA Engineer</td>
+                        <td>1.0</td>
+                        <td>NPR 100,000</td>
+                        <td>$709</td>
+                    </tr>
+                    <tr>
+                        <td>DevOps Engineer</td>
+                        <td>0.5</td>
+                        <td>NPR 70,000</td>
+                        <td>$496</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Total Monthly Team Cost:</strong> NPR 995,000 = <strong>$7,055/month</strong></p>
+
+            <p><strong>Team Allocation:</strong></p>
+            <ul>
+                <li><strong>Module 1 (Frontend):</strong> 1 Flutter dev + 0.75 Designer = 1.75 FTE</li>
+                <li><strong>Module 2 (Backend):</strong> 1 Backend dev + 0.5 DevOps = 1.5 FTE</li>
+                <li><strong>Module 3 (AI/ML):</strong> 1 ML Engineer + shared backend support (~0.25) = 1.25 FTE</li>
+                <li><strong>QA &amp; PM:</strong> 1 QA + 0.5 PM = 1.5 FTE</li>
+            </ul>
+
+            <hr>
+
+            <h2>5. Cost Estimation (Nepal-Based Team)</h2>
+
+            <h3>Monthly Costs Breakdown</h3>
+
+            <p><strong>Team Salaries (Phased Allocation):</strong></p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Duration</th>
+                        <th>Team Composition</th>
+                        <th>FTE</th>
+                        <th>Monthly Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Phase 0: Design</strong></td>
+                        <td>Months 1-2</td>
+                        <td>PM (0.5) + Designer (0.75) + Backend Lead (1.0)</td>
+                        <td>2.25</td>
+                        <td>$3,014</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase 1: MVP</strong></td>
+                        <td>Months 3-6</td>
+                        <td>PM (0.5) + 1 Flutter + 1 Backend + Designer (0.25) + QA + DevOps (0.5)</td>
+                        <td>4.25</td>
+                        <td>$5,140</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase 2: AI Features</strong></td>
+                        <td>Months 7-9</td>
+                        <td>PM (0.5) + 1 Flutter + 1 Backend + ML Engineer (1.0) + QA + DevOps (0.25)</td>
+                        <td>5.25</td>
+                        <td>$6,062</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase 3-4: Accessibility &amp; Launch</strong></td>
+                        <td>Months 10-12</td>
+                        <td>PM (0.5) + 1 Flutter + 1 Backend + QA + DevOps (0.25)</td>
+                        <td>3.75</td>
+                        <td>$4,644</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Rationale for Phased Staffing:</strong></p>
+            <ul>
+                <li><strong>Designer (0.75 FTE):</strong> Heavy involvement in Phase 0 for design system creation,
+                    minimal support (0.25 FTE) during MVP implementation for design handoff, then not needed</li>
+                <li><strong>ML Engineer (1.0 FTE):</strong> Only required in Phase 2 (months 7-9) for AI model
+                    development and training</li>
+                <li><strong>DevOps (0.5 → 0.25 FTE):</strong> Higher allocation during initial infrastructure setup
+                    (months 1-6), reduced to maintenance mode (0.25 FTE) afterward</li>
+            </ul>
+
+            <p><strong>Infrastructure &amp; Services:</strong></p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Monthly Cost</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cloud hosting (DigitalOcean)</td>
+                        <td>$250</td>
+                        <td>Single droplet + managed DB (small)</td>
+                    </tr>
+                    <tr>
+                        <td>Supabase Pro</td>
+                        <td>$25</td>
+                        <td>PostgreSQL + Auth + Storage</td>
+                    </tr>
+                    <tr>
+                        <td>Redis Cloud</td>
+                        <td>$30</td>
+                        <td>Basic cache tier</td>
+                    </tr>
+                    <tr>
+                        <td>Twilio (SMS/Voice)</td>
+                        <td>$150</td>
+                        <td>Low/medium usage</td>
+                    </tr>
+                    <tr>
+                        <td>Vercel Pro</td>
+                        <td>$20</td>
+                        <td>Web hosting</td>
+                    </tr>
+                    <tr>
+                        <td>Monitoring &amp; Logging</td>
+                        <td>$80</td>
+                        <td>Sentry + basic monitoring</td>
+                    </tr>
+                    <tr>
+                        <td>Analytics</td>
+                        <td>$0</td>
+                        <td>Stay on free tiers</td>
+                    </tr>
+                    <tr>
+                        <td>APIs (OpenAI, social, sports)</td>
+                        <td>$200</td>
+                        <td>Pay-per-use cap</td>
+                    </tr>
+                    <tr>
+                        <td>CDN/Storage (Cloudflare + S3)</td>
+                        <td>$120</td>
+                        <td>Basic tier</td>
+                    </tr>
+                    <tr>
+                        <td>KYC (Onfido)</td>
+                        <td>$100</td>
+                        <td>Pay-per-verification</td>
+                    </tr>
+                    <tr>
+                        <td>DocuSign/HelloSign</td>
+                        <td>$75</td>
+                        <td>Startup plan</td>
+                    </tr>
+                    <tr>
+                        <td>Stripe Connect</td>
+                        <td>$20</td>
+                        <td>Platform fees</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Subtotal</strong></td>
+                        <td><strong>$1,070/month</strong></td>
+                        <td>Lean configuration</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Total Project Cost (12 months)</h3>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Calculation</th>
+                        <th>Cost (USD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Team - Phase 0: Design (2 months)</td>
+                        <td>2 × $3,014</td>
+                        <td>$6,028</td>
+                    </tr>
+                    <tr>
+                        <td>Team - Phase 1: MVP (4 months)</td>
+                        <td>4 × $5,140</td>
+                        <td>$20,560</td>
+                    </tr>
+                    <tr>
+                        <td>Team - Phase 2: AI Features (3 months)</td>
+                        <td>3 × $6,062</td>
+                        <td>$18,186</td>
+                    </tr>
+                    <tr>
+                        <td>Team - Phase 3-4: Launch (3 months)</td>
+                        <td>3 × $4,644</td>
+                        <td>$13,932</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Team Subtotal</strong></td>
+                        <td></td>
+                        <td><strong>$58,706</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Infrastructure (12 months)</td>
+                        <td>12 × $1,070</td>
+                        <td>$12,840</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Subtotal</strong></td>
+                        <td></td>
+                        <td><strong>$71,546</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Contingency (15%)</td>
+                        <td></td>
+                        <td>$10,732</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TOTAL PROJECT COST</strong></td>
+                        <td></td>
+                        <td><strong>$82,278</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Cost Summary</h3>
+
+            <p><strong>Final Estimate: $80,000 - $95,000</strong></p>
+
+            <p><strong>Monthly Burn Rate:</strong></p>
+            <ul>
+                <li>Months 1-2 (Design): ~$4,084/month (team $3,014 + infra $1,070)</li>
+                <li>Months 3-6 (MVP): ~$6,210/month (team $5,140 + infra $1,070)</li>
+                <li>Months 7-9 (AI): ~$7,132/month (team $6,062 + infra $1,070)</li>
+                <li>Months 10-12 (Launch): ~$5,714/month (team $4,644 + infra $1,070)</li>
+                <li>Average: ~$5,962/month</li>
+            </ul>
+
+            <hr>
+
+            <h2>6. Technology Stack Summary</h2>
+
+            <h3>Frontend</h3>
+            <ul>
+                <li><strong>Mobile:</strong> Flutter 3.16+ with Dart</li>
+                <li><strong>Web:</strong> Next.js 15 + React 18</li>
+                <li><strong>Styling:</strong> TailwindCSS + shadcn/ui</li>
+                <li><strong>State:</strong> Riverpod (mobile), Zustand (web)</li>
+            </ul>
+
+            <h3>Backend</h3>
+            <ul>
+                <li><strong>Framework:</strong> Node.js + NestJS</li>
+                <li><strong>Database:</strong> PostgreSQL 15 (Supabase)</li>
+                <li><strong>Cache:</strong> Redis 7</li>
+                <li><strong>Queue:</strong> BullMQ</li>
+            </ul>
+
+            <h3>AI/ML</h3>
+            <ul>
+                <li><strong>Framework:</strong> Python + FastAPI</li>
+                <li><strong>ML:</strong> scikit-learn, XGBoost, pandas</li>
+                <li><strong>NLP:</strong> spaCy, Transformers</li>
+                <li><strong>LLM:</strong> OpenAI GPT-4 API</li>
+            </ul>
+
+            <h3>Contract &amp; Payments</h3>
+            <ul>
+                <li><strong>E-Signature:</strong> DocuSign API / HelloSign</li>
+                <li><strong>Payments:</strong> Stripe Connect</li>
+                <li><strong>PDF:</strong> PDFKit / Puppeteer</li>
+                <li><strong>Storage:</strong> AWS S3 with encryption</li>
+            </ul>
+
+            <h3>Infrastructure</h3>
+            <ul>
+                <li><strong>Cloud:</strong> DigitalOcean (droplet + managed DB)</li>
+                <li><strong>CI/CD:</strong> GitHub Actions</li>
+                <li><strong>Monitoring:</strong> Sentry + basic uptime checks</li>
+                <li><strong>CDN:</strong> Cloudflare</li>
+                <li><strong>Container:</strong> Docker</li>
+            </ul>
+
+            <h3>Third-Party Services</h3>
+            <ul>
+                <li>Supabase (DB + Auth + Storage)</li>
+                <li>Twilio (SMS + Voice)</li>
+                <li>SendGrid (Email)</li>
+                <li>Firebase (Push notifications)</li>
+                <li>Onfido/Persona (KYC)</li>
+                <li>OpenAI (AI assistant)</li>
+            </ul>
+
+            <hr>
+
+            <h2>7. Project Deliverables</h2>
+
+            <h3>Phase 0: Design (Month 1-2)</h3>
+            <ul>
+                <li>Figma design system with 45-50 screens</li>
+                <li>Clickable prototype for user testing</li>
+                <li>Technical architecture document</li>
+                <li>Database schema &amp; API design</li>
+                <li>Development environment setup</li>
+            </ul>
+
+            <h3>Phase 1: MVP (Month 3-6)</h3>
+            <ul>
+                <li>Flutter mobile apps (iOS + Android)</li>
+                <li>Next.js web application</li>
+                <li>Backend API (NestJS monolith)</li>
+                <li>Basic authentication &amp; user management</li>
+                <li>Contract browsing &amp; simple e-signature</li>
+                <li>Admin panel for user management</li>
+                <li>Deployed to staging environment</li>
+            </ul>
+
+            <h3>Phase 2: AI Features (Month 7-9)</h3>
+            <ul>
+                <li>AI market value engine (production)</li>
+                <li>Scam detection system</li>
+                <li>AI negotiation assistant (GPT-4)</li>
+                <li>KYC integration (Onfido)</li>
+                <li>Stripe Connect escrow payments</li>
+                <li>Real-time chat with WebSocket</li>
+            </ul>
+
+            <h3>Phase 3: Accessibility (Month 10-11)</h3>
+            <ul>
+                <li>Lite mode for low-bandwidth</li>
+                <li>SMS/Voice system (Twilio)</li>
+                <li>Multi-language support (4 languages)</li>
+                <li>Screen reader compatibility</li>
+                <li>Performance optimization</li>
+            </ul>
+
+            <h3>Phase 4: Launch (Month 12)</h3>
+            <ul>
+                <li>Production deployment</li>
+                <li>App store submissions (iOS + Android)</li>
+                <li>Security audit &amp; fixes</li>
+                <li>Documentation complete</li>
+                <li>Beta testing with 100-200 users</li>
+                <li>Marketing website live</li>
+            </ul>
+
+            <hr>
+
+            <h2>8. Key Technical Decisions</h2>
+
+            <h3>1. Flutter over React Native</h3>
+            <ul>
+                <li>30-40% smaller APK sizes</li>
+                <li>Better performance on low-end devices</li>
+                <li>Superior offline support</li>
+                <li>Single codebase for iOS/Android/Web</li>
+            </ul>
+
+            <h3>2. No Blockchain Implementation</h3>
+            <ul>
+                <li>Lack of in-house expertise</li>
+                <li>Using DocuSign for legal e-signatures</li>
+                <li>Stripe Connect for secure escrow</li>
+                <li>Reduces costs by ~$50K</li>
+                <li>Accelerates timeline by 2-3 months</li>
+            </ul>
+
+            <h3>3. Supabase for Backend</h3>
+            <ul>
+                <li>PostgreSQL + Auth + Storage bundled</li>
+                <li>Real-time subscriptions</li>
+                <li>Row-level security</li>
+                <li>Reduces backend development time</li>
+            </ul>
+
+            <h3>4. Nepal-Based Team</h3>
+            <ul>
+                <li>Cost-effective: ~70% cheaper than US/EU</li>
+                <li>Strong technical talent pool</li>
+                <li>Good English proficiency</li>
+                <li>Time zone overlap with target markets (Asia/Africa)</li>
+            </ul>
+
+            <h3>5. AI via APIs Initially</h3>
+            <ul>
+                <li>OpenAI GPT-4 for negotiation assistant</li>
+                <li>Build custom models in Phase 2</li>
+                <li>Validates need before heavy investment</li>
+            </ul>
+
+            <hr>
+
+            <h2>9. Project Assumptions</h2>
+            <ol>
+                <li><strong>Team Location:</strong> All members based in Kathmandu, Nepal</li>
+                <li><strong>Exchange Rate:</strong> 1 USD = 141 NPR (December 2025)</li>
+                <li><strong>Team Experience:</strong> Familiarity with Flutter, Node.js, Python, and ML basics</li>
+                <li><strong>No Blockchain:</strong> Traditional e-signature and payment systems only</li>
+                <li><strong>Third-Party Availability:</strong> All listed services (Twilio, DocuSign, Stripe) available
+                    in target markets</li>
+                <li><strong>Internet:</strong> Stable connectivity for remote collaboration and deployment</li>
+                <li><strong>Equipment:</strong> BYOD model - team provides own laptops</li>
+                <li><strong>Working Hours:</strong> Standard 8-hour days, 5 days/week</li>
+                <li><strong>Timeline:</strong> 12-month estimate assumes no major scope changes</li>
+                <li><strong>Holidays:</strong> Nepalese public holidays factored into timeline</li>
+            </ol>
+
+            <hr>
+
+            <h2>10. Major Milestones &amp; Timeline</h2>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Milestone</th>
+                        <th>Deliverable</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1-2</td>
+                        <td>Design Complete</td>
+                        <td>Figma prototype, architecture docs</td>
+                    </tr>
+                    <tr>
+                        <td>3-4</td>
+                        <td>MVP Backend</td>
+                        <td>API endpoints, database, auth system</td>
+                    </tr>
+                    <tr>
+                        <td>5-6</td>
+                        <td>MVP Frontend</td>
+                        <td>Mobile + web apps with basic features</td>
+                    </tr>
+                    <tr>
+                        <td>7-8</td>
+                        <td>AI Engine</td>
+                        <td>Market value &amp; scam detection models</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Advanced Features</td>
+                        <td>KYC, escrow, real-time chat</td>
+                    </tr>
+                    <tr>
+                        <td>10-11</td>
+                        <td>Accessibility</td>
+                        <td>Lite mode, SMS/Voice, localization</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Production Launch</td>
+                        <td>App stores, security audit, beta users</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Critical Path:</strong> Design → Backend → Frontend → AI → Launch</p>
+
+            <hr>
+
+            <h2>11. Summary</h2>
+
+            <h3>Project Overview</h3>
+            <ul>
+                <li><strong>Architecture:</strong> Monolithic (single backend, Flutter mobile, Next.js web)</li>
+                <li><strong>Team:</strong> 5.75 FTE Nepal-based developers (phased allocation)</li>
+                <li><strong>Timeline:</strong> 10-14 months to public launch</li>
+                <li><strong>Total Cost:</strong> $80,000 - $95,000</li>
+            </ul>
+
+            <h3>Cost Breakdown</h3>
+            <ul>
+                <li>Team salaries: $58,706 (~71%)</li>
+                <li>Infrastructure: $12,840 (~16%)</li>
+                <li>Contingency: $10,732 (~13%)</li>
+            </ul>
+
+            <h3>Key Technologies</h3>
+            <ul>
+                <li><strong>Mobile:</strong> Flutter 3.16+</li>
+                <li><strong>Web:</strong> Next.js 15</li>
+                <li><strong>Backend:</strong> Node.js + NestJS (monolith)</li>
+                <li><strong>Database:</strong> PostgreSQL (Supabase)</li>
+                <li><strong>AI/ML:</strong> Python + scikit-learn + OpenAI API</li>
+                <li><strong>Payments:</strong> Stripe Connect</li>
+                <li><strong>E-Signature:</strong> DocuSign/HelloSign</li>
+            </ul>
+
+            <h3>Advantages of This Approach</h3>
+            <ol>
+                <li><strong>Cost-Effective:</strong> Nepal-based team reduces costs by 70% vs US/EU</li>
+                <li><strong>Simplified Architecture:</strong> Monolith easier to develop and maintain</li>
+                <li><strong>Proven Technologies:</strong> No experimental blockchain components</li>
+                <li><strong>Realistic Timeline:</strong> 10-14 months with buffer for iteration</li>
+                <li><strong>Scalable Foundation:</strong> Can migrate to microservices later if needed</li>
+            </ol>
+
+            <hr>
+
+            <p><strong>Document Information</strong><br>
+                <strong>Prepared By:</strong> Technical Estimation Team<br>
+                <strong>Version:</strong> 3.0 (Monolithic Architecture + Phased Staffing)<br>
+                <strong>Date:</strong> December 9, 2025<br>
+                <strong>Currency:</strong> USD (NPR exchange rate: 141)<br>
+                <strong>Next Review:</strong> After Phase 0 completion
+            </p>
+
+            <p><strong>Notes &amp; Clarifications</strong><br>
+                - Costs assume lean infrastructure and no one-time costs; adjust if procurement (devices/legal) is added
+                back.<br>
+                - Burn-rate average includes infrastructure; marketing/user acquisition is excluded.<br>
+                - Timeline reflects the combined phase ranges (10-14 months); pushing all phases to the lower bound will
+                require aggressive scope control.</p>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
