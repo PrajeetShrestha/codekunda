@@ -235,11 +235,10 @@ code {
 
 .toc__link {
   display: block;
-  padding: var(--space-1) 0;
+  padding: var(--space-1) 0 var(--space-1) var(--space-3);
   color: var(--text-muted);
   font-size: var(--font-size-sm);
   border-left: 2px solid transparent;
-  padding-left: var(--space-3);
   margin-left: -2px;
 }
 
@@ -251,6 +250,15 @@ code {
 .toc__link.active {
   color: var(--color-primary);
   border-left-color: var(--color-primary);
+  padding-left: var(--space-3);
+}
+
+.toc__link--h3 {
+  padding-left: calc(var(--space-3) + 1rem);
+}
+
+.toc__link--h3.active {
+  padding-left: calc(var(--space-3) + 1rem);
 }
 
 /* Code Blocks */

@@ -82,9 +82,8 @@ function initTOC() {
 
     const link = document.createElement('a');
     link.href = `#${heading.id}`;
-    link.className = 'toc__link';
+    link.className = heading.tagName === 'H3' ? 'toc__link toc__link--h3' : 'toc__link';
     link.textContent = heading.textContent;
-    link.style.paddingLeft = heading.tagName === 'H3' ? '1rem' : '0';
     
     link.addEventListener('click', (e) => {
       e.preventDefault();
