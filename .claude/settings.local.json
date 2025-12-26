@@ -16,7 +16,10 @@
       "Bash(firebase --version:*)",
       "Bash(node --version:*)",
       "Bash(grep:*)",
-      "mcp_clipnote_*(:*)"
+      "mcp_clipnote_*(:*)",
+      "Bash(npm install:*)",
+      "Bash(JEKYLL_ENV=production bundle exec jekyll build:*)",
+      "Bash(node scripts/obfuscate.js:*)"
     ],
     "deny": [],
     "ask": []

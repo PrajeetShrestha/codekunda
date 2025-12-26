@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "Build scripts for CodeKunda",
     "scripts": {
+        "build": "JEKYLL_ENV=production bundle exec jekyll build",
         "obfuscate": "node scripts/obfuscate.js"
     },
     "devDependencies": {

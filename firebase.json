@@ -5,7 +5,7 @@
       "pkill -f 'jekyll serve' || true",
       "npm install",
       "bundle exec jekyll clean",
-      "bundle exec jekyll build",
+      "npm run build",
       "node scripts/obfuscate.js"
     ],
     "headers": [
