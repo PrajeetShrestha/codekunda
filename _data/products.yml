@@ -3,8 +3,13 @@
   image_style: default
   url: /clipkunda/
   release_url: /product-launches/
-  latest_release: true
 - title: Sour.Chat
   desc: Modern chat platform for AI-driven conversations.
   image_style: default
   url: https://sour.chat
+- title: LogicLand
+  desc: Educational iOS app helping kids learn math, logic, and reading through interactive games.
+  image_style: graph
+  url: /logicland/
+  release_url: /product-launches/
+  latest_release: true

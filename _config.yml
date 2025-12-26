@@ -19,6 +19,9 @@ collections:
   clipkunda:
     output: true
     permalink: /clipkunda/:path/
+  logicland:
+    output: true
+    permalink: /logicland/:path/
 
 defaults:
   - scope:
