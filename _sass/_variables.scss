@@ -1,17 +1,17 @@
 /* Theme variables */
 :root {
-    /* Color Palette (HSL) */
-    --hue-primary: 239;
-    --sat-primary: 84%;
-    --lig-primary: 67%;
+    /* Color Palette (HSL) - Blue/Teal Theme */
+    --hue-primary: 215;   /* Royal Blue */
+    --sat-primary: 90%;
+    --lig-primary: 60%;
     
-    --hue-secondary: 271;
-    --sat-secondary: 91%;
-    --lig-secondary: 65%;
+    --hue-secondary: 175; /* Teal */
+    --sat-secondary: 70%;
+    --lig-secondary: 35%;
     
-    --hue-accent: 333;
-    --sat-accent: 83%;
-    --lig-accent: 51%;
+    --hue-accent: 35;     /* Warm Gold */
+    --sat-accent: 90%;
+    --lig-accent: 55%;
 
     /* Colors */
     --primary-color: hsl(var(--hue-primary), var(--sat-primary), var(--lig-primary));
@@ -32,10 +32,10 @@
     --card-hover-bg: rgba(255, 255, 255, 0.12);
     --nav-bg: rgba(10, 10, 10, 0.85); /* Increased opacity for legibility */
     
-    /* Gradients */
-    --gradient-main: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    --gradient-text: linear-gradient(to right, #ffffff, #a5b4fc);
-    --gradient-surface: linear-gradient(to bottom right, var(--surface-1), var(--bg-color));
+    /* Gradients - Replaced with solid colors */
+    --gradient-main: var(--primary-color);
+    --gradient-text: var(--text-color);
+    --gradient-surface: var(--surface-1);
     
     /* Typography */
     --font-heading: 'Outfit', sans-serif;
@@ -48,7 +48,8 @@
     
     /* Card Specific */
     --card-text-color: rgba(255, 255, 255, 0.95);
-    --product-img-bg: linear-gradient(135deg, hsla(var(--hue-primary), var(--sat-primary), var(--lig-primary), 0.1), hsla(var(--hue-secondary), var(--sat-secondary), var(--lig-secondary), 0.1));
+    /* Solid color with low opacity for product bg instead of gradient */
+    --product-img-bg: hsla(var(--hue-primary), var(--sat-primary), var(--lig-primary), 0.1);
     --placeholder-bg: rgba(255, 255, 255, 0.15);
     --placeholder-element: rgba(255, 255, 255, 0.4);
     
@@ -90,28 +91,28 @@
     --text-muted: #64748b;
     
     /* Slightly different HSL for light mode if needed, or re-declare */
-    --hue-primary: 243;
-    --sat-primary: 75%;
-    --lig-primary: 59%;
+    --hue-primary: 215;
+    --sat-primary: 85%;
+    --lig-primary: 50%;
     
-    --hue-secondary: 270;
-    --sat-secondary: 85%;
-    --lig-secondary: 55%;
+    --hue-secondary: 175;
+    --sat-secondary: 70%;
+    --lig-secondary: 30%;
 
     --glass-bg: rgba(255, 255, 255, 0.7);
     --glass-border: rgba(0, 0, 0, 0.08);
     --card-hover-bg: rgba(255, 255, 255, 0.95);
     --nav-bg: rgba(248, 250, 252, 0.85);
     
-    --gradient-text: linear-gradient(to right, #0f172a, var(--primary-color));
-    --gradient-surface: linear-gradient(to bottom right, var(--surface-1), var(--bg-color));
+    --gradient-text: var(--text-color);
+    --gradient-surface: var(--surface-1);
     
     --form-bg-light: rgba(0, 0, 0, 0.03);
     --form-focus-bg-light: rgba(0, 0, 0, 0.05);
 
     /* Card Specific */
     --card-text-color: #0f172a;
-    --product-img-bg: linear-gradient(135deg, hsla(var(--hue-primary), var(--sat-primary), var(--lig-primary), 0.05), hsla(var(--hue-secondary), var(--sat-secondary), var(--lig-secondary), 0.05));
+    --product-img-bg: hsla(var(--hue-primary), var(--sat-primary), var(--lig-primary), 0.05);
     --placeholder-bg: rgba(15, 23, 42, 0.06);
     --placeholder-element: rgba(15, 23, 42, 0.2);
     
@@ -133,22 +134,22 @@
     --surface-2: #f1f5f9;
     --text-color: #0f172a;
     --text-muted: #64748b;
-    --hue-primary: 243;
-    --sat-primary: 75%;
-    --lig-primary: 59%;
-    --hue-secondary: 270;
-    --sat-secondary: 85%;
-    --lig-secondary: 55%;
+    --hue-primary: 215;
+    --sat-primary: 85%;
+    --lig-primary: 50%;
+    --hue-secondary: 175;
+    --sat-secondary: 70%;
+    --lig-secondary: 30%;
 
     --glass-bg: rgba(255, 255, 255, 0.7);
     --glass-border: rgba(0, 0, 0, 0.08);
     --card-hover-bg: rgba(255, 255, 255, 0.95);
     --nav-bg: rgba(248, 250, 252, 0.85);
 
-    --gradient-text: linear-gradient(to right, #0f172a, var(--primary-color));
+    --gradient-text: var(--text-color);
     
     --card-text-color: #0f172a;
-    --product-img-bg: linear-gradient(135deg, hsla(var(--hue-primary), var(--sat-primary), var(--lig-primary), 0.05), hsla(var(--hue-secondary), var(--sat-secondary), var(--lig-secondary), 0.05));
+    --product-img-bg: hsla(var(--hue-primary), var(--sat-primary), var(--lig-primary), 0.05);
     --placeholder-bg: rgba(15, 23, 42, 0.06);
     --placeholder-element: rgba(15, 23, 42, 0.15);
     
