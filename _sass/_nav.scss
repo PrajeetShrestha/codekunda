@@ -1,5 +1,5 @@
 /* Navigation & Toggles */
-.main-nav ul {
+.main-nav > ul {
     display: flex;
     gap: 3rem;
 }
@@ -78,4 +78,78 @@
     background: var(--glass-bg);
     border-color: var(--primary-color);
     color: var(--primary-color);
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+    z-index: 101; 
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--nav-bg);
+    min-width: 220px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.dropdown-item:hover {
+    background: var(--glass-bg);
+    color: var(--primary-color);
+}
+
+/* Mobile Dropdown styles */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        padding-left: 1.5rem;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        min-width: unset;
+        display: none; /* JS will likely handle this via .active class if we add toggle logic, or we rely on CSS hover/focus for now. Since header.html has structure, if we want pure CSS click on mobile, we might need :focus or checkboxes. But standard mobile nav usually expands all or uses JS. */
+    }
+    
+    /* For simple mobile nav without JS toggle adaptation, we can just show it or rely on hover (which is bad on touch). 
+       Ideally we add a small script or rely on the mobile menu logic. 
+       Let's assume the mobile menu is just listed. */
+    
+    .dropdown:hover .dropdown-menu {
+        display: flex;
+    }
 }

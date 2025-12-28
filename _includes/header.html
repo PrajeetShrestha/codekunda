@@ -6,8 +6,14 @@
     <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
       <ul>
         <li><a href="{{ '/' | relative_url }}#services" class="nav-link">Services</a></li>
-        <li><a href="{{ '/' | relative_url }}#products" class="nav-link">Products</a></li>
-        <li><a href="{{ '/product-launches/' | relative_url }}" class="nav-link">Product Launches</a></li>
+        <li class="dropdown">
+          <a href="#" class="nav-link dropdown-toggle">Products</a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ '/' | relative_url }}#products" class="dropdown-item">Core Products</a></li>
+            <li><a href="{{ '/product-launches/' | relative_url }}" class="dropdown-item">Product Launches</a></li>
+            <li><a href="{{ '/utilities/' | relative_url }}" class="dropdown-item">Utilities</a></li>
+          </ul>
+        </li>
         <li><a href="{{ '/' | relative_url }}#vision" class="nav-link">Vision</a></li>
         <li><a href="{{ '/' | relative_url }}#contact" class="nav-link">Contact</a></li>
       </ul>
