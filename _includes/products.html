@@ -5,30 +5,53 @@
       {% for p in site.data.products %}
       <article class="product-card glass-panel">
         <div class="product-image">
-          {% case p.image_style %}
-          {% when "default" %}
-          <div class="placeholder-ui">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="circle"></div>
+          {% if p.title == "LogicLand" %}
+            <img src="{{ '/assets/images/logicland/logic_land_logo.png' | relative_url }}" alt="LogicLand Logo" class="product-logo-img">
+          {% elsif p.title == "ClipKunda" %}
+            <img src="{{ '/assets/images/clipkunda/clipkundalogo.png' | relative_url }}" alt="ClipKunda Logo" class="product-logo-img">
+          {% else %}
+            {% case p.image_style %}
+            {% when "default" %}
+            <div class="placeholder-ui">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="circle"></div>
+            </div>
+            {% when "graph" %}
+            <div class="placeholder-ui graph">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+            {% when "shield" %}
+            <div class="placeholder-ui shield">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            {% endcase %}
+          {% endif %}
+
+          {% if p.latest_release %}
+          <span class="badge overlay-badge">Latest Release</span>
+          {% endif %}
+          
+          {% if p.platforms %}
+          <div class="platform-badges overlay-badges">
+            {% for platform in p.platforms %}
+              {% if platform == 'ios' %}
+                <span class="platform-badge" title="iOS"><i class="fab fa-apple"></i></span>
+              {% elsif platform == 'android' %}
+                <span class="platform-badge" title="Android"><i class="fab fa-android"></i></span>
+              {% elsif platform == 'macos' %}
+                <span class="platform-badge" title="macOS"><i class="fab fa-apple"></i></span>
+              {% elsif platform == 'web' %}
+                <span class="platform-badge" title="Web"><i class="fas fa-globe"></i></span>
+              {% endif %}
+            {% endfor %}
           </div>
-          {% when "graph" %}
-          <div class="placeholder-ui graph">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-          </div>
-          {% when "shield" %}
-          <div class="placeholder-ui shield">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          {% endcase %}
+          {% endif %}
         </div>
         <div class="product-content">
           <h3>{{ p.title }}</h3>
-          {% if p.latest_release %}
-          <span class="badge">Latest Release</span>
-          {% endif %}
           <p>{{ p.desc }}</p>
           <a href="{{ p.url | default: '#' | relative_url }}" class="btn-sm">View Details</a>
           {% if p.release_url %}

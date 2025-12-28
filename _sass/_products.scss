@@ -243,6 +243,67 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    padding: 2rem; /* Add padding so logo breathes */
+}
+
+.product-logo-img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    /* object-fit: contain;  Removed as we are letting img size itself */
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+    transition: transform 0.3s ease;
+    border-radius: 24px; /* Increased corner radius */
+}
+
+.product-card:hover .product-logo-img {
+    transform: scale(1.05);
+}
+
+.platform-badges {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.overlay-badges {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    margin: 0;
+    z-index: 2;
+}
+
+.overlay-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    margin: 0;
+    z-index: 2;
+    background: rgba(var(--primary-color-rgb), 0.9);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.platform-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.9); /* More visible on images */
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    color: #333; /* Darker icon for contrast on white bg */
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.platform-badge:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 /* Abstract UI Placeholders */

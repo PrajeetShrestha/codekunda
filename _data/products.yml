@@ -1,14 +1,17 @@
 - title: ClipKunda
-  desc: Privacy-first clipboard manager with local AI and rich docs.
+  desc: Privacy-first clipboard manager with local AI.
+  platforms: [macos]
   image_style: default
   url: /clipkunda/
   release_url: /product-launches/
 - title: Sour.Chat
   desc: Modern chat platform for AI-driven conversations.
+  platforms: [web]
   image_style: default
   url: https://sour.chat
 - title: LogicLand
-  desc: Educational iOS app helping kids learn math, logic, and reading through interactive games.
+  desc: Educational games for kids to learn math & logic.
+  platforms: [ios, android]
   image_style: graph
   url: /logicland/
   release_url: /product-launches/
