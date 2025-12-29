@@ -55,10 +55,12 @@
         <div class="product-content">
           <h3>{{ p.title }}</h3>
           <p>{{ p.desc }}</p>
-          <a href="{{ p.url | default: '#' | relative_url }}" class="btn-sm">View Details</a>
-          {% if p.release_url %}
-          <a href="{{ p.release_url | relative_url }}" class="btn-sm">Release Notes</a>
-          {% endif %}
+          <div class="product-actions">
+            <a href="{{ p.url | default: '#' | relative_url }}" class="btn-sm">View Details</a>
+            {% if p.release_url %}
+            <a href="{{ p.release_url | relative_url }}" class="btn-sm">Release Notes</a>
+            {% endif %}
+          </div>
         </div>
       </article>
       {% endfor %}

@@ -1,14 +1,14 @@
-<section id="utilities" class="products-section">
+<section id="utilities" class="utilities-section">
   <div class="container">
     <h2 class="section-title center-text">Utilities</h2>
-    <div class="products-grid">
+    {% assign utility_count = site.data.utilities | size %}
+    <div class="products-grid{% if utility_count == 1 %} single-item{% endif %}">
       {% for u in site.data.utilities %}
       <article class="product-card glass-panel">
         <div class="product-image">
            {% if u.image_path %}
             <img src="{{ u.image_path | relative_url }}" alt="{{ u.title }} Logo" class="product-logo-img">
            {% else %}
-            <!-- Fallback or existing logic if needed -->
             <div class="placeholder-ui">
               <div class="circle"></div>
             </div>
@@ -17,7 +17,7 @@
           {% if u.latest_release %}
           <span class="badge overlay-badge">Latest Release</span>
           {% endif %}
-          
+
           {% if u.platforms %}
           <div class="platform-badges overlay-badges">
             {% for platform in u.platforms %}
@@ -37,10 +37,12 @@
         <div class="product-content">
           <h3>{{ u.title }}</h3>
           <p>{{ u.desc }}</p>
-          <a href="{{ u.url | default: '#' | relative_url }}" class="btn-sm">View Details</a>
-          {% if u.release_url %}
-          <a href="{{ u.release_url | relative_url }}" class="btn-sm">Release Notes</a>
-          {% endif %}
+          <div class="product-actions">
+            <a href="{{ u.url | default: '#' | relative_url }}" class="btn-sm">View Details</a>
+            {% if u.release_url %}
+            <a href="{{ u.release_url | relative_url }}" class="btn-sm">Release Notes</a>
+            {% endif %}
+          </div>
         </div>
       </article>
       {% endfor %}
