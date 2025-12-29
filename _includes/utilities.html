@@ -1,0 +1,49 @@
+<section id="utilities" class="products-section">
+  <div class="container">
+    <h2 class="section-title center-text">Utilities</h2>
+    <div class="products-grid">
+      {% for u in site.data.utilities %}
+      <article class="product-card glass-panel">
+        <div class="product-image">
+           {% if u.image_path %}
+            <img src="{{ u.image_path | relative_url }}" alt="{{ u.title }} Logo" class="product-logo-img">
+           {% else %}
+            <!-- Fallback or existing logic if needed -->
+            <div class="placeholder-ui">
+              <div class="circle"></div>
+            </div>
+           {% endif %}
+
+          {% if u.latest_release %}
+          <span class="badge overlay-badge">Latest Release</span>
+          {% endif %}
+          
+          {% if u.platforms %}
+          <div class="platform-badges overlay-badges">
+            {% for platform in u.platforms %}
+              {% if platform == 'ios' %}
+                <span class="platform-badge" title="iOS"><i class="fab fa-apple"></i></span>
+              {% elsif platform == 'android' %}
+                <span class="platform-badge" title="Android"><i class="fab fa-android"></i></span>
+              {% elsif platform == 'macos' %}
+                <span class="platform-badge" title="macOS"><i class="fab fa-apple"></i></span>
+              {% elsif platform == 'web' %}
+                <span class="platform-badge" title="Web"><i class="fas fa-globe"></i></span>
+              {% endif %}
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        <div class="product-content">
+          <h3>{{ u.title }}</h3>
+          <p>{{ u.desc }}</p>
+          <a href="{{ u.url | default: '#' | relative_url }}" class="btn-sm">View Details</a>
+          {% if u.release_url %}
+          <a href="{{ u.release_url | relative_url }}" class="btn-sm">Release Notes</a>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

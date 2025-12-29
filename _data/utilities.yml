@@ -1,0 +1,5 @@
+- title: JustSend
+  desc: The Native Resend Client for macOS. Compose, test, and send HTML emails directly from your Mac.
+  platforms: [macos]
+  url: /JustSend/
+  image_path: /JustSend/assets/logo.png
