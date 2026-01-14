@@ -258,7 +258,7 @@
     }
 }
 
-/* Single item layout - centered card with comfortable width */
+/* Single item layout - centered card matching regular product card size */
 .products-grid.single-item {
     display: flex;
     justify-content: center;
@@ -267,15 +267,15 @@
 
 .products-grid.single-item .product-card {
     width: 100%;
-    max-width: 420px;
+    max-width: 320px;
 
     @media (min-width: 600px) {
-        max-width: 480px;
+        max-width: 340px;
     }
 }
 
 .products-grid.single-item .product-image {
-    height: 220px;
+    height: 160px;
 }
 
 .products-grid.single-item .product-content {
@@ -472,39 +472,51 @@
 /* Product Card Actions */
 .product-actions {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    align-items: center;
+    gap: 0.75rem;
     margin-top: auto;
-    padding-top: 1rem;
-    border-top: 1px solid var(--glass-border);
+    padding-top: 1.25rem;
 }
 
 .product-actions .btn-sm {
+    flex: 1;
     margin: 0;
-    padding: 0.5rem 1rem;
-    min-height: 36px;
-    font-size: 0.85rem;
-    background: transparent;
-    border: 1px solid var(--glass-border);
-    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    min-height: 44px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
     transition: all 0.2s ease;
+    text-decoration: none;
 }
 
-.product-actions .btn-sm:hover {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
-    color: #fff;
-}
-
+/* Primary button - View Details */
 .product-actions .btn-sm:first-child {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
-    color: #fff;
+    background: transparent;
+    border: 1.5px solid var(--primary-color);
+    color: var(--primary-color);
 }
 
 .product-actions .btn-sm:first-child:hover {
-    background: var(--secondary-color);
     border-color: var(--secondary-color);
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Secondary button - Release Notes */
+.product-actions .btn-sm:not(:first-child) {
+    background: transparent;
+    border: 1.5px solid var(--glass-border);
+    color: var(--text-color);
+}
+
+.product-actions .btn-sm:not(:first-child):hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .badge {
@@ -722,25 +734,29 @@
     }
 
     .product-actions {
-        padding-top: 0.75rem;
+        padding-top: 1rem;
+        gap: 0.5rem;
     }
 
     .product-actions .btn-sm {
         flex: 1;
-        text-align: center;
-        justify-content: center;
-        min-width: 100px;
+        padding: 0.65rem 1rem;
+        min-height: 42px;
+        font-size: 0.8rem;
     }
 }
 
 /* Small mobile adjustments */
 @media (max-width: 480px) {
     .product-actions {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .product-actions .btn-sm {
-        width: 100%;
+        flex: 1;
+        min-width: 0;
+        padding: 0.6rem 0.75rem;
+        font-size: 0.75rem;
     }
 
     .products-grid {
