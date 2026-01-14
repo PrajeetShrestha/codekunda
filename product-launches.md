@@ -13,7 +13,7 @@ releases:
       - Flexible subscription model with monthly, yearly, and lifetime options
       - Kid-friendly SwiftUI interface with colorful themes
       - Local metrics tracking with session history
-    primary_download_url: https://apps.apple.com/app/logicland
+    primary_download_url: https://apps.apple.com/np/app/logicland-kids-math-reading/id6757007447
     secondary_url: /logicland/
     notes_url: /releases/logicland/
     details: |

@@ -1,9 +1,155 @@
 ---
 layout: default
-title: LogicLand - Educational Games for Kids
-description: Educational iOS app helping kids learn math, logic, and reading through 25+ interactive games
+title: LogicLand - Kids Math & Reading Games | Educational App for Children
+description: LogicLand is a fun educational iOS app with 25+ interactive games teaching math, logic, and reading to kids ages 4-10. Features parent dashboard, progress tracking, and COPPA-compliant privacy. Download free on App Store.
 permalink: /logicland/
+keywords: educational games for kids, kids math app, children learning app, math games for kids, reading games, logic puzzles for children, educational iOS app, kids educational games, learn to read app, counting games, fractions for kids, parent dashboard, COPPA compliant kids app
+image: /assets/images/logicland/logic_land_logo.png
+og_image: /assets/images/logicland/logic_land_logo.png
+app_id: 6757007447
 ---
+
+<!-- App Store Smart Banner -->
+<meta name="apple-itunes-app" content="app-id=6757007447">
+
+<!-- Additional SEO Meta Tags -->
+<meta name="robots" content="index, follow">
+<meta name="author" content="CodeKunda">
+<meta name="application-name" content="LogicLand">
+<meta name="apple-mobile-web-app-title" content="LogicLand">
+
+<!-- Open Graph Overrides for LogicLand -->
+<meta property="og:image" content="{{ '/assets/images/logicland/logic_land_logo.png' | absolute_url }}">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:image:alt" content="LogicLand App Logo - Educational Games for Kids">
+<meta property="og:site_name" content="CodeKunda">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card Overrides -->
+<meta name="twitter:image" content="{{ '/assets/images/logicland/logic_land_logo.png' | absolute_url }}">
+<meta name="twitter:image:alt" content="LogicLand - Kids Math & Reading Educational App">
+<meta name="twitter:creator" content="@codekunda">
+
+<!-- MobileApplication Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "LogicLand: Kids Math & Reading",
+  "operatingSystem": "iOS",
+  "applicationCategory": "EducationalApplication",
+  "applicationSubCategory": "Kids Games",
+  "description": "LogicLand is a fun educational app with 25+ interactive games helping kids ages 4-10 master math, logic, and reading skills. Features include a parent dashboard for progress tracking, text-to-speech audio feedback, and COPPA-compliant privacy protection.",
+  "url": "{{ '/logicland/' | absolute_url }}",
+  "downloadUrl": "https://apps.apple.com/np/app/logicland-kids-math-reading/id6757007447",
+  "installUrl": "https://apps.apple.com/np/app/logicland-kids-math-reading/id6757007447",
+  "image": "{{ '/assets/images/logicland/logic_land_logo.png' | absolute_url }}",
+  "screenshot": [
+    "{{ '/assets/images/logicland/iphone_images/splash-screen.png' | absolute_url }}",
+    "{{ '/assets/images/logicland/iphone_images/main-menu.png' | absolute_url }}",
+    "{{ '/assets/images/logicland/iphone_images/home-screen.png' | absolute_url }}",
+    "{{ '/assets/images/logicland/iphone_images/game-balance-scale.png' | absolute_url }}",
+    "{{ '/assets/images/logicland/iphone_images/parent-dashboard.png' | absolute_url }}"
+  ],
+  "author": {
+    "@type": "Organization",
+    "name": "CodeKunda",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CodeKunda"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Free download with in-app purchases"
+    },
+    {
+      "@type": "Offer",
+      "name": "Monthly Subscription",
+      "description": "Full access to all 25+ educational games"
+    },
+    {
+      "@type": "Offer",
+      "name": "Yearly Subscription",
+      "description": "Best value - annual access to all games"
+    },
+    {
+      "@type": "Offer",
+      "name": "Lifetime Access",
+      "description": "One-time purchase for permanent access"
+    }
+  ],
+  "featureList": [
+    "25+ Educational Games",
+    "Math Games: Counting, Fractions, Multiplication",
+    "Logic Games: Patterns, Sequences, Shapes",
+    "Reading Games: Read Aloud, Speed Reader",
+    "Parent Dashboard with Progress Tracking",
+    "Text-to-Speech Audio Feedback",
+    "COPPA Compliant Privacy",
+    "No Ads",
+    "Offline Play"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "1",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "contentRating": "Everyone",
+  "inLanguage": "en",
+  "softwareVersion": "1.0.0",
+  "datePublished": "2024-12-01"
+}
+</script>
+
+<!-- FAQ Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What age is LogicLand suitable for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LogicLand is designed for children ages 4-10, with games that adapt to different skill levels from basic counting to more advanced multiplication and reading comprehension."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is LogicLand safe for kids?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, LogicLand is COPPA compliant with no ads, no data collection, and all data stored locally on your device. The Parent Gate feature protects settings and the parent dashboard."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What subjects does LogicLand cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LogicLand includes 25+ games covering Mathematics (counting, fractions, multiplication, place value), Logic (patterns, sequences, shapes, time), and Reading (read aloud, dictation, speed reading)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I track my child's progress?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, LogicLand includes a comprehensive Parent Dashboard where you can view games played, scores, time spent, and identify areas that need more practice."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
 /* LogicLand Custom Theme - Playful & Colorful */
@@ -150,6 +296,17 @@ permalink: /logicland/
 .ll-btn-outline:hover {
   background: var(--ll-purple);
   color: white !important;
+}
+
+.ll-btn-android-soon {
+  background: #E5E7EB;
+  color: #6B7280 !important;
+  cursor: default;
+  opacity: 0.9;
+}
+
+.ll-btn-android-soon i {
+  color: #3DDC84 !important;
 }
 
 /* Screenshot Gallery */
@@ -490,6 +647,9 @@ permalink: /logicland/
         <a href="https://apps.apple.com/np/app/logicland-kids-math-reading/id6757007447" class="ll-btn ll-btn-primary">
           <i class="fab fa-apple"></i> Download on App Store
         </a>
+        <span class="ll-btn ll-btn-android-soon">
+          <i class="fab fa-android"></i> Android Coming Soon
+        </span>
       </div>
     </section>
 
@@ -738,9 +898,9 @@ permalink: /logicland/
         <a href="https://apps.apple.com/np/app/logicland-kids-math-reading/id6757007447" class="ll-btn ll-btn-primary">
           <i class="fab fa-apple"></i> Download on App Store
         </a>
-        <a href="{{ '/product-launches/' | relative_url }}" class="ll-btn ll-btn-outline">
-          View Release Notes
-        </a>
+        <span class="ll-btn ll-btn-android-soon">
+          <i class="fab fa-android"></i> Android Coming Soon
+        </span>
       </div>
     </section>
 

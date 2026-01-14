@@ -30,6 +30,15 @@ permalink: /sitemap/
                             {% endfor %}
                         </ul>
                     {% endif %}
+                    {% if product.title == 'LogicLand' %}
+                        <ul style="margin-left: 1rem; margin-top: 0.5rem; list-style: circle;">
+                            {% for page in site.logicland %}
+                                {% if page.url != '/logicland/' %}
+                                <li style="margin-bottom: 0.25rem;"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </li>
              {% endfor %}
         </ul>
