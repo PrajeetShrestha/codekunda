@@ -20,7 +20,8 @@
       "Bash(npm install:*)",
       "Bash(JEKYLL_ENV=production bundle exec jekyll build:*)",
       "Bash(node scripts/obfuscate.js:*)",
-      "Bash(firebase use:*)"
+      "Bash(firebase use:*)",
+      "Bash(sips:*)"
     ],
     "deny": [],
     "ask": []

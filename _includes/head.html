@@ -26,9 +26,9 @@
 <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}">
 <meta property="og:title" content="{{ page.title | default: site.title }}">
 <meta property="og:description" content="{{ page.description | default: site.description }}">
-<meta property="og:image" content="{{ '/assets/og-image.jpg' | absolute_url }}">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="{{ '/assets/codekunda_logo.jpg' | absolute_url }}">
+<meta property="og:image:width" content="960">
+<meta property="og:image:height" content="960">
 <meta property="og:image:alt" content="CodeKunda - Software Company in Nepal">
 
 <!-- Twitter -->
@@ -37,13 +37,16 @@
 <meta name="twitter:url" content="{{ page.url | replace:'index.html','' | absolute_url }}">
 <meta name="twitter:title" content="{{ page.title | default: site.title }}">
 <meta name="twitter:description" content="{{ page.description | default: site.description }}">
-<meta name="twitter:image" content="{{ '/assets/og-image.jpg' | absolute_url }}">
+<meta name="twitter:image" content="{{ '/assets/codekunda_logo.jpg' | absolute_url }}">
 <meta name="twitter:image:alt" content="CodeKunda - Software Company in Nepal">
 
 {% include seo_schema.html %}
 
 <!-- Favicon -->
-<link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon/favicon-32x32.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon/favicon-16x16.png' | relative_url }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicon/apple-touch-icon.png' | relative_url }}">
+<link rel="icon" sizes="192x192" href="{{ '/assets/favicon/android-chrome-192x192.png' | relative_url }}">
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
