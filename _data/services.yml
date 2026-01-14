@@ -1,13 +1,13 @@
-- icon: fas fa-code
-  title: Custom Software Development
-  desc: Bespoke enterprise solutions tailored to complex workflows and unique business logic.
 - icon: fas fa-mobile-alt
   title: Mobile App Development
-  desc: Native and cross-platform experiences that feel fluid, responsive, and intuitive.
-- icon: fas fa-cloud
-  title: Cloud Infrastructure
-  desc: Scalable, secure, and serverless architectures designed for maximum uptime and performance.
-- icon: fas fa-bezier-curve
-  title: UI/UX Design
-  desc: Human-centered design philosophy that prioritizes accessibility and aesthetic delight.
+  desc: Native iOS and Android apps with engaging user experiences. From educational games to productivity tools.
+- icon: fab fa-apple
+  title: macOS App Development
+  desc: Privacy-first desktop applications built for Apple's ecosystem with native performance and seamless integration.
+- icon: fas fa-robot
+  title: AI-Powered Solutions
+  desc: Intelligent applications with local AI processing, smart chat platforms, and machine learning integration.
+- icon: fas fa-globe
+  title: Web Platforms
+  desc: Modern web applications and SaaS products built with scalable architecture and intuitive interfaces.
 
