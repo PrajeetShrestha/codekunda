@@ -1,6 +1,6 @@
 <article class="launch-card">
   <div class="launch-header">
-    <div class="launch-logo">
+    <div class="launch-logo{% if include.release.wide_logo %} launch-logo--wide{% endif %}">
       {% if include.release.image %}
         <img src="{{ include.release.image | relative_url }}" alt="{{ include.release.name }}" />
       {% else %}
