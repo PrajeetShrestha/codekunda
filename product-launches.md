@@ -16,6 +16,7 @@ releases:
       - Image galleries and brochure downloads
       - Dark/light mode with responsive design
     primary_download_url: https://carkunda.com
+    primary_label: View Project
     details: |
       Version 1.0.0 — Full launch of CarKunda featuring 50+ cars across
       major brands in Nepal including BYD, MG, Hyundai, Kia, Toyota, and more.
