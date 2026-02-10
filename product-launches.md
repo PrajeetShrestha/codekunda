@@ -2,6 +2,24 @@
 title: Product Launches
 permalink: /product-launches/
 releases:
+  - name: CarKunda
+    version: 1.0.0
+    image: /assets/images/carkunda-logo.png
+    summary: Nepal's comprehensive car information platform — specs, prices, comparisons, and reviews for every car available in Nepal.
+    features:
+      - Complete car database with detailed specifications for Nepal market
+      - Price listings in NPR with multi-variant support
+      - Side-by-side car comparison tool
+      - EV, Hybrid, and ICE vehicle coverage
+      - Brand pages with full model lineups
+      - Budget-based car browsing
+      - Image galleries and brochure downloads
+      - Dark/light mode with responsive design
+    primary_download_url: https://carkunda.com
+    details: |
+      Version 1.0.0 — Full launch of CarKunda featuring 50+ cars across
+      major brands in Nepal including BYD, MG, Hyundai, Kia, Toyota, and more.
+      Built with Next.js, MongoDB, and Tailwind CSS.
   - name: LogicLand for iOS
     version: 1.0.0
     image: /assets/images/logicland/logic_land_logo.png
@@ -44,7 +62,7 @@ releases:
   <div class="container">
     <h1 class="section-title center-text">Product Launches</h1>
     <p class="products-intro">
-      Check out our latest products — LogicLand, an educational iOS app for kids, and ClipKunda, the ultimate clipboard manager with on-device intelligence.
+      Check out our latest products — CarKunda, Nepal's car info platform; LogicLand, an educational iOS app for kids; and ClipKunda, the ultimate clipboard manager with on-device intelligence.
     </p>
 
     <div class="products-launch-grid">

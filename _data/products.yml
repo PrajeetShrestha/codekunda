@@ -1,3 +1,10 @@
+- title: CarKunda
+  desc: Nepal's comprehensive car info platform with specs, prices & comparisons.
+  platforms: [web]
+  image_style: default
+  url: https://carkunda.com
+  release_url: /product-launches/
+  latest_release: true
 - title: ClipKunda
   desc: Privacy-first clipboard manager with local AI.
   platforms: [macos]
@@ -15,4 +22,3 @@
   image_style: graph
   url: /logicland/
   release_url: /product-launches/
-  latest_release: true
