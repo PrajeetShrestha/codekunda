@@ -4,8 +4,7 @@ permalink: /product-launches/
 releases:
   - name: CarKunda
     version: 1.0.0
-    image: /assets/images/carkunda-logo-light.png
-    wide_logo: true
+    image: /assets/images/carkunda-icon.png
     summary: Nepal's comprehensive car information platform — specs, prices, comparisons, and reviews for every car available in Nepal.
     features:
       - Complete car database with detailed specifications for Nepal market
