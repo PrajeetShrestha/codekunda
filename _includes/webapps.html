@@ -1,0 +1,32 @@
+<section id="webapps" class="webapps-section">
+  <div class="container">
+    <h2 class="section-title center-text">Web Apps</h2>
+    <div class="products-grid">
+      {% for app in site.data.webapps %}
+      <article class="product-card glass-panel">
+        <div class="product-image">
+          <div class="webapp-icon-display" style="color: {{ app.icon_color }};">
+            <i class="fas {{ app.icon }}"></i>
+          </div>
+          {% if app.platforms %}
+          <div class="platform-badges overlay-badges">
+            {% for platform in app.platforms %}
+              {% if platform == 'web' %}
+                <span class="platform-badge" title="Web"><i class="fas fa-globe"></i></span>
+              {% endif %}
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        <div class="product-content">
+          <h3>{{ app.title }}</h3>
+          <p>{{ app.desc }}</p>
+          <div class="product-actions">
+            <a href="{{ app.url }}" target="_blank" class="btn-sm">Visit App</a>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

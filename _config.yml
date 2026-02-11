@@ -5,6 +5,14 @@ baseurl: "" # Serve site from root
 
 permalink: pretty
 
+# Blog
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: post
+
 # Sass/SCSS settings
 sass:
   sass_dir: _sass

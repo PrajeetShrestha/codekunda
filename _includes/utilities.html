@@ -8,6 +8,10 @@
         <div class="product-image">
            {% if u.image_path %}
             <img src="{{ u.image_path | relative_url }}" alt="{{ u.title }} Logo" class="product-logo-img">
+           {% elsif u.icon %}
+            <div class="utility-icon-display" style="color: {{ u.icon_color }};">
+              <i class="fas {{ u.icon }}"></i>
+            </div>
            {% else %}
             <div class="placeholder-ui">
               <div class="circle"></div>

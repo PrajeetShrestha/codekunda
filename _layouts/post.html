@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% include head.html %}
+  <style>
+    .post-container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .post-header {
+      margin-bottom: 2.5rem;
+      padding-top: 2rem;
+    }
+
+    .post-header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .post-meta {
+      font-size: 0.9rem;
+      opacity: 0.6;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .post-content {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.08rem;
+      line-height: 1.8;
+    }
+
+    .post-content h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .post-content h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .post-content p {
+      margin-bottom: 1.2rem;
+    }
+
+    .post-content code {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-size: 0.92em;
+    }
+
+    [data-theme="light"] .post-content code {
+      background: rgba(0, 0, 0, 0.06);
+    }
+
+    .post-content pre {
+      background: #1a1a2e;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+
+    [data-theme="light"] .post-content pre {
+      background: #f5f5f7;
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .post-content pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .post-content a {
+      color: #6c63ff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .post-content a:hover {
+      opacity: 0.8;
+    }
+
+    .post-content ul,
+    .post-content ol {
+      margin: 1rem 0 1.5rem 1.5rem;
+    }
+
+    .post-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .post-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .post-content th,
+    .post-content td {
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: left;
+    }
+
+    [data-theme="light"] .post-content th,
+    [data-theme="light"] .post-content td {
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .post-content th {
+      background: rgba(255, 255, 255, 0.05);
+      font-weight: 600;
+    }
+
+    [data-theme="light"] .post-content th {
+      background: rgba(0, 0, 0, 0.03);
+    }
+
+    .post-content blockquote {
+      border-left: 3px solid #6c63ff;
+      padding: 0.5rem 1.2rem;
+      margin: 1.5rem 0;
+      opacity: 0.85;
+      font-style: italic;
+    }
+
+    .post-content strong {
+      font-weight: 600;
+    }
+
+    .post-content hr {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin: 2.5rem 0;
+    }
+
+    [data-theme="light"] .post-content hr {
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .post-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      opacity: 0.7;
+      text-decoration: none;
+      margin-bottom: 1rem;
+      transition: opacity 0.2s;
+    }
+
+    .post-back:hover {
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      .post-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .post-content {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div id="canvas-container" aria-hidden="true"></div>
+
+  {% include header.html %}
+
+  <main id="main-content" role="main">
+    <article class="post-container">
+      <a href="/blog" class="post-back">← Back to Blog</a>
+      <header class="post-header">
+        <h1>{{ page.title }}</h1>
+        <p class="post-meta">
+          {{ page.date | date: "%B %d, %Y" }}
+          {% if page.author %} · {{ page.author }}{% endif %}
+          {% if page.read_time %} · {{ page.read_time }}{% endif %}
+        </p>
+      </header>
+
+      <div class="post-content">
+        {{ content }}
+      </div>
+    </article>
+  </main>
+
+  {% include footer.html %}
+  {% include scripts.html %}
+</body>
+
+</html>

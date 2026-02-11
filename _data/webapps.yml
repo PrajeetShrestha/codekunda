@@ -1,29 +1,27 @@
-- title: JustSend
-  desc: The Native Resend Client for macOS. Compose, test, and send HTML emails directly from your Mac.
-  platforms: [macos]
-  url: /JustSend/
-  image_path: /JustSend/assets/logo.png
-
 - title: Game Hub
   desc: Collection of casual browser games — Snake, 2048, Word Scramble, Memory Match and more. Play instantly, no install needed.
-  platforms: [web]
+  icon: fa-gamepad
+  icon_color: "#f472b6"
   url: https://game.codekunda.com
-  image_path: /assets/images/utilities/gamehub.svg
+  platforms: [web]
 
 - title: Pastebin
   desc: Share code snippets with syntax highlighting, language detection, and auto-expiry. Clean, fast, developer-friendly.
-  platforms: [web]
+  icon: fa-clipboard-list
+  icon_color: "#60a5fa"
   url: https://paste.codekunda.com
-  image_path: /assets/images/utilities/pastebin.svg
+  platforms: [web]
 
 - title: CodeLinks
   desc: Simple link-in-bio page builder. Create your own branded landing page with all your links in one place.
-  platforms: [web]
+  icon: fa-link
+  icon_color: "#34d399"
   url: https://link.codekunda.com
-  image_path: /assets/images/utilities/codelinks.svg
+  platforms: [web]
 
 - title: CarKunda Bot
   desc: Discord bot for Nepal's car database. Look up prices, specs, and compare vehicles right from your server.
+  icon: fa-robot
+  icon_color: "#a78bfa"
+  url: https://discord.com
   platforms: [web]
-  url: https://discord.com/oauth2/authorize?client_id=1470523031578214401&permissions=51200&scope=bot%20applications.commands
-  image_path: /assets/images/utilities/carkunda-bot.svg
